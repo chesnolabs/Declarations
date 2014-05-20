@@ -27,6 +27,7 @@
 		02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */; };
 		02B26640192B721D0091C2EA /* DCDeclarationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2663F192B721D0091C2EA /* DCDeclarationsViewController.xib */; };
 		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
+		02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26642192B823F0091C2EA /* DCDeclarationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		02B2663F192B721D0091C2EA /* DCDeclarationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCDeclarationsViewController.xib; sourceTree = "<group>"; };
 		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
+		02B26641192B823F0091C2EA /* DCDeclarationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclarationViewController.h; sourceTree = "<group>"; };
+		02B26642192B823F0091C2EA /* DCDeclarationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				02B26611192A89B40091C2EA /* DCDeputyViewController.m */,
 				02B26613192A89B40091C2EA /* DCSecondViewController.h */,
 				02B26614192A89B40091C2EA /* DCSecondViewController.m */,
+				02B26641192B823F0091C2EA /* DCDeclarationViewController.h */,
+				02B26642192B823F0091C2EA /* DCDeclarationViewController.m */,
 				02B2663A192B6FE30091C2EA /* DCDeclarationsViewController.h */,
 				02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */,
 			);
@@ -301,6 +306,7 @@
 				02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
+				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

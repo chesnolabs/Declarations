@@ -30,6 +30,7 @@
         
         DCDeclaration *dec = [DCDeclaration new];
         dec.year = 2014;
+        dec.data = @{ @"Income" : @( 1000000 )};
         [deputy addDeclaration:dec];
         [self.deputies addObject:deputy];
     }

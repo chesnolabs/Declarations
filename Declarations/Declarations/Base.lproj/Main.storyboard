@@ -111,10 +111,38 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="QIj-UX-JrJ" kind="push" identifier="DeclarationDataSegue" id="frn-2B-KGU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKl-a8-OJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="-85"/>
+            <point key="canvasLocation" x="1838" y="-116"/>
+        </scene>
+        <!--Declaration View Controller - Декларація-->
+        <scene sceneID="hkg-65-XNi">
+            <objects>
+                <viewController id="QIj-UX-JrJ" customClass="DCDeclarationViewController" sceneMemberID="viewController">
+                    <textField key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="zhC-7g-IMM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <navigationItem key="navigationItem" title="Декларація" id="Dmq-2U-W07">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="1OS-uZ-22u">
+                            <connections>
+                                <action selector="cancelAction:" destination="QIj-UX-JrJ" id="D9f-CG-yk2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dumpView" destination="zhC-7g-IMM" id="oub-Od-Brg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5r-XA-641" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="564"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">

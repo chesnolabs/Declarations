@@ -8,6 +8,7 @@
 
 #import "DCDeclarationsViewController.h"
 #import "DCDeclaration.h"
+#import "DCDeclarationViewController.h"
 
 @implementation DCDeclarationsViewController
 
@@ -52,7 +53,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO
+    [self performSegueWithIdentifier:@"DeclarationDataSegue" sender:self.deputy.declarations[indexPath.row]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DeclarationDataSegue"])
+    {
+        ((DCDeclarationViewController *)segue.destinationViewController).declaration = sender;
+    }
 }
 
 @end
