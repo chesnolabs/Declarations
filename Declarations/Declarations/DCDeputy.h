@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCDeclaration.h"
 
 @interface DCDeputy : NSObject
 
 @property (strong) NSString *name;
 @property (strong) NSString *surname;
+
+@property (readonly) NSArray *declarations;
+
+- (void)addDeclaration:(DCDeclaration *)aDeclaration;
 
 @end

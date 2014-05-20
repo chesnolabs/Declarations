@@ -8,6 +8,7 @@
 
 #import "DCDeputyViewController.h"
 #import "DCDeputy.h"
+#import "DCDeclarationsViewController.h"
 
 @interface DCDeputyViewController ()
 
@@ -26,6 +27,7 @@
         DCDeputy *deputy = [DCDeputy new];
         deputy.name = @"Михайло";
         deputy.surname = [@"Добкін" stringByAppendingFormat:@" - %i", i];
+        [deputy addDeclaration:[DCDeclaration new]];
         [self.deputies addObject:deputy];
     }
     self.displayedDeputies = self.deputies;
@@ -44,6 +46,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)showDeclarationsForDeputy:(DCDeputy *)aDeputy
+{
+    DCDeclarationsViewController *decViewController = [[DCDeclarationsViewController alloc] init];
+    decViewController.deputy = aDeputy;
+    [self presentViewController:decViewController animated:YES completion:nil];
+}
+
 #pragma mark - Table View delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,6 +69,11 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", deputy.surname, deputy.name];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self showDeclarationsForDeputy:self.displayedDeputies[indexPath.row]];
 }
 
 #pragma mark - Search
