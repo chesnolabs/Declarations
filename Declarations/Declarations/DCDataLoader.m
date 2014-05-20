@@ -17,10 +17,11 @@
 @end
 
 static NSString *const DCChesnoLink = @"";
+static NSString *const DCDeclarationKey = @"declaration";
 
 @implementation DCDataLoader
 
-- (id)init
+- (id)initWithDelegate:(id<DCDataLoaderDelegate>)delegate
 {
     self = [super init];
     
@@ -30,6 +31,8 @@ static NSString *const DCChesnoLink = @"";
         
         _session = [NSURLSession sessionWithConfiguration:configuration];
         _chesnoLink = [NSURL URLWithString:DCChesnoLink];
+        
+        _delegate = delegate;
     }
     
     return self;
@@ -85,7 +88,38 @@ static NSString *const DCChesnoLink = @"";
 
 - (void)loadDataForPerson:(DCPerson *)person
 {
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
     
+    // setup request for defined person
+    [self.session dataTaskWithRequest:request
+                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        if (error == nil && data != nil)
+        {
+            NSError *parsingJSONError;
+            NSDictionary *jsonResponce = [NSJSONSerialization JSONObjectWithData:data
+                                                                         options:NSJSONReadingAllowFragments
+                                                                           error:&error];
+            
+            if (parsingJSONError != nil)
+            {
+                // just demo depends on future json structure
+                NSDictionary *declarationInfo = [jsonResponce objectForKey:DCDeclarationKey];
+                DCDeclaration *newDeclaration = [[DCDeclaration alloc] initWithJSONObject:declarationInfo];
+                [person addDeclaration:newDeclaration];
+                
+                [self.delegate dataLoader:self didFinishLoadingPerson:person];
+            }
+            else
+            {
+                [self.delegate dataLoader:self didFailedLoadingPerson:person];
+            }
+        }
+        else
+        {
+            [self.delegate dataLoader:self didFailedLoadingPerson:person];
+        }
+    }];
 }
 
 @end

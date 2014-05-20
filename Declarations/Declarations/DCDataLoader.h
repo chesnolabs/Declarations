@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 
 @class  DCPerson;
+@protocol DCDataLoaderDelegate;
 
 @interface DCDataLoader : NSObject
 
+- (id)initWithDelegate:(id<DCDataLoaderDelegate>)delegate;
+
+@property (weak, readonly) id<DCDataLoaderDelegate> delegate;
+
 - (NSArray *)loadPersons;
 - (void)loadDataForPerson:(DCPerson *)person;
+
+@end
+
+@protocol DCDataLoaderDelegate <NSObject>
+
+- (void)dataLoader:(DCDataLoader *)dataloader didFinishLoadingPerson:(DCPerson *)person;
+- (void)dataLoader:(DCDataLoader *)dataloader didFailedLoadingPerson:(DCPerson *)person;
 
 @end

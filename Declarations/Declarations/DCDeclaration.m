@@ -10,6 +10,11 @@
 
 @implementation DCDeclaration
 
+- (id)initWithJSONObject:(NSDictionary *)jsonObject
+{
+    return [self init];
+}
+
 - (NSString *)title
 {
     if (_title == nil)

@@ -26,7 +26,6 @@
     return self;
 }
 
-
 - (id)initWithJSONObject:(NSDictionary *)jsonObject
 {
     return [self init];

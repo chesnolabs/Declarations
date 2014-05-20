@@ -10,6 +10,8 @@
 
 @interface DCDeclaration : NSObject
 
+- (id)initWithJSONObject:(NSDictionary *)jsonObject;
+
 @property (strong, nonatomic) NSString *title;
 @property (assign) NSUInteger year;
 @property (strong) NSURL *linkToSource;
