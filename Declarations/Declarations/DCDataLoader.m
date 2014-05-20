@@ -69,6 +69,8 @@ static NSString *const DCDeclarationKey = @"declaration";
         }
     }];
     
+    [allPersonsTask resume];
+    
     while (allPersonsTask.state == NSURLSessionTaskStateRunning)
     {
         [NSThread sleepForTimeInterval:0.2];
@@ -91,8 +93,8 @@ static NSString *const DCDeclarationKey = @"declaration";
     NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
     
     // setup request for defined person
-    [self.session dataTaskWithRequest:request
-                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSessionDataTask *personInfoTask = [self.session dataTaskWithRequest:request
+                                                           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         if (error == nil && data != nil)
         {
@@ -120,6 +122,8 @@ static NSString *const DCDeclarationKey = @"declaration";
             [self.delegate dataLoader:self didFailedLoadingPerson:person];
         }
     }];
+    
+    [personInfoTask resume];
 }
 
 @end
