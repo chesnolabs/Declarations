@@ -7,24 +7,13 @@
 //
 
 #import "DCDeclarationsViewController.h"
+#import "DCDeclaration.h"
 
 @implementation DCDeclarationsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [a1 setFrame:CGRectMake(0.0f, 0.0f, 67.0f, 31.0f)];
-//    [a1 addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
-//    [a1 setImage:[UIImage imageNamed:@"CancelButton"] forState:UIControlStateNormal];
-//    
-//    UIBarButtonItem *statsButton = [[UIBarButtonItem alloc] initWithCustomView:a1];
-    
-//    UINavigationItem *navItem = [[UINavigationItem alloc] init];
-//    navItem.title = @"Statistics";
-//    navItem.leftBarButtonItem = statsButton;
-//    [self.navBar pushNavigationItem:navItem animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +25,34 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+}
+
+- (IBAction)cancelAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - TableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.deputy.declarations.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"DeclarationIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+	DCDeclarationsViewController *declaration = (self.deputy.declarations)[indexPath.row];
+    cell.textLabel.text = declaration.title;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO
 }
 
 @end

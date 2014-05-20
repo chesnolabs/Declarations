@@ -27,7 +27,10 @@
         DCDeputy *deputy = [DCDeputy new];
         deputy.name = @"Михайло";
         deputy.surname = [@"Добкін" stringByAppendingFormat:@" - %i", i];
-        [deputy addDeclaration:[DCDeclaration new]];
+        
+        DCDeclaration *dec = [DCDeclaration new];
+        dec.year = 2014;
+        [deputy addDeclaration:dec];
         [self.deputies addObject:deputy];
     }
     self.displayedDeputies = self.deputies;
@@ -48,9 +51,15 @@
 
 - (void)showDeclarationsForDeputy:(DCDeputy *)aDeputy
 {
-    DCDeclarationsViewController *decViewController = [[DCDeclarationsViewController alloc] init];
-    decViewController.deputy = aDeputy;
-    [self presentViewController:decViewController animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"DeclarationSegue"])
+    {
+        ((DCDeclarationsViewController *)((UINavigationController *)segue.destinationViewController).topViewController).deputy = sender;
+    }
 }
 
 #pragma mark - Table View delegate

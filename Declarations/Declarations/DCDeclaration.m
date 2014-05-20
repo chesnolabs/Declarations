@@ -10,5 +10,13 @@
 
 @implementation DCDeclaration
 
+- (NSString *)title
+{
+    if (_title == nil)
+    {
+        _title = [NSString stringWithFormat:@"%i", self.year];
+    }
+    return _title;
+}
 
 @end

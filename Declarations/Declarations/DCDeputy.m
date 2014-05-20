@@ -26,6 +26,11 @@
     return self;
 }
 
+- (NSArray *)declarations
+{
+    return self.declarationsStorage;
+}
+
 - (void)addDeclaration:(DCDeclaration *)aDeclaration
 {
     if (aDeclaration != nil)

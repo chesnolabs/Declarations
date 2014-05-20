@@ -13,4 +13,8 @@
 
 @property (strong) DCDeputy *deputy;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+
 @end
