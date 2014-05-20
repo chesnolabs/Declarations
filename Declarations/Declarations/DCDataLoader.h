@@ -18,7 +18,7 @@
 @property (weak, readonly) id<DCDataLoaderDelegate> delegate;
 
 - (NSArray *)loadPersons;
-- (void)loadDataForPerson:(DCPerson *)person;
+- (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block;
 
 @end
 

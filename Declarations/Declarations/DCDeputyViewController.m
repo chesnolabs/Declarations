@@ -9,6 +9,7 @@
 #import "DCDeputyViewController.h"
 #import "DCPerson.h"
 #import "DCDeclarationsViewController.h"
+#import "DCDataLoader.h"
 
 @interface DCDeputyViewController ()
 
@@ -37,11 +38,24 @@
     self.displayedDeputies = self.deputies;
 }
 
+- (void)loadPersons
+{
+    DCDataLoader *loader = [[DCDataLoader alloc] init];
+    NSArray *persons = [loader loadPersons];
+    if (persons != nil)
+    {
+        [self.deputies addObjectsFromArray:persons];
+    }
+    
+    self.displayedDeputies = self.deputies;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self generateTestData];
+    //[self loadPersons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +66,14 @@
 
 - (void)showDeclarationsForDeputy:(DCPerson *)aDeputy
 {
+//    DCDataLoader *loader = [DCDataLoader new];
+//    [loader loadDataForPerson:aDeputy completionHandler:^(BOOL success)
+//    {
+//        if (success)
+//        {
+//            [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
+//        }
+//    }];
     [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
 }
 
