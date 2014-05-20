@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DCDeputy.h"
+#import "DCPerson.h"
 
 @interface DCDeclarationsViewController : UIViewController
 
-@property (strong) DCDeputy *deputy;
+@property (strong) DCPerson *deputy;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

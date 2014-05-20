@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 Chesno. All rights reserved.
 //
 
-#import "DCDeputy.h"
+#import "DCPerson.h"
 
-@interface DCDeputy ()
+@interface DCPerson ()
 
 @property (strong) NSMutableArray *declarationsStorage;
 
 @end
 
-@implementation DCDeputy
+@implementation DCPerson
 
-- (instancetype)init
+- (id)init
 {
     self = [super init];
     if (self)
@@ -24,6 +24,12 @@
         self.declarationsStorage = [NSMutableArray array];
     }
     return self;
+}
+
+
+- (id)initWithJSONObject:(NSDictionary *)jsonObject
+{
+    return [self init];
 }
 
 - (NSArray *)declarations

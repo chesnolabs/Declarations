@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DCDeclaration.h"
 
-@interface DCDeputy : NSObject
+@interface DCPerson : NSObject
+
+- (id)initWithJSONObject:(NSDictionary *)jsonObject;
 
 @property (strong) NSString *name;
 @property (strong) NSString *surname;

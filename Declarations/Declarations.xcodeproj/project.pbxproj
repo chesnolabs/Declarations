@@ -22,9 +22,11 @@
 		02B26620192A89B40091C2EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FF192A89B40091C2EA /* UIKit.framework */; };
 		02B26628192A89B40091C2EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B26626192A89B40091C2EA /* InfoPlist.strings */; };
 		02B2662A192A89B40091C2EA /* DeclarationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26629192A89B40091C2EA /* DeclarationsTests.m */; };
-		02B26636192A913C0091C2EA /* DCDeputy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26635192A913C0091C2EA /* DCDeputy.m */; };
+		02B26636192A913C0091C2EA /* DCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26635192A913C0091C2EA /* DCPerson.m */; };
 		02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26638192B4DDE0091C2EA /* DCDeclaration.m */; };
 		02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */; };
+		02B26640192B721D0091C2EA /* DCDeclarationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2663F192B721D0091C2EA /* DCDeclarationsViewController.xib */; };
+		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +61,15 @@
 		02B26625192A89B40091C2EA /* DeclarationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeclarationsTests-Info.plist"; sourceTree = "<group>"; };
 		02B26627192A89B40091C2EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02B26629192A89B40091C2EA /* DeclarationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeclarationsTests.m; sourceTree = "<group>"; };
-		02B26634192A913C0091C2EA /* DCDeputy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeputy.h; sourceTree = "<group>"; };
-		02B26635192A913C0091C2EA /* DCDeputy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeputy.m; sourceTree = "<group>"; };
+		02B26634192A913C0091C2EA /* DCPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPerson.h; sourceTree = "<group>"; };
+		02B26635192A913C0091C2EA /* DCPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPerson.m; sourceTree = "<group>"; };
 		02B26637192B4DDE0091C2EA /* DCDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclaration.h; sourceTree = "<group>"; };
 		02B26638192B4DDE0091C2EA /* DCDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclaration.m; sourceTree = "<group>"; };
 		02B2663A192B6FE30091C2EA /* DCDeclarationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclarationsViewController.h; sourceTree = "<group>"; };
 		02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationsViewController.m; sourceTree = "<group>"; };
+		02B2663F192B721D0091C2EA /* DCDeclarationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCDeclarationsViewController.xib; sourceTree = "<group>"; };
+		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
+		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,7 @@
 		02B26601192A89B40091C2EA /* Declarations */ = {
 			isa = PBXGroup;
 			children = (
+				B8ABC29D192B6E5A00BAD5E5 /* Connection */,
 				02B26633192A912E0091C2EA /* Model */,
 				02B26602192A89B40091C2EA /* Supporting Files */,
 				02B2660A192A89B40091C2EA /* DCAppDelegate.h */,
@@ -172,12 +178,21 @@
 		02B26633192A912E0091C2EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				02B26634192A913C0091C2EA /* DCDeputy.h */,
-				02B26635192A913C0091C2EA /* DCDeputy.m */,
+				02B26634192A913C0091C2EA /* DCPerson.h */,
+				02B26635192A913C0091C2EA /* DCPerson.m */,
 				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
 				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B8ABC29D192B6E5A00BAD5E5 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */,
+				B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */,
+			);
+			name = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,13 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B26636192A913C0091C2EA /* DCDeputy.m in Sources */,
+				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
 				02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */,
 				02B26608192A89B40091C2EA /* main.m in Sources */,
 				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,
 				02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
+				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +507,7 @@
 				02B2662F192A89B40091C2EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		02B26630192A89B40091C2EA /* Build configuration list for PBXNativeTarget "DeclarationsTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +516,7 @@
 				02B26632192A89B40091C2EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

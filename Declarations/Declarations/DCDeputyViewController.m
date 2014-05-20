@@ -7,7 +7,7 @@
 //
 
 #import "DCDeputyViewController.h"
-#import "DCDeputy.h"
+#import "DCPerson.h"
 #import "DCDeclarationsViewController.h"
 
 @interface DCDeputyViewController ()
@@ -24,7 +24,7 @@
     self.deputies = [NSMutableArray array];
     for (int i = 0; i < 10; i++)
     {
-        DCDeputy *deputy = [DCDeputy new];
+        DCPerson *deputy = [DCPerson new];
         deputy.name = @"Михайло";
         deputy.surname = [@"Добкін" stringByAppendingFormat:@" - %i", i];
         
@@ -49,7 +49,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showDeclarationsForDeputy:(DCDeputy *)aDeputy
+- (void)showDeclarationsForDeputy:(DCPerson *)aDeputy
 {
     [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
 }
@@ -74,7 +74,7 @@
     static NSString *CellIdentifier = @"DeputyIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-	DCDeputy *deputy = (self.displayedDeputies)[indexPath.row];
+	DCPerson *deputy = (self.displayedDeputies)[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", deputy.surname, deputy.name];
     
     return cell;
