@@ -26,8 +26,7 @@
     for (int i = 0; i < 10; i++)
     {
         DCPerson *deputy = [DCPerson new];
-        deputy.name = @"Михайло";
-        deputy.surname = [@"Добкін" stringByAppendingFormat:@" - %i", i];
+        deputy.fullName = [@"Михайло Добкін" stringByAppendingFormat:@" - %i", i];
         
         DCDeclaration *dec = [DCDeclaration new];
         dec.year = 2014;
@@ -44,18 +43,19 @@
     NSArray *persons = [loader loadPersons];
     if (persons != nil)
     {
-        [self.deputies addObjectsFromArray:persons];
+        self.deputies = [persons mutableCopy];
     }
     
     self.displayedDeputies = self.deputies;
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self generateTestData];
-    //[self loadPersons];
+    //[self generateTestData];
+    [self loadPersons];
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,7 +98,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
 	DCPerson *deputy = (self.displayedDeputies)[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", deputy.surname, deputy.name];
+    cell.textLabel.text = deputy.fullName;
     
     return cell;
 }
@@ -123,7 +123,7 @@
     }
     else
     {
-        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"(self.name CONTAINS[cd] %@) or (self.surname CONTAINS[cd] %@)", filterString, filterString];
+        NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"self.fullName CONTAINS[cd] %@", filterString];
         NSArray *filteredDeputies = [self.deputies filteredArrayUsingPredicate:filterPredicate];
         self.displayedDeputies = filteredDeputies;
     }

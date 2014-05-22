@@ -28,7 +28,13 @@
 
 - (id)initWithJSONObject:(NSDictionary *)jsonObject
 {
-    return [self init];
+    self = [super init];
+    if (self)
+    {
+        self.declarationsStorage = [NSMutableArray array];
+        self.fullName = jsonObject[@"full_name"];
+    }
+    return self;
 }
 
 - (NSArray *)declarations
@@ -42,6 +48,11 @@
     {
         [self.declarationsStorage addObject:aDeclaration];
     }
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Name: %@", self.fullName];
 }
 
 @end

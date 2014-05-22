@@ -13,8 +13,7 @@
 
 - (id)initWithJSONObject:(NSDictionary *)jsonObject;
 
-@property (strong) NSString *name;
-@property (strong) NSString *surname;
+@property (strong) NSString *fullName;
 
 @property (readonly) NSArray *declarations;
 

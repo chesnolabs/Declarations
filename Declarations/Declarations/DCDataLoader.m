@@ -16,10 +16,15 @@
 
 @end
 
-static NSString *const DCChesnoLink = @"";
+static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
 static NSString *const DCDeclarationKey = @"declaration";
 
 @implementation DCDataLoader
+
+- (instancetype)init
+{
+    return [self initWithDelegate:nil];
+}
 
 - (id)initWithDelegate:(id<DCDataLoaderDelegate>)delegate
 {
@@ -47,7 +52,7 @@ static NSString *const DCDeclarationKey = @"declaration";
     NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
     // setup request for all persons here
     
-    __block id jsonResponce;
+    __block id jsonResponse = nil;
     
     NSURLSessionDataTask *allPersonsTask = [self.session dataTaskWithRequest:request
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
@@ -55,7 +60,7 @@ static NSString *const DCDeclarationKey = @"declaration";
         if (error == nil && data != nil)
         {
             NSError *parsingJSONError;
-            jsonResponce = [NSJSONSerialization JSONObjectWithData:data
+            jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                            options:NSJSONReadingAllowFragments
                                                              error:&parsingJSONError];
             if (parsingJSONError != nil)
@@ -77,16 +82,16 @@ static NSString *const DCDeclarationKey = @"declaration";
         [NSThread sleepForTimeInterval:0.2];
     }
     
-    if ([jsonResponce isKindOfClass:[NSArray class]])
+    if ([jsonResponse isKindOfClass:[NSArray class]])
     {
-        for (NSDictionary *personJSONObject in jsonResponce)
+        for (NSDictionary *personJSONObject in jsonResponse)
         {
             DCPerson *newPerson = [[DCPerson alloc] initWithJSONObject:personJSONObject];
             [loadedPersons addObject:newPerson];
         }
     }
     
-    return [loadedPersons copy];
+    return loadedPersons;
 }
 
 - (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block
