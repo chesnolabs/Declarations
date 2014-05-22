@@ -14,6 +14,7 @@
 - (id)initWithJSONObject:(NSDictionary *)jsonObject;
 
 @property (strong) NSString *fullName;
+@property (assign) NSUInteger identifier;
 
 @property (readonly) NSArray *declarations;
 

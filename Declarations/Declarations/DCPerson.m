@@ -33,6 +33,7 @@
     {
         self.declarationsStorage = [NSMutableArray array];
         self.fullName = jsonObject[@"full_name"];
+        self.identifier = [jsonObject[@"id"] unsignedIntegerValue];
     }
     return self;
 }
