@@ -19,7 +19,7 @@
 {
     if (_title == nil)
     {
-        _title = [NSString stringWithFormat:@"%i", self.year];
+        _title = [NSString stringWithFormat:@"%lu", (unsigned long)self.year];
     }
     return _title;
 }

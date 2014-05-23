@@ -7,12 +7,18 @@
 //
 
 #import "DCAppDelegate.h"
+#import "TestFlight/TestFlight.h"
+
+#define MACROSTRING(x) #x
+#define NSSTRING_MACRO(x) @MACROSTRING(x)
 
 @implementation DCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    #ifdef TESTFLIGHT_TOKEN
+        [TestFlight takeOff:NSSTRING_MACRO(TESTFLIGHT_TOKEN)];
+    #endif
     return YES;
 }
 							
