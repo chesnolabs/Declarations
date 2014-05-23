@@ -15,6 +15,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = self.deputy.fullName;
 }
 
 - (void)didReceiveMemoryWarning

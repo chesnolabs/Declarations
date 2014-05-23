@@ -12,8 +12,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="qZa-xt-pOz">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Пошук" id="qZa-xt-pOz">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -22,7 +22,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeputyIdentifier" textLabel="EKw-ry-M1B" style="IBUITableViewCellStyleDefault" id="pRO-az-0Dg">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRO-az-0Dg" id="wLO-HP-Gyl">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -44,14 +44,14 @@
                             <outlet property="delegate" destination="BxU-oD-0aJ" id="k22-tl-JMu"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Депутати" image="first" id="zsK-Rm-Vvu"/>
+                    <navigationItem key="navigationItem" title="Усі депутати" id="1j2-yX-tOX"/>
                     <connections>
-                        <segue destination="7yo-ib-aW8" kind="modal" identifier="DeclarationSegue" id="dNq-NF-xVA"/>
+                        <segue destination="jEL-eF-0hv" kind="push" identifier="DeclarationSegue" id="Fre-5s-Nkx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQB-o7-2BW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-85"/>
+            <point key="canvasLocation" x="1089" y="-68"/>
         </scene>
         <!--Second View Controller - Кандидати-->
         <scene sceneID="ot8-2e-RuS">
@@ -104,20 +104,14 @@
                             <outlet property="delegate" destination="jEL-eF-0hv" id="6uT-vQ-yto"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Декларації" id="MIL-YS-mMG">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="FX9-Da-c1P">
-                            <connections>
-                                <action selector="cancelAction:" destination="jEL-eF-0hv" id="SH7-2Y-6za"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Декларації" id="MIL-YS-mMG"/>
                     <connections>
                         <segue destination="QIj-UX-JrJ" kind="push" identifier="DeclarationDataSegue" id="frn-2B-KGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKl-a8-OJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-116"/>
+            <point key="canvasLocation" x="1577" y="-91"/>
         </scene>
         <!--Declaration View Controller - Декларація-->
         <scene sceneID="hkg-65-XNi">
@@ -129,13 +123,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <navigationItem key="navigationItem" title="Декларація" id="Dmq-2U-W07">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="1OS-uZ-22u">
-                            <connections>
-                                <action selector="cancelAction:" destination="QIj-UX-JrJ" id="D9f-CG-yk2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Декларація" id="Dmq-2U-W07"/>
                     <connections>
                         <outlet property="dumpView" destination="zhC-7g-IMM" id="oub-Od-Brg"/>
                     </connections>
@@ -155,7 +143,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BxU-oD-0aJ" kind="relationship" relationship="viewControllers" id="JzC-q4-HaK"/>
+                        <segue destination="L2A-t8-oYV" kind="relationship" relationship="viewControllers" id="JzC-q4-HaK"/>
                         <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
                     </connections>
                 </tabBarController>
@@ -163,23 +151,24 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yRf-Tc-5Km">
+        <!--Navigation Controller - Депутати-->
+        <scene sceneID="wtT-sF-n6D">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7yo-ib-aW8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L2A-t8-oYV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Депутати" image="first" id="zsK-Rm-Vvu"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LkB-Yc-BnH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mgC-NV-EC9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jEL-eF-0hv" kind="relationship" relationship="rootViewController" id="fkA-WP-bKy"/>
+                        <segue destination="BxU-oD-0aJ" kind="relationship" relationship="rootViewController" id="XMW-kU-6sQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A4F-1X-BfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIV-ex-MF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="-85"/>
+            <point key="canvasLocation" x="638" y="-85"/>
         </scene>
     </scenes>
     <resources>

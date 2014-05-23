@@ -81,7 +81,7 @@
 {
     if ([segue.identifier isEqualToString:@"DeclarationSegue"])
     {
-        ((DCDeclarationsViewController *)((UINavigationController *)segue.destinationViewController).topViewController).deputy = sender;
+        ((DCDeclarationsViewController *)segue.destinationViewController).deputy = sender;
     }
 }
 
