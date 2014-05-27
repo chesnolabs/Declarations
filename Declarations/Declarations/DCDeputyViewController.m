@@ -20,23 +20,6 @@
 
 @implementation DCDeputyViewController
 
-- (void)generateTestData
-{
-    self.deputies = [NSMutableArray array];
-    for (int i = 0; i < 10; i++)
-    {
-        DCPerson *deputy = [DCPerson new];
-        deputy.fullName = [@"Михайло Добкін" stringByAppendingFormat:@" - %i", i];
-        
-        DCDeclaration *dec = [DCDeclaration new];
-        dec.year = 2014;
-        dec.data = @{ @"Income" : @( 1000000 )};
-        [deputy addDeclaration:dec];
-        [self.deputies addObject:deputy];
-    }
-    self.displayedDeputies = self.deputies;
-}
-
 - (void)loadPersons
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
@@ -53,8 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    //[self generateTestData];
     [self loadPersons];
 }
 

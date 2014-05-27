@@ -87,7 +87,10 @@ static NSString *const DCDeclarationKey = @"declaration";
         for (NSDictionary *personJSONObject in jsonResponse)
         {
             DCPerson *newPerson = [[DCPerson alloc] initWithJSONObject:personJSONObject];
-            [loadedPersons addObject:newPerson];
+            if (newPerson != nil)
+            {
+                [loadedPersons addObject:newPerson];
+            }
         }
     }
     

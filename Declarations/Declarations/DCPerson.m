@@ -32,10 +32,38 @@
     if (self)
     {
         self.declarationsStorage = [NSMutableArray array];
-        self.fullName = jsonObject[@"full_name"];
+        id lastNameJson = jsonObject[@"last_name"];
+        if (lastNameJson == [NSNull null] || ![lastNameJson isKindOfClass:[NSString class]] || ([lastNameJson isKindOfClass:[NSString class]] && ((NSString *)lastNameJson).length == 0))
+        {
+            NSLog(@"Failed to create person from JSON %@", jsonObject);
+            return nil;
+        }
+
+        self.lastName = jsonObject[@"last_name"];
+        if (jsonObject[@"first_name"] != [NSNull null])
+        {
+            self.firstName = jsonObject[@"first_name"];
+        }
+        if (jsonObject[@"second_name"] != [NSNull null])
+        {
+            self.middleName = jsonObject[@"second_name"];
+        }
         self.identifier = [jsonObject[@"id"] unsignedIntegerValue];
     }
     return self;
+}
+
+- (NSString *)fullName
+{
+    if (self.firstName.length == 0)
+    {
+        return [NSString stringWithFormat:@"%@", self.lastName];
+    }
+    if (self.middleName.length == 0)
+    {
+        return [NSString stringWithFormat:@"%@ %@.", self.lastName, [self.firstName substringToIndex:1]];
+    }
+    return [NSString stringWithFormat:@"%@ %@.%@.", self.lastName, [self.firstName substringToIndex:1], [self.middleName substringToIndex:1]];
 }
 
 - (NSArray *)declarations
