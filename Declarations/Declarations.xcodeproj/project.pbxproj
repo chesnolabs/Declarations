@@ -31,6 +31,14 @@
 		02B26655192F4FF40091C2EA /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 02B2664F192F4FF40091C2EA /* release_notes.md */; };
 		02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02B2665A192F51330091C2EA /* AdHoc.xcconfig */; };
 		02B26660192F545E0091C2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2665F192F545E0091C2EA /* libz.dylib */; };
+		B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */; };
+		B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC71932923600E12D30 /* DCProfitInfo.m */; };
+		B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBCA193292DC00E12D30 /* DCValue.m */; };
+		B864A1F41935008D00FA5D58 /* DCRealtyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1F31935008D00FA5D58 /* DCRealtyInfo.m */; };
+		B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */; };
+		B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */; };
+		B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */; };
+		B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */ = {isa = PBXBuildFile; fileRef = B88CCE47192E5F2800DE6960 /* declaration_example.dat */; };
 		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +92,21 @@
 		02B2665D192F54430091C2EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		02B2665F192F545E0091C2EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		02B26661192F59DA0091C2EA /* Declarations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Declarations.entitlements; sourceTree = "<group>"; };
+		B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGeneralInfo.h; sourceTree = "<group>"; };
+		B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGeneralInfo.m; sourceTree = "<group>"; };
+		B82FDBC61932923600E12D30 /* DCProfitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCProfitInfo.h; sourceTree = "<group>"; };
+		B82FDBC71932923600E12D30 /* DCProfitInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCProfitInfo.m; sourceTree = "<group>"; };
+		B82FDBC9193292DC00E12D30 /* DCValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValue.h; sourceTree = "<group>"; };
+		B82FDBCA193292DC00E12D30 /* DCValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValue.m; sourceTree = "<group>"; };
+		B864A1F21935008D00FA5D58 /* DCRealtyInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRealtyInfo.h; sourceTree = "<group>"; };
+		B864A1F31935008D00FA5D58 /* DCRealtyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRealtyInfo.m; sourceTree = "<group>"; };
+		B864A1F51935025500FA5D58 /* DCVehiclesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehiclesInfo.h; sourceTree = "<group>"; };
+		B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehiclesInfo.m; sourceTree = "<group>"; };
+		B864A1F9193504B100FA5D58 /* DCDepositsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDepositsInfo.h; sourceTree = "<group>"; };
+		B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDepositsInfo.m; sourceTree = "<group>"; };
+		B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFinancialLiabilities.h; sourceTree = "<group>"; };
+		B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFinancialLiabilities.m; sourceTree = "<group>"; };
+		B88CCE47192E5F2800DE6960 /* declaration_example.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = declaration_example.dat; sourceTree = "<group>"; };
 		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +201,7 @@
 				02B26604192A89B40091C2EA /* InfoPlist.strings */,
 				02B26607192A89B40091C2EA /* main.m */,
 				02B26609192A89B40091C2EA /* Declarations-Prefix.pch */,
+				B88CCE47192E5F2800DE6960 /* declaration_example.dat */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,12 +227,42 @@
 		02B26633192A912E0091C2EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B82FDBC51932920500E12D30 /* Declaration */,
 				02B26634192A913C0091C2EA /* DCPerson.h */,
 				02B26635192A913C0091C2EA /* DCPerson.m */,
-				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
-				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		B82FDBC51932920500E12D30 /* Declaration */ = {
+			isa = PBXGroup;
+			children = (
+				B864A1F81935028100FA5D58 /* Categories */,
+				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
+				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
+				B82FDBC9193292DC00E12D30 /* DCValue.h */,
+				B82FDBCA193292DC00E12D30 /* DCValue.m */,
+			);
+			name = Declaration;
+			sourceTree = "<group>";
+		};
+		B864A1F81935028100FA5D58 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */,
+				B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */,
+				B82FDBC61932923600E12D30 /* DCProfitInfo.h */,
+				B82FDBC71932923600E12D30 /* DCProfitInfo.m */,
+				B864A1F21935008D00FA5D58 /* DCRealtyInfo.h */,
+				B864A1F31935008D00FA5D58 /* DCRealtyInfo.m */,
+				B864A1F51935025500FA5D58 /* DCVehiclesInfo.h */,
+				B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */,
+				B864A1F9193504B100FA5D58 /* DCDepositsInfo.h */,
+				B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */,
+				B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */,
+				B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		02B2664C192F4FF40091C2EA /* TestFlight */ = {
@@ -336,6 +390,7 @@
 				02B2660F192A89B40091C2EA /* Main.storyboard in Resources */,
 				02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */,
 				02B26655192F4FF40091C2EA /* release_notes.md in Resources */,
+				B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,14 +409,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */,
 				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
+				B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */,
+				B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */,
 				02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */,
 				02B26608192A89B40091C2EA /* main.m in Sources */,
 				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,
+				B864A1F41935008D00FA5D58 /* DCRealtyInfo.m in Sources */,
+				B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */,
+				B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */,
 				02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
+				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

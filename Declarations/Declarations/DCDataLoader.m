@@ -17,7 +17,6 @@
 @end
 
 static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
-static NSString *const DCDeclarationKey = @"declaration";
 
 @implementation DCDataLoader
 
@@ -99,7 +98,8 @@ static NSString *const DCDeclarationKey = @"declaration";
 
 - (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://chesno.org/person/json/declarations_for/1870/"]];
+                             //[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"declaration_example" ofType:@"dat"]]];
     
     // setup request for defined person
     NSURLSessionDataTask *personInfoTask = [self.session dataTaskWithRequest:request
@@ -108,14 +108,14 @@ static NSString *const DCDeclarationKey = @"declaration";
         if (error == nil && data != nil)
         {
             NSError *parsingJSONError;
-            NSDictionary *jsonResponce = [NSJSONSerialization JSONObjectWithData:data
-                                                                         options:NSJSONReadingAllowFragments
-                                                                           error:&error];
+            NSArray *jsonResponce = [NSJSONSerialization JSONObjectWithData:data
+                                                                    options:NSJSONReadingAllowFragments
+                                                                      error:&parsingJSONError];
             
-            if (parsingJSONError != nil)
+            if (jsonResponce != nil && jsonResponce.count)
             {
                 // just demo depends on future json structure
-                NSDictionary *declarationInfo = [jsonResponce objectForKey:DCDeclarationKey];
+                NSDictionary *declarationInfo = jsonResponce[0];
                 DCDeclaration *newDeclaration = [[DCDeclaration alloc] initWithJSONObject:declarationInfo];
                 [person addDeclaration:newDeclaration];
                 

@@ -47,14 +47,15 @@
 
 - (void)showDeclarationsForDeputy:(DCPerson *)aDeputy
 {
-//    DCDataLoader *loader = [DCDataLoader new];
-//    [loader loadDataForPerson:aDeputy completionHandler:^(BOOL success)
-//    {
-//        if (success)
-//        {
-//            [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
-//        }
-//    }];
+    DCDataLoader *loader = [DCDataLoader new];
+    [loader loadDataForPerson:aDeputy completionHandler:^(BOOL success)
+    {
+        if (success)
+        {
+            [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
+        }
+    }];
+
     [self performSegueWithIdentifier:@"DeclarationSegue" sender:aDeputy];
 }
 
