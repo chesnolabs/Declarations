@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Кандидати" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Кандидати" image="candidates" id="Z7h-1E-pvt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,6 +141,7 @@
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.23921570180000001" green="0.12549020350000001" blue="0.35686275360000003" alpha="1" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="L2A-t8-oYV" kind="relationship" relationship="viewControllers" id="JzC-q4-HaK"/>
@@ -155,7 +156,7 @@
         <scene sceneID="wtT-sF-n6D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L2A-t8-oYV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Депутати" image="first" id="zsK-Rm-Vvu"/>
+                    <tabBarItem key="tabBarItem" title="Депутати" image="deputies" id="zsK-Rm-Vvu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mgC-NV-EC9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -172,9 +173,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="candidates" width="30" height="30"/>
+        <image name="deputies" width="30" height="30"/>
     </resources>
+    <color key="tintColor" red="0.23921570181846619" green="0.12549020349979401" blue="0.35686275362968445" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
