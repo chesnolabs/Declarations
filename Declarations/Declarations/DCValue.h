@@ -11,11 +11,11 @@
 @interface DCValue : NSObject
 
 - (id)initWithCode:(NSString *)code
-             value:(NSString *)value
+             value:(id)value
              units:(NSString *)units;
 
 @property (readonly) NSString *code;
-@property (readonly) NSString *value;
+@property (readonly) id value;
 @property (readonly) NSString *units;
 
 @end

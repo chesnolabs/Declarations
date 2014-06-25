@@ -12,6 +12,13 @@
 #import "DCDepositsInfo.h"
 #import "DCFinancialLiabilities.h"
 #import "DCRealtyInfo.h"
+#import "DCValue.h"
+
+@interface DCDeclaration ()
+
+@property (strong, readonly) NSDictionary *table;
+
+@end
 
 static NSString *const MHDeclarationYearKey = @"year";
 static NSString *const MHDeclarationURLKey = @"url";
@@ -19,7 +26,12 @@ static NSString *const MHDeclarationIDKey = @"id";
 static NSString *const MHDeclarationCommentKey = @"comment";
 static NSString *const MHDeclarationFieldsKey = @"fields";
 
+static NSString *const MHDeclarationsItemsKey = @"items";
+static NSString *const MHDeclarationsValueKey = @"value";
+
 @implementation DCDeclaration
+
+@synthesize profit = _profit;
 
 - (id)init
 {
@@ -39,6 +51,8 @@ static NSString *const MHDeclarationFieldsKey = @"fields";
     
     if (self != nil)
     {
+        _table = @{ @"7.0" : @"profit.teachingSalary_7" };
+        
         [self setupWithJSON:jsonObject];
     }
     
@@ -57,7 +71,22 @@ static NSString *const MHDeclarationFieldsKey = @"fields";
     
     NSDictionary *model = [jsonObject objectForKey:MHDeclarationFieldsKey];
     
-    NSLog(@"model = %@", model);
+    [model enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSString *keyPath = [self.table objectForKey:key];
+        if (keyPath != nil && [obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
+        {
+            NSArray *items = [obj objectForKey:MHDeclarationsItemsKey];
+            id value = [items[0] objectForKey:MHDeclarationsValueKey];
+            
+            DCValue *newValue = [[DCValue alloc] initWithCode:key
+                                                        value:value
+                                                        units:@""];
+            
+            [self setValue:newValue forKeyPath:keyPath];
+            
+            NSLog(@"test = %@", self.profit.teachingSalary_7);
+        }
+    }];
 }
 
 - (NSString *)title

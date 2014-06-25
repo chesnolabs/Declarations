@@ -20,4 +20,6 @@
 @property (strong) DCValue *garage_27;
 @property (strong) DCValue *otherRealty_28;
 
++ (BOOL)containsValue:(NSString *)valueCode;
+
 @end

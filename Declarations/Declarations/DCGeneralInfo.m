@@ -10,4 +10,18 @@
 
 @implementation DCGeneralInfo
 
+@synthesize familyMembers = _familyMembers;
+
+- (id)initWithFamilyMembers:(NSArray *)members
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _familyMembers = [NSArray arrayWithArray:members];
+    }
+    
+    return self;
+}
+
 @end
