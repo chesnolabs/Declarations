@@ -10,4 +10,14 @@
 
 @implementation DCCategory
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.icon = [UIImage imageNamed:@"Vehicle"];
+    }
+    return self;
+}
+
+
 @end
