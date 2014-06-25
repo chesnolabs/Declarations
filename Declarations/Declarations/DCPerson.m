@@ -79,6 +79,11 @@
     }
 }
 
+- (void)removeAllDeclarations
+{
+    [self.declarationsStorage removeAllObjects];
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Name: %@", self.fullName];

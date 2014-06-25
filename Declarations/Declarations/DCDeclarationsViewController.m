@@ -9,6 +9,7 @@
 #import "DCDeclarationsViewController.h"
 #import "DCDeclaration.h"
 #import "DCDeclarationViewController.h"
+#import "DCDataLoader.h"
 
 @implementation DCDeclarationsViewController
 
@@ -16,6 +17,19 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.deputy.fullName;
+    
+    DCDataLoader *loader = [DCDataLoader new];
+    [loader loadDataForPerson:self.deputy completionHandler:^(BOOL success)
+     {
+         if (success)
+         {
+             NSLog(@"Succeded in loading declaration %@", self.deputy.declarations);
+             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                 [self.tableView reloadData];
+             }];
+         }
+     }];
+
 }
 
 - (void)didReceiveMemoryWarning

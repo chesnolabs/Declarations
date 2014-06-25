@@ -22,5 +22,6 @@
 @property (readonly) NSArray *declarations;
 
 - (void)addDeclaration:(DCDeclaration *)aDeclaration;
+- (void)removeAllDeclarations;
 
 @end

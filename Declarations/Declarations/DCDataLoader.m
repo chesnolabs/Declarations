@@ -107,6 +107,7 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     {
         if (error == nil && data != nil)
         {
+            [person removeAllDeclarations];
             NSError *parsingJSONError;
             NSArray *jsonResponce = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:NSJSONReadingAllowFragments
