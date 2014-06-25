@@ -1,0 +1,9 @@
+//
+//  Config.xcconfig
+//  Declarations
+//
+//  Created by Vera Tkachenko on 5/23/14.
+//  Copyright (c) 2014 Chesno. All rights reserved.
+//
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) TESTFLIGHT_TOKEN="2ace3241-6f2f-427a-ac47-0d6244f8cef5"
