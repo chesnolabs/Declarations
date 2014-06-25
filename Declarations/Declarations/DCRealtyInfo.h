@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCCategory.h"
 
 @class DCValue;
 
-@interface DCRealtyInfo : NSObject
+@interface DCRealtyInfo : DCCategory
 
 @property (strong) DCValue *stead_23;
 @property (strong) DCValue *house_24;

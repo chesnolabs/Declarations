@@ -28,10 +28,12 @@
 @property (strong) NSURL *originalURL;
 
 @property (strong) DCGeneralInfo *generalInfo;
-@property (strong) DCProfitInfo *profit;
-@property (strong) DCRealtyInfo *realty;
-@property (strong) DCVehiclesInfo *vehicles;
-@property (strong) DCDepositsInfo *deposit;
-@property (strong) DCFinancialLiabilities *fLiabilities;
+
+@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) DCProfitInfo *profit;
+@property (strong, nonatomic) DCRealtyInfo *realty;
+@property (strong, nonatomic) DCVehiclesInfo *vehicles;
+@property (strong, nonatomic) DCDepositsInfo *deposit;
+@property (strong, nonatomic) DCFinancialLiabilities *financialLiabilities;
 
 @end

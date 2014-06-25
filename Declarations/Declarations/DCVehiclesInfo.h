@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCCategory.h"
 
 @class DCValue;
 
-@interface DCVehiclesInfo : NSObject
+@interface DCVehiclesInfo : DCCategory
 
 @property (strong) DCValue *cars_35;
 @property (strong) DCValue *trucks_36;

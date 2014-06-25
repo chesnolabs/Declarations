@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCCategory.h"
 
 @class DCValue;
 
-@interface DCProfitInfo : NSObject
+@interface DCProfitInfo : DCCategory
 
 @property (strong) DCValue *totalProfit_5;
 @property (strong) DCValue *laborSalary_6;

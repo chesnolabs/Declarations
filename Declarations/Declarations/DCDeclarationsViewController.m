@@ -66,16 +66,11 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"DeclarationDataSegue" sender:self.deputy.declarations[indexPath.row]];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"DeclarationDataSegue"])
     {
-        ((DCDeclarationViewController *)segue.destinationViewController).declaration = sender;
+        ((DCDeclarationViewController *)segue.destinationViewController).declaration = self.deputy.declarations[[self.tableView indexPathForCell:sender].row];
     }
 }
 

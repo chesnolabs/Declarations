@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCCategory.h"
 
 @class DCValue;
 
-@interface DCFinancialLiabilities : NSObject
+@interface DCFinancialLiabilities : DCCategory
 
 @property (strong) DCValue *voluntaryInsuarance_54;
 @property (strong) DCValue *privatePensions_55;

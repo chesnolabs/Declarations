@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCCategory.h"
 
 @class DCValue;
 
-@interface DCDepositsInfo : NSObject
+@interface DCDepositsInfo : DCCategory
 
 @property (strong) DCValue *bankDeposit_45_49;
 @property (strong) DCValue *financialYearBankDeposit_46_50;

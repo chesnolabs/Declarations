@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DCDeclaration.h"
 
-@interface DCDeclarationViewController : UIViewController
+@interface DCDeclarationViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout >
 
 @property (strong) DCDeclaration *declaration;
-@property (strong, nonatomic) IBOutlet UITextField *dumpView;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "DCDeclarationViewController.h"
+#import "DCCategoryCell.h"
+#import "DCCategory.h"
 
 @interface DCDeclarationViewController ()
 
@@ -26,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dumpView.text = self.declaration.data.description;
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -38,6 +39,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UICollectionView Datasource
+
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    return self.declaration.categories.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    DCCategoryCell *cell = (DCCategoryCell *)[cv dequeueReusableCellWithReuseIdentifier:@"CategoryCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
+    cell.titleView.text = category.name;
+    return cell;
 }
 
 /*

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025EE78C195B4AB1006531EF /* DCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78B195B4AB1006531EF /* DCCategory.m */; };
+		025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78F195B4F4E006531EF /* DCCategoryCell.m */; };
 		02B265FC192A89B40091C2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FB192A89B40091C2EA /* Foundation.framework */; };
 		02B265FE192A89B40091C2EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FD192A89B40091C2EA /* CoreGraphics.framework */; };
 		02B26600192A89B40091C2EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FF192A89B40091C2EA /* UIKit.framework */; };
@@ -53,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025EE78A195B4AB1006531EF /* DCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategory.h; sourceTree = "<group>"; };
+		025EE78B195B4AB1006531EF /* DCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategory.m; sourceTree = "<group>"; };
+		025EE78E195B4F4E006531EF /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
+		025EE78F195B4F4E006531EF /* DCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryCell.m; sourceTree = "<group>"; };
 		02B265F8192A89B40091C2EA /* Declarations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Declarations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B265FB192A89B40091C2EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		02B265FD192A89B40091C2EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +143,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		025EE78D195B4EF5006531EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				025EE78E195B4F4E006531EF /* DCCategoryCell.h */,
+				025EE78F195B4F4E006531EF /* DCCategoryCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		02B265EF192A89B40091C2EA = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				02B26661192F59DA0091C2EA /* Declarations.entitlements */,
+				025EE78D195B4EF5006531EF /* Views */,
 				B8ABC29D192B6E5A00BAD5E5 /* Connection */,
 				02B26633192A912E0091C2EA /* Model */,
 				02B26602192A89B40091C2EA /* Supporting Files */,
@@ -230,39 +246,9 @@
 				B82FDBC51932920500E12D30 /* Declaration */,
 				02B26634192A913C0091C2EA /* DCPerson.h */,
 				02B26635192A913C0091C2EA /* DCPerson.m */,
+				B82FDBC9193292DC00E12D30 /* DCValue.h */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		B82FDBC51932920500E12D30 /* Declaration */ = {
-			isa = PBXGroup;
-			children = (
-				B864A1F81935028100FA5D58 /* Categories */,
-				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
-				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
-				B82FDBC9193292DC00E12D30 /* DCValue.h */,
-				B82FDBCA193292DC00E12D30 /* DCValue.m */,
-			);
-			name = Declaration;
-			sourceTree = "<group>";
-		};
-		B864A1F81935028100FA5D58 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */,
-				B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */,
-				B82FDBC61932923600E12D30 /* DCProfitInfo.h */,
-				B82FDBC71932923600E12D30 /* DCProfitInfo.m */,
-				B864A1F21935008D00FA5D58 /* DCRealtyInfo.h */,
-				B864A1F31935008D00FA5D58 /* DCRealtyInfo.m */,
-				B864A1F51935025500FA5D58 /* DCVehiclesInfo.h */,
-				B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */,
-				B864A1F9193504B100FA5D58 /* DCDepositsInfo.h */,
-				B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */,
-				B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */,
-				B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */,
-			);
-			name = Categories;
 			sourceTree = "<group>";
 		};
 		02B2664C192F4FF40091C2EA /* TestFlight */ = {
@@ -285,6 +271,38 @@
 				02B2665A192F51330091C2EA /* AdHoc.xcconfig */,
 			);
 			name = "Build Configs";
+			sourceTree = "<group>";
+		};
+		B82FDBC51932920500E12D30 /* Declaration */ = {
+			isa = PBXGroup;
+			children = (
+				B864A1F81935028100FA5D58 /* Categories */,
+				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
+				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
+				B82FDBCA193292DC00E12D30 /* DCValue.m */,
+			);
+			name = Declaration;
+			sourceTree = "<group>";
+		};
+		B864A1F81935028100FA5D58 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				025EE78A195B4AB1006531EF /* DCCategory.h */,
+				025EE78B195B4AB1006531EF /* DCCategory.m */,
+				B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */,
+				B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */,
+				B82FDBC61932923600E12D30 /* DCProfitInfo.h */,
+				B82FDBC71932923600E12D30 /* DCProfitInfo.m */,
+				B864A1F21935008D00FA5D58 /* DCRealtyInfo.h */,
+				B864A1F31935008D00FA5D58 /* DCRealtyInfo.m */,
+				B864A1F51935025500FA5D58 /* DCVehiclesInfo.h */,
+				B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */,
+				B864A1F9193504B100FA5D58 /* DCDepositsInfo.h */,
+				B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */,
+				B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */,
+				B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		B8ABC29D192B6E5A00BAD5E5 /* Connection */ = {
@@ -421,10 +439,12 @@
 				B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */,
 				B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */,
 				02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */,
+				025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
 				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,
+				025EE78C195B4AB1006531EF /* DCCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
