@@ -19,6 +19,7 @@
     #ifdef TESTFLIGHT_TOKEN
         [TestFlight takeOff:NSSTRING_MACRO(TESTFLIGHT_TOKEN)];
     #endif
+    self.window.tintColor = [UIColor purpleColor];
     return YES;
 }
 							
