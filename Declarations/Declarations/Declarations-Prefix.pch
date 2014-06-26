@@ -10,6 +10,13 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
+#ifdef DEBUG
+    #define NSLogD(format, ...) NSLog(format, ##__VA_ARGS__)
+#else
+    #define NSLogD(format, ...) do {} while (0)
+#endif
+
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>

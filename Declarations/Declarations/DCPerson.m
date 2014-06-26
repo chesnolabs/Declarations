@@ -35,7 +35,7 @@
         id lastNameJson = jsonObject[@"last_name"];
         if (lastNameJson == [NSNull null] || ![lastNameJson isKindOfClass:[NSString class]] || ([lastNameJson isKindOfClass:[NSString class]] && ((NSString *)lastNameJson).length == 0))
         {
-            NSLog(@"Failed to create person from JSON %@", jsonObject);
+            NSLogD(@"Failed to create person from JSON %@", jsonObject);
             return nil;
         }
 
