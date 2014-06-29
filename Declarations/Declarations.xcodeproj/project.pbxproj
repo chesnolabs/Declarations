@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		025EE78C195B4AB1006531EF /* DCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78B195B4AB1006531EF /* DCCategory.m */; };
 		025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78F195B4F4E006531EF /* DCCategoryCell.m */; };
+		02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02912E0419609D4D007963E5 /* DCCategoryViewController.m */; };
 		02B265FC192A89B40091C2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FB192A89B40091C2EA /* Foundation.framework */; };
 		02B265FE192A89B40091C2EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FD192A89B40091C2EA /* CoreGraphics.framework */; };
 		02B26600192A89B40091C2EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FF192A89B40091C2EA /* UIKit.framework */; };
@@ -59,6 +60,8 @@
 		025EE78B195B4AB1006531EF /* DCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategory.m; sourceTree = "<group>"; };
 		025EE78E195B4F4E006531EF /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
 		025EE78F195B4F4E006531EF /* DCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryCell.m; sourceTree = "<group>"; };
+		02912E0319609D4D007963E5 /* DCCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryViewController.h; sourceTree = "<group>"; };
+		02912E0419609D4D007963E5 /* DCCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryViewController.m; sourceTree = "<group>"; };
 		02B265F8192A89B40091C2EA /* Declarations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Declarations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B265FB192A89B40091C2EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		02B265FD192A89B40091C2EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -206,6 +209,8 @@
 				02B26642192B823F0091C2EA /* DCDeclarationViewController.m */,
 				02B2663A192B6FE30091C2EA /* DCDeclarationsViewController.h */,
 				02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */,
+				02912E0319609D4D007963E5 /* DCCategoryViewController.h */,
+				02912E0419609D4D007963E5 /* DCCategoryViewController.m */,
 			);
 			path = Declarations;
 			sourceTree = "<group>";
@@ -246,7 +251,6 @@
 				B82FDBC51932920500E12D30 /* Declaration */,
 				02B26634192A913C0091C2EA /* DCPerson.h */,
 				02B26635192A913C0091C2EA /* DCPerson.m */,
-				B82FDBC9193292DC00E12D30 /* DCValue.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,6 +283,7 @@
 				B864A1F81935028100FA5D58 /* Categories */,
 				02B26637192B4DDE0091C2EA /* DCDeclaration.h */,
 				02B26638192B4DDE0091C2EA /* DCDeclaration.m */,
+				B82FDBC9193292DC00E12D30 /* DCValue.h */,
 				B82FDBCA193292DC00E12D30 /* DCValue.m */,
 			);
 			name = Declaration;
@@ -427,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */,
 				B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */,
 				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
 				B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */,

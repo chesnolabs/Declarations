@@ -9,6 +9,7 @@
 #import "DCDeclarationViewController.h"
 #import "DCCategoryCell.h"
 #import "DCCategory.h"
+#import "DCCategoryViewController.h"
 
 @interface DCDeclarationViewController ()
 
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.navigationItem.title = self.declaration.title;
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -65,15 +67,19 @@
     return cell;
 }
 
-/*
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"DeclarationCategorySegue" sender:(DCCategory *)self.declaration.categories[indexPath.row]];
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DeclarationCategorySegue"])
+    {
+        ((DCCategoryViewController *)segue.destinationViewController).category = sender;
+    }
 }
-*/
 
 @end

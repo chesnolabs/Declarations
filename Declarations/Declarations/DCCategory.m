@@ -8,16 +8,36 @@
 
 #import "DCCategory.h"
 
+@interface DCCategory ()
+
+@property (strong) NSMutableArray *valuesStorage;
+
+@end
+
 @implementation DCCategory
 
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         self.icon = [UIImage imageNamed:@"Vehicle"];
+        self.valuesStorage = [NSMutableArray array];
     }
     return self;
 }
 
+- (NSArray *)values
+{
+    return self.valuesStorage;
+}
+
+- (void)addValue:(DCValue *)value
+{
+    if (value)
+    {
+        [self.valuesStorage addObject:value];
+    }
+}
 
 @end

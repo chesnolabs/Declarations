@@ -51,7 +51,7 @@ static NSString *const MHDeclarationsValueKey = @"value";
     
     if (self != nil)
     {
-        _table = @{ @"7.0" : @"profit.teachingSalary_7" };
+        _table = @{ @"7.0" : @{ @"category" : @"profit", @"key" : @"teachingSalary_7" } };
         
         [self setupWithJSON:jsonObject];
     }
@@ -72,8 +72,8 @@ static NSString *const MHDeclarationsValueKey = @"value";
     NSDictionary *model = [jsonObject objectForKey:MHDeclarationFieldsKey];
     
     [model enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSString *keyPath = [self.table objectForKey:key];
-        if (keyPath != nil && [obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
+        NSDictionary *keyPathDict = [self.table objectForKey:key];
+        if (keyPathDict != nil && [obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
         {
             NSArray *items = [obj objectForKey:MHDeclarationsItemsKey];
             id value = [items[0] objectForKey:MHDeclarationsValueKey];
@@ -82,9 +82,11 @@ static NSString *const MHDeclarationsValueKey = @"value";
                                                         value:value
                                                         units:@""];
             
-            [self setValue:newValue forKeyPath:keyPath];
+            DCCategory *category = [self valueForKey:keyPathDict[@"category"]];
+            [category setValue:newValue forKey:keyPathDict[@"key"]];
+            [category addValue:newValue];
             
-            NSLog(@"test = %@", self.profit.teachingSalary_7);
+            NSLogD(@"test = %@", self.profit.teachingSalary_7);
         }
     }];
 }

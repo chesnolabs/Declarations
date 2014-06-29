@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCValue.h"
 
 @interface DCCategory : NSObject
 
 @property (strong) NSString *name;
 @property (strong) UIImage *icon;
+
+@property (readonly) NSArray *values; // DCValue
+
+- (void)addValue:(DCValue *)value;
 
 @end
