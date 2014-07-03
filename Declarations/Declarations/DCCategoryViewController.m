@@ -8,7 +8,9 @@
 
 #import "DCCategoryViewController.h"
 #import "DCValueCellView.h"
+#import "DCVehicleTableViewCell.h"
 #import "DCCategory.h"
+#import "DCVehicle.h"
 
 @interface DCCategoryViewController ()
 
@@ -46,22 +48,37 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ValueIdentifier";
-    DCValueCellView *cell = (DCValueCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DCValue *value = (self.category.values)[indexPath.row];
     
-	DCValue *value = (self.category.values)[indexPath.row];
-    cell.titleLabel.text = value.title;
-    // Just for now
-    if ([value.units isEqualToString:@"грн"])
+    if ([value isKindOfClass:[DCVehicle class]])
     {
-        cell.valueLabel.text = [self.formatter stringForObjectValue:value.value];
+        DCVehicle *vehicle = (DCVehicle *)value;
+        static NSString *CellIdentifier = @"CarValueIdentifier";
+        DCVehicleTableViewCell *cell = (DCVehicleTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        cell.fullModelLabel.text = [NSString stringWithFormat:@"%@ %@", vehicle.mark, vehicle.model];
+        cell.yearLabel.text = vehicle.year;
+        cell.engineLabel.text = vehicle.info;
+        return cell;
     }
     else
     {
-        cell.valueLabel.text = [NSString stringWithFormat:@"%@ %@", value.value, value.units];
+        static NSString *CellIdentifier = @"ValueIdentifier";
+        DCValueCellView *cell = (DCValueCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        cell.titleLabel.text = value.title;
+        // Just for now
+        if ([value.units isEqualToString:@"грн"])
+        {
+            cell.valueLabel.text = [self.formatter stringForObjectValue:value.value];
+        }
+        else
+        {
+            cell.valueLabel.text = [NSString stringWithFormat:@"%@ %@", value.value, value.units];
+        }
+        return cell;
     }
     
-    return cell;
+    return nil;
 }
 
 @end

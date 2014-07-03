@@ -1,14 +1,14 @@
 //
-//  DCValueCellView.m
+//  DCVehicleTableViewCell.m
 //  Declarations
 //
 //  Created by Vera Tkachenko on 7/3/14.
 //  Copyright (c) 2014 Chesno. All rights reserved.
 //
 
-#import "DCValueCellView.h"
+#import "DCVehicleTableViewCell.h"
 
-@implementation DCValueCellView
+@implementation DCVehicleTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -27,7 +27,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    
+
     // Configure the view for the selected state
 }
 
