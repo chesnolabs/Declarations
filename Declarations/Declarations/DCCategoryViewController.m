@@ -7,6 +7,7 @@
 //
 
 #import "DCCategoryViewController.h"
+#import "DCValueCellView.h"
 #import "DCCategory.h"
 
 @implementation DCCategoryViewController
@@ -28,10 +29,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ValueIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DCValueCellView *cell = (DCValueCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
 	DCValue *value = (self.category.values)[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", value.value, value.units];
+    cell.titleLabel.text = value.title;
+    cell.valueLabel.text = [NSString stringWithFormat:@"%@ %@", value.value, value.units];
     
     return cell;
 }
