@@ -31,7 +31,12 @@
         _code = [code copy];
         _value = [value copy];
         _units = [units copy];
-        _title = [title copy];
+        
+        if (title != nil && title.length > 1)
+        {
+            NSString *firstLetter = [title substringToIndex:1];
+            _title = [[firstLetter uppercaseString] stringByAppendingString:[title substringFromIndex:1]];
+        }
     }
     
     return self;

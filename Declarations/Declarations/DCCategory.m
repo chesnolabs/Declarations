@@ -21,7 +21,7 @@
     self = [super init];
     if (self)
     {
-        self.icon = [UIImage imageNamed:@"Vehicle"];
+        self.icon = [UIImage imageNamed:@"Finance"];
         self.valuesStorage = [NSMutableArray array];
     }
     return self;

@@ -158,6 +158,7 @@ static NSString *const DCVehicleModelKey = @"model";
     {
         _vehicles = [DCVehiclesInfo new];
         _vehicles.name = @"Авто";
+        _vehicles.icon = [UIImage imageNamed:@"Vehicle"];
     }
     return _vehicles;
 }
@@ -188,6 +189,7 @@ static NSString *const DCVehicleModelKey = @"model";
     {
         _realty = [DCRealtyInfo new];
         _realty.name = @"Нерухомість";
+        _realty.icon = [UIImage imageNamed:@"Realty"];
     }
     return _realty;
 }
