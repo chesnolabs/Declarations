@@ -42,6 +42,7 @@
 		B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1F61935025500FA5D58 /* DCVehiclesInfo.m */; };
 		B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */; };
 		B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */; };
+		B87BAF3F1965DFCE00964A70 /* DCVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BAF3E1965DFCE00964A70 /* DCVehicle.m */; };
 		B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */ = {isa = PBXBuildFile; fileRef = B88CCE47192E5F2800DE6960 /* declaration_example.dat */; };
 		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,8 @@
 		B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDepositsInfo.m; sourceTree = "<group>"; };
 		B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFinancialLiabilities.h; sourceTree = "<group>"; };
 		B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFinancialLiabilities.m; sourceTree = "<group>"; };
+		B87BAF3D1965DFCE00964A70 /* DCVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehicle.h; sourceTree = "<group>"; };
+		B87BAF3E1965DFCE00964A70 /* DCVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehicle.m; sourceTree = "<group>"; };
 		B88CCE47192E5F2800DE6960 /* declaration_example.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = declaration_example.dat; sourceTree = "<group>"; };
 		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 				B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */,
 				B864A1FC193508CE00FA5D58 /* DCFinancialLiabilities.h */,
 				B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */,
+				B87BAF3D1965DFCE00964A70 /* DCVehicle.h */,
+				B87BAF3E1965DFCE00964A70 /* DCVehicle.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */,
 				B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */,
 				02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */,
+				B87BAF3F1965DFCE00964A70 /* DCVehicle.m in Sources */,
 				02B26608192A89B40091C2EA /* main.m in Sources */,
 				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,

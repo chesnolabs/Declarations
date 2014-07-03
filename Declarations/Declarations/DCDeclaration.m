@@ -13,6 +13,7 @@
 #import "DCFinancialLiabilities.h"
 #import "DCRealtyInfo.h"
 #import "DCValue.h"
+#import "DCVehicle.h"
 
 @interface DCDeclaration ()
 
@@ -30,6 +31,10 @@ static NSString *const MHDeclarationsItemsKey = @"items";
 static NSString *const MHDeclarationsValueKey = @"value";
 static NSString *const MHDeclarationsUnitsKey = @"units";
 static NSString *const DCDeclarationsTitleKey = @"title";
+
+static NSString *const DCVehicleInfoKey = @"description";
+static NSString *const DCVehicleMarkKey = @"mark";
+static NSString *const DCVehicleModelKey = @"model";
 
 @implementation DCDeclaration
 
@@ -94,13 +99,6 @@ static NSString *const DCDeclarationsTitleKey = @"title";
             {
                 id value = [currentItem objectForKey:MHDeclarationsValueKey];
                 
-                DCValue *newValue = [[DCValue alloc] initWithCode:key
-                                                            value:value
-                                                            title:title
-                                                            units:units];
-                
-                NSLog(@"item = %@", newValue);
-                
                 __block NSString *foundCategory = nil;
                 [self.table enumerateKeysAndObjectsUsingBlock:^(NSString *category, NSDictionary *range, BOOL *stop) {
                     if ([key floatValue] >= [range[@"from"] floatValue] && [key floatValue] <= [range[@"to"] floatValue])
@@ -112,6 +110,26 @@ static NSString *const DCDeclarationsTitleKey = @"title";
                 
                 if (foundCategory != nil)
                 {
+                    DCValue *newValue = nil;
+                    
+                    if ([foundCategory isEqualToString:@"vehicles"])
+                    {
+                        newValue = [[DCVehicle alloc] initWithCode:key
+                                                              info:[currentItem objectForKey:DCVehicleInfoKey]
+                                                              mark:[currentItem objectForKey:DCVehicleMarkKey]
+                                                             model:[currentItem objectForKey:DCVehicleModelKey]
+                                                              year:[currentItem objectForKey:MHDeclarationYearKey]];
+                    }
+                    else
+                    {
+                        newValue = [[DCValue alloc] initWithCode:key
+                                                           value:value
+                                                           title:title
+                                                           units:units];
+                    }
+                    
+                    NSLog(@"item = %@", newValue);
+                    
                     DCCategory *category = [self valueForKey:foundCategory];
                     [category addValue:newValue];
                 }
