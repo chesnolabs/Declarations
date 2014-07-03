@@ -12,10 +12,13 @@
 
 - (id)initWithCode:(NSString *)code
              value:(id)value
+             title:(NSString *)title
              units:(NSString *)units;
 
 @property (readonly) NSString *code;
-@property (readonly) id value;
 @property (readonly) NSString *units;
+@property (readonly) NSString *title;
+
+@property (readonly) id value;
 
 @end

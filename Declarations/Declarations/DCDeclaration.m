@@ -28,6 +28,8 @@ static NSString *const MHDeclarationFieldsKey = @"fields";
 
 static NSString *const MHDeclarationsItemsKey = @"items";
 static NSString *const MHDeclarationsValueKey = @"value";
+static NSString *const MHDeclarationsUnitsKey = @"units";
+static NSString *const DCDeclarationsTitleKey = @"title";
 
 @implementation DCDeclaration
 
@@ -51,7 +53,26 @@ static NSString *const MHDeclarationsValueKey = @"value";
     
     if (self != nil)
     {
-        _table = @{ @"7.0" : @{ @"category" : @"profit", @"key" : @"teachingSalary_7" } };
+        _table = @{ @"profit" : @{ @"from" : @( 6 ), @"to" : @( 21 ) } };
+//        _table = @{ @"5.0" : @"profit.totalProfit_5",
+//                    @"6.0" : @"profit.laborSalary_6",
+//                    @"7.0" : @"profit.teachingSalary_7",
+//                    @"8.0" : @"profit.royalties_8",
+//                    @"9.0" : @"profit.interest_9",
+//                    @"10.0" : @"profit.financialAid_10",
+//                    @"11.0" : @"profit.awards_11",
+//                    @"12.0" : @"profit.dole_12",
+//                    @"13.0" : @"profit.alimony_13",
+//                    @"14.0" : @"profit.heritage_14",
+//                    @"15.0" : @"profit.insuranceBenefits_15",
+//                    @"16.0" : @"profit.alienationPropertyIncome_16",
+//                    @"17.0" : @"profit.businessIncome_17",
+//                    @"18.0" : @"profit.securitiesDisposalIncome_18",
+//                    @"19.0" : @"profit.leaseIncome_19",
+//                    @"20.0" : @"profit.otherIncome_20",
+//                    @"21.0" : @"profit.foreignIncome_21",
+//                    };
+         self.categories = @[ self.vehicles, self.profit, self.deposit, self.realty, self.financialLiabilities ];
         
         [self setupWithJSON:jsonObject];
     }
@@ -71,22 +92,43 @@ static NSString *const MHDeclarationsValueKey = @"value";
     
     NSDictionary *model = [jsonObject objectForKey:MHDeclarationFieldsKey];
     
+    NSLog(@"model = %@", model);
+    
     [model enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        NSDictionary *keyPathDict = [self.table objectForKey:key];
-        if (keyPathDict != nil && [obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
+        //NSDictionary *keyPathDict = [self.table objectForKey:key];
+        if ([obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
         {
             NSArray *items = [obj objectForKey:MHDeclarationsItemsKey];
-            id value = [items[0] objectForKey:MHDeclarationsValueKey];
+
+            NSString *units = [obj objectForKey:MHDeclarationsUnitsKey];
+            NSString *title = [obj objectForKey:DCDeclarationsTitleKey];
             
-            DCValue *newValue = [[DCValue alloc] initWithCode:key
-                                                        value:value
-                                                        units:@""];
-            
-            DCCategory *category = [self valueForKey:keyPathDict[@"category"]];
-            [category setValue:newValue forKey:keyPathDict[@"key"]];
-            [category addValue:newValue];
-            
-            NSLogD(@"test = %@", self.profit.teachingSalary_7);
+            for (id currentItem in items)
+            {
+                id value = [currentItem objectForKey:MHDeclarationsValueKey];
+                
+                DCValue *newValue = [[DCValue alloc] initWithCode:key
+                                                            value:value
+                                                            title:title
+                                                            units:units];
+                
+                __block NSString *foundCategory = nil;
+                [self.table enumerateKeysAndObjectsUsingBlock:^(NSString *category, NSDictionary *range, BOOL *stop) {
+                    if ([key floatValue] >= [range[@"from"] floatValue] && [key floatValue] <= [range[@"to"] floatValue])
+                    {
+                        foundCategory = category;
+                        *stop = YES;
+                    }
+                }];
+                
+                if (foundCategory != nil)
+                {
+                    DCCategory *category = [self valueForKey:foundCategory];
+                    [category addValue:newValue];
+                }
+                
+                //[category setValue:newValue forKey:keyPathDict[@"key"]];
+            }
         }
     }];
 }
