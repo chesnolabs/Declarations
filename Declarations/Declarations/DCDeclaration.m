@@ -53,25 +53,12 @@ static NSString *const DCDeclarationsTitleKey = @"title";
     
     if (self != nil)
     {
-        _table = @{ @"profit" : @{ @"from" : @( 6 ), @"to" : @( 21 ) } };
-//        _table = @{ @"5.0" : @"profit.totalProfit_5",
-//                    @"6.0" : @"profit.laborSalary_6",
-//                    @"7.0" : @"profit.teachingSalary_7",
-//                    @"8.0" : @"profit.royalties_8",
-//                    @"9.0" : @"profit.interest_9",
-//                    @"10.0" : @"profit.financialAid_10",
-//                    @"11.0" : @"profit.awards_11",
-//                    @"12.0" : @"profit.dole_12",
-//                    @"13.0" : @"profit.alimony_13",
-//                    @"14.0" : @"profit.heritage_14",
-//                    @"15.0" : @"profit.insuranceBenefits_15",
-//                    @"16.0" : @"profit.alienationPropertyIncome_16",
-//                    @"17.0" : @"profit.businessIncome_17",
-//                    @"18.0" : @"profit.securitiesDisposalIncome_18",
-//                    @"19.0" : @"profit.leaseIncome_19",
-//                    @"20.0" : @"profit.otherIncome_20",
-//                    @"21.0" : @"profit.foreignIncome_21",
-//                    };
+        _table = @{ @"profit" : @{ @"from" : @( 6 ), @"to" : @( 22 )},
+                    @"realty" : @{ @"from" : @( 23 ), @"to" : @( 34 )},
+                    @"vehicles" : @{ @"from" : @( 35 ), @"to" : @( 44 )},
+                    @"deposit" : @{ @"from" : @( 45 ), @"to" : @( 53 )},
+                    @"financialLiabilities" : @{ @"from" : @( 54 ), @"to" : @( 64 )} };
+
          self.categories = @[ self.vehicles, self.profit, self.deposit, self.realty, self.financialLiabilities ];
         
         [self setupWithJSON:jsonObject];
@@ -111,6 +98,8 @@ static NSString *const DCDeclarationsTitleKey = @"title";
                                                             value:value
                                                             title:title
                                                             units:units];
+                
+                NSLog(@"item = %@", newValue);
                 
                 __block NSString *foundCategory = nil;
                 [self.table enumerateKeysAndObjectsUsingBlock:^(NSString *category, NSDictionary *range, BOOL *stop) {
