@@ -79,7 +79,7 @@ static NSString *const DCVehicleModelKey = @"model";
     NSString *url = [jsonObject objectForKey:MHDeclarationURLKey];
     if (url != nil)
     {
-        _originalURL = [NSURL URLWithString:url];
+        _originalURL = [NSURL URLWithString:[@"http://chesno.org" stringByAppendingString:url]];
     }
     
     NSDictionary *model = [jsonObject objectForKey:MHDeclarationFieldsKey];

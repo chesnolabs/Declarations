@@ -54,7 +54,8 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     // setup request for all persons here
     
     __block id jsonResponse = nil;
-    
+    __block NSString *stringData = nil;
+
     NSURLSessionDataTask *allPersonsTask = [self.session dataTaskWithRequest:request
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
@@ -64,9 +65,11 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
             jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                            options:NSJSONReadingAllowFragments
                                                              error:&parsingJSONError];
-            if (parsingJSONError != nil)
+            stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+            if (jsonResponse == nil)
             {
-                NSLog(@"Error parsing json server responce %@", parsingJSONError);
+                NSLog(@"Error parsing json server response %@ data: %@", parsingJSONError, stringData);
             }
         }
         else
@@ -77,8 +80,7 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     
     [allPersonsTask resume];
     
-    while (allPersonsTask != nil &&
-           allPersonsTask.state == NSURLSessionTaskStateRunning)
+    while (allPersonsTask.state != NSURLSessionTaskStateCompleted)
     {
         [NSThread sleepForTimeInterval:0.2];
     }
@@ -96,7 +98,7 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     }
     else
     {
-        NSLog(@"Received JSON responce of unknown type %@", jsonResponse);
+        NSLog(@"Received JSON response of unknown type %@ data: %@", jsonResponse, stringData);
     }
     
     return loadedPersons;
@@ -116,14 +118,14 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
         {
             [person removeAllDeclarations];
             NSError *parsingJSONError;
-            NSArray *jsonResponce = [NSJSONSerialization JSONObjectWithData:data
+            NSArray *jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:NSJSONReadingAllowFragments
                                                                       error:&parsingJSONError];
             
-            if (jsonResponce != nil && jsonResponce.count)
+            if (jsonResponse != nil && jsonResponse.count)
             {
                 // just demo depends on future json structure
-                NSDictionary *declarationInfo = jsonResponce[0];
+                NSDictionary *declarationInfo = jsonResponse[0];
                 DCDeclaration *newDeclaration = [[DCDeclaration alloc] initWithJSONObject:declarationInfo];
                 [person addDeclaration:newDeclaration];
                 

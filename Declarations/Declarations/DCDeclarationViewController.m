@@ -10,8 +10,9 @@
 #import "DCCategoryCell.h"
 #import "DCCategory.h"
 #import "DCCategoryViewController.h"
+#import "DCDeclarationFooterView.h"
 
-@interface DCDeclarationViewController ()
+@interface DCDeclarationViewController () <TTTAttributedLabelDelegate>
 
 @end
 
@@ -70,6 +71,37 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [self performSegueWithIdentifier:@"DeclarationCategorySegue" sender:(DCCategory *)self.declaration.categories[indexPath.row]];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader)
+    {
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        reusableview = headerView;
+    }
+    
+    if (kind == UICollectionElementKindSectionFooter)
+    {
+        DCDeclarationFooterView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FooterView" forIndexPath:indexPath];
+        
+        footerview.originURLView.delegate = self;
+        NSRange range = [footerview.originURLView.text rangeOfString:@"Джерело"];
+        [footerview.originURLView addLinkToURL:self.declaration.originalURL withRange:range];
+
+        reusableview = footerview;
+    }
+    
+    return reusableview;
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label
+   didSelectLinkWithURL:(NSURL *)url
+{
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 #pragma mark - Navigation

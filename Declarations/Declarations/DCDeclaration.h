@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) NSString *title;
 @property (assign) NSUInteger year;
-@property (strong) NSURL *linkToSource;
 @property (strong) NSDictionary *data;
 @property (assign) NSUInteger declarationID;
 @property (strong) NSString *comment;
