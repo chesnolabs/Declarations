@@ -84,10 +84,7 @@ static NSString *const DCVehicleModelKey = @"model";
     
     NSDictionary *model = [jsonObject objectForKey:MHDeclarationFieldsKey];
     
-    NSLog(@"model = %@", model);
-    
     [model enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        //NSDictionary *keyPathDict = [self.table objectForKey:key];
         if ([obj isKindOfClass:[NSDictionary class]] && [obj allKeys].count)
         {
             NSArray *items = [obj objectForKey:MHDeclarationsItemsKey];
@@ -128,13 +125,9 @@ static NSString *const DCVehicleModelKey = @"model";
                                                            units:units];
                     }
                     
-                    NSLog(@"item = %@", newValue);
-                    
                     DCCategory *category = [self valueForKey:foundCategory];
                     [category addValue:newValue];
                 }
-                
-                //[category setValue:newValue forKey:keyPathDict[@"key"]];
             }
         }
     }];

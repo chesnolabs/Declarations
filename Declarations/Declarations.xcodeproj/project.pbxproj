@@ -604,7 +604,6 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D893F475-F70D-40B5-B08E-F0706FB759EC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -625,7 +624,6 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D893F475-F70D-40B5-B08E-F0706FB759EC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -719,7 +717,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "D893F475-F70D-40B5-B08E-F0706FB759EC";
+				PROVISIONING_PROFILE = "8322D333-56D9-49BA-82C4-6F4E71012FFC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;

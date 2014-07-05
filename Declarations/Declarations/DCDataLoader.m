@@ -46,6 +46,8 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
 
 - (NSArray *)loadPersons
 {
+    NSLog(@"Start loading data from %@", self.chesnoLink);
+
     NSMutableArray *loadedPersons = [NSMutableArray array];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
@@ -58,7 +60,7 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     {
         if (error == nil && data != nil)
         {
-            NSError *parsingJSONError;
+            NSError *parsingJSONError = nil;
             jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                            options:NSJSONReadingAllowFragments
                                                              error:&parsingJSONError];
@@ -92,13 +94,18 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
             }
         }
     }
+    else
+    {
+        NSLog(@"Received JSON responce of unknown type %@", jsonResponse);
+    }
     
     return loadedPersons;
 }
 
 - (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://chesno.org/person/json/declarations_for/1870/"]];
+    NSString *urlString = [NSString stringWithFormat:@"http://chesno.org/person/json/declarations_for/%lu", (unsigned long)person.identifier];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
                              //[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"declaration_example" ofType:@"dat"]]];
     
     // setup request for defined person
