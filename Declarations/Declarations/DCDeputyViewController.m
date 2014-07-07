@@ -23,14 +23,17 @@
 - (void)loadPersons
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
-    NSArray *persons = [loader loadPersons];
-    if (persons != nil)
-    {
-        self.deputies = [persons mutableCopy];
-    }
-    
-    self.displayedDeputies = self.deputies;
-    [self.tableView reloadData];
+    [loader loadPersonsWithCompletionHandler:^(NSArray *persons) {
+        if (persons != nil)
+        {
+            self.deputies = [persons mutableCopy];
+        }
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.displayedDeputies = self.deputies;
+            [self.tableView reloadData];
+        }];
+    }];
 }
 
 - (void)viewDidLoad

@@ -44,7 +44,7 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
 
 #pragma mark -
 
-- (NSArray *)loadPersons
+- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons)) completionHandler
 {
     NSLog(@"Start loading data from %@", self.chesnoLink);
 
@@ -65,11 +65,33 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
             jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                            options:NSJSONReadingAllowFragments
                                                              error:&parsingJSONError];
-            stringData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
             if (jsonResponse == nil)
             {
                 NSLog(@"Error parsing json server response %@ data: %@", parsingJSONError, stringData);
+            }
+            else
+            {
+                if ([jsonResponse isKindOfClass:[NSArray class]])
+                {
+                    for (NSDictionary *personJSONObject in jsonResponse)
+                    {
+                        DCPerson *newPerson = [[DCPerson alloc] initWithJSONObject:personJSONObject];
+                        if (newPerson != nil)
+                        {
+                            [loadedPersons addObject:newPerson];
+                        }
+                    }
+                    
+                    if (completionHandler != nil)
+                    {
+                        completionHandler(loadedPersons);
+                    }
+                }
+                else
+                {
+                    NSLog(@"Received JSON response of unknown type %@ data: %@", jsonResponse, stringData);
+                }
             }
         }
         else
@@ -79,29 +101,6 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
     }];
     
     [allPersonsTask resume];
-    
-    while (allPersonsTask.state != NSURLSessionTaskStateCompleted)
-    {
-        [NSThread sleepForTimeInterval:0.2];
-    }
-    
-    if ([jsonResponse isKindOfClass:[NSArray class]])
-    {
-        for (NSDictionary *personJSONObject in jsonResponse)
-        {
-            DCPerson *newPerson = [[DCPerson alloc] initWithJSONObject:personJSONObject];
-            if (newPerson != nil)
-            {
-                [loadedPersons addObject:newPerson];
-            }
-        }
-    }
-    else
-    {
-        NSLog(@"Received JSON response of unknown type %@ data: %@", jsonResponse, stringData);
-    }
-    
-    return loadedPersons;
 }
 
 - (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block
