@@ -37,7 +37,7 @@
 		02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02B2665A192F51330091C2EA /* AdHoc.xcconfig */; };
 		02B26660192F545E0091C2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2665F192F545E0091C2EA /* libz.dylib */; };
 		02B27E8B19680BF2001E9A3B /* DCDeclarationFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B27E8A19680BF2001E9A3B /* DCDeclarationFooterView.m */; };
-		1142E517ED8E4C2BBE1627A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D55BB53B444E0F8E6EFB0E /* libPods.a */; };
+		02B27E94196B0B6F001E9A3B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */; };
 		B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */; };
 		B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC71932923600E12D30 /* DCProfitInfo.m */; };
 		B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBCA193292DC00E12D30 /* DCValue.m */; };
@@ -112,8 +112,8 @@
 		02B26661192F59DA0091C2EA /* Declarations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Declarations.entitlements; sourceTree = "<group>"; };
 		02B27E8919680BF2001E9A3B /* DCDeclarationFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclarationFooterView.h; sourceTree = "<group>"; };
 		02B27E8A19680BF2001E9A3B /* DCDeclarationFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationFooterView.m; sourceTree = "<group>"; };
-		27D55BB53B444E0F8E6EFB0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02876D11A264CB4925FD24F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		02B27E92196B0B6E001E9A3B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGeneralInfo.h; sourceTree = "<group>"; };
 		B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGeneralInfo.m; sourceTree = "<group>"; };
 		B82FDBC61932923600E12D30 /* DCProfitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCProfitInfo.h; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 				02B26600192A89B40091C2EA /* UIKit.framework in Frameworks */,
 				02B265FC192A89B40091C2EA /* Foundation.framework in Frameworks */,
 				02B26653192F4FF40091C2EA /* libTestFlight.a in Frameworks */,
-				1142E517ED8E4C2BBE1627A4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +178,6 @@
 				02B26659192F51140091C2EA /* Build Configs */,
 				02B265FA192A89B40091C2EA /* Frameworks */,
 				02B265F9192A89B40091C2EA /* Products */,
-				B02876D11A264CB4925FD24F /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +193,7 @@
 		02B265FA192A89B40091C2EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02B27E91196B0B6E001E9A3B /* TTTAttributedLabel */,
 				02B2665F192F545E0091C2EA /* libz.dylib */,
 				02B2665D192F54430091C2EA /* Security.framework */,
 				02B2664C192F4FF40091C2EA /* TestFlight */,
@@ -202,7 +201,6 @@
 				02B265FD192A89B40091C2EA /* CoreGraphics.framework */,
 				02B265FF192A89B40091C2EA /* UIKit.framework */,
 				02B2661D192A89B40091C2EA /* XCTest.framework */,
-				27D55BB53B444E0F8E6EFB0E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,6 +299,16 @@
 			name = "Build Configs";
 			sourceTree = "<group>";
 		};
+		02B27E91196B0B6E001E9A3B /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				02B27E92196B0B6E001E9A3B /* TTTAttributedLabel.h */,
+				02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */,
+			);
+			name = TTTAttributedLabel;
+			path = Declarations/External/TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 		B82FDBC51932920500E12D30 /* Declaration */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,11 +360,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02B2662D192A89B40091C2EA /* Build configuration list for PBXNativeTarget "Declarations" */;
 			buildPhases = (
-				C7386E231B2449C19AD2C731 /* Check Pods Manifest.lock */,
 				02B265F4192A89B40091C2EA /* Sources */,
 				02B265F5192A89B40091C2EA /* Frameworks */,
 				02B265F6192A89B40091C2EA /* Resources */,
-				436CE7DB916E472793BAD051 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -455,39 +461,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		436CE7DB916E472793BAD051 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7386E231B2449C19AD2C731 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		02B265F4192A89B40091C2EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -504,6 +477,7 @@
 				02B26608192A89B40091C2EA /* main.m in Sources */,
 				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,
+				02B27E94196B0B6F001E9A3B /* TTTAttributedLabel.m in Sources */,
 				B864A1F41935008D00FA5D58 /* DCRealtyInfo.m in Sources */,
 				B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */,
 				B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */,
@@ -637,7 +611,6 @@
 		};
 		02B2662E192A89B40091C2EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B02876D11A264CB4925FD24F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -658,7 +631,6 @@
 		};
 		02B2662F192A89B40091C2EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B02876D11A264CB4925FD24F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -752,7 +724,6 @@
 		};
 		02B26657192F51030091C2EA /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B02876D11A264CB4925FD24F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
