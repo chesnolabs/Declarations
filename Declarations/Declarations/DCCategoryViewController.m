@@ -14,7 +14,8 @@
 
 @interface DCCategoryViewController ()
 
-@property (nonatomic) NSNumberFormatter *formatter;
+@property (nonatomic) NSNumberFormatter *currencyFormatter;
+@property (nonatomic) NSNumberFormatter *areaFormatter;
 
 @end
 
@@ -27,16 +28,28 @@
     self.navigationItem.title = self.category.name;
 }
 
-- (NSNumberFormatter *)formatter
+- (NSNumberFormatter *)currencyFormatter
 {
-    if (!_formatter)
+    if (!_currencyFormatter)
     {
-        _formatter = [NSNumberFormatter new];
-        _formatter.numberStyle = NSNumberFormatterCurrencyStyle;
-        _formatter.locale = [NSLocale localeWithLocaleIdentifier:@"ua"];
-        _formatter.positiveFormat = @"#,##0.00 грн";
+        _currencyFormatter = [NSNumberFormatter new];
+        _currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+        _currencyFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"ua"];
+        _currencyFormatter.positiveFormat = @"#,##0.00 грн";
     }
-    return _formatter;
+    return _currencyFormatter;
+}
+
+- (NSNumberFormatter *)areaFormatter
+{
+    if (!_areaFormatter)
+    {
+        _areaFormatter = [NSNumberFormatter new];
+        _areaFormatter.numberStyle = kCFNumberFormatterDecimalStyle;
+        _areaFormatter.maximumFractionDigits = 2;
+        _areaFormatter.minimumFractionDigits = 2;
+    }
+    return _areaFormatter;
 }
 
 #pragma mark - TableView datasource/delegate
@@ -69,7 +82,11 @@
         // Just for now
         if ([value.units isEqualToString:@"грн"])
         {
-            cell.valueLabel.text = [self.formatter stringForObjectValue:value.value];
+            cell.valueLabel.text = [self.currencyFormatter stringForObjectValue:value.value];
+        }
+        else if ([value.units isEqualToString:@"кв. м."])
+        {
+            cell.valueLabel.text = [NSString stringWithFormat:@"%@ %@", [self.areaFormatter stringForObjectValue:value.value], value.units];
         }
         else
         {
