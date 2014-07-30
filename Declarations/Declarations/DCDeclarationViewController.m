@@ -10,6 +10,7 @@
 #import "DCCategoryCell.h"
 #import "DCCategory.h"
 #import "DCCategoryViewController.h"
+#import "DCPerson.h"
 
 @implementation DCDeclarationViewController
 
@@ -38,6 +39,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)shareAction:(id)sender
+{
+    NSString *text = [NSString stringWithFormat:@"Декларація %@", self.declaration.person.fullName];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://chesno.org/profile/%lu/#person_property", (unsigned long)self.declaration.person.identifier]];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc]
+     initWithActivityItems:@[text, url]
+     applicationActivities:nil];
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark - TableView datasource/delegate

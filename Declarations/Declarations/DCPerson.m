@@ -76,6 +76,7 @@
     if (aDeclaration != nil)
     {
         [self.declarationsStorage addObject:aDeclaration];
+        aDeclaration.person = self;
     }
 }
 

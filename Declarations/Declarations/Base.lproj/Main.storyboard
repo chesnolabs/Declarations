@@ -104,7 +104,13 @@
                             <outlet property="delegate" destination="9IQ-oH-yyX" id="vc1-tr-nRX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Декларація" id="c24-bG-pay"/>
+                    <navigationItem key="navigationItem" title="Декларація" id="c24-bG-pay">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="xbh-yS-cCd">
+                            <connections>
+                                <action selector="shareAction:" destination="9IQ-oH-yyX" id="FTC-L4-aox"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="B4E-ve-oYM" kind="push" identifier="DeclarationCategorySegue" id="tDy-e0-2ws"/>
                     </connections>
@@ -171,15 +177,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fea-ln-rhs">
-                                            <rect key="frame" x="0.0" y="8" width="39" height="18"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fea-ln-rhs">
+                                            <rect key="frame" x="20" y="8" width="39" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWn-dz-ttO">
-                                            <rect key="frame" x="129" y="38" width="191" height="21"/>
+                                            <rect key="frame" x="109" y="38" width="191" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="191" id="gzi-P5-42y"/>
@@ -193,6 +199,8 @@
                                         <constraint firstItem="fea-ln-rhs" firstAttribute="leading" secondItem="hIn-hR-nlB" secondAttribute="leading" id="9lW-lx-4HQ"/>
                                         <constraint firstAttribute="trailing" secondItem="RWn-dz-ttO" secondAttribute="trailing" id="DD7-lX-jPt"/>
                                         <constraint firstItem="fea-ln-rhs" firstAttribute="top" secondItem="hIn-hR-nlB" secondAttribute="top" constant="8" id="NXE-8y-iUT"/>
+                                        <constraint firstItem="fea-ln-rhs" firstAttribute="leading" secondItem="hIn-hR-nlB" secondAttribute="leading" constant="20" symbolic="YES" id="aEF-Zi-SuG"/>
+                                        <constraint firstAttribute="trailing" secondItem="RWn-dz-ttO" secondAttribute="trailing" constant="20" symbolic="YES" id="kNZ-qh-X6O"/>
                                         <constraint firstAttribute="bottom" secondItem="RWn-dz-ttO" secondAttribute="bottom" id="lSH-KA-nfT"/>
                                     </constraints>
                                 </tableViewCellContentView>

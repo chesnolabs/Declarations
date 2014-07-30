@@ -14,15 +14,17 @@
 @class DCVehiclesInfo;
 @class DCDepositsInfo;
 @class DCFinancialLiabilities;
+@class DCPerson;
 
 @interface DCDeclaration : NSObject
 
 - (id)initWithJSONObject:(NSDictionary *)jsonObject;
 
+@property (weak) DCPerson *person;
 @property (strong, nonatomic) NSString *title;
 @property (assign) NSUInteger year;
 @property (strong) NSDictionary *data;
-@property (assign) NSUInteger declarationID;
+@property (assign) NSUInteger identifier;
 @property (strong) NSString *comment;
 @property (strong) NSURL *originalURL;
 
