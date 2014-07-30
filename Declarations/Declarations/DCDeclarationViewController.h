@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DCDeclaration.h"
 
-@interface DCDeclarationViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout >
+@interface DCDeclarationViewController : UITableViewController
 
 @property (strong) DCDeclaration *declaration;
 

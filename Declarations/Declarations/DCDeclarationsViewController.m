@@ -60,10 +60,16 @@
     static NSString *CellIdentifier = @"DeclarationIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-	DCDeclarationsViewController *declaration = (self.deputy.declarations)[indexPath.row];
+	DCDeclaration *declaration = (self.deputy.declarations)[indexPath.row];
     cell.textLabel.text = declaration.title;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DCDeclaration *declaration = (self.deputy.declarations)[indexPath.row];
+    [self performSegueWithIdentifier:@"DeclarationDataSegue" sender:declaration];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

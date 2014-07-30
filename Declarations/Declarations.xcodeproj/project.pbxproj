@@ -36,8 +36,6 @@
 		02B26655192F4FF40091C2EA /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 02B2664F192F4FF40091C2EA /* release_notes.md */; };
 		02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02B2665A192F51330091C2EA /* AdHoc.xcconfig */; };
 		02B26660192F545E0091C2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2665F192F545E0091C2EA /* libz.dylib */; };
-		02B27E8B19680BF2001E9A3B /* DCDeclarationFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B27E8A19680BF2001E9A3B /* DCDeclarationFooterView.m */; };
-		02B27E94196B0B6F001E9A3B /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */; };
 		B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */; };
 		B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC71932923600E12D30 /* DCProfitInfo.m */; };
 		B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBCA193292DC00E12D30 /* DCValue.m */; };
@@ -110,10 +108,6 @@
 		02B2665D192F54430091C2EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		02B2665F192F545E0091C2EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		02B26661192F59DA0091C2EA /* Declarations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Declarations.entitlements; sourceTree = "<group>"; };
-		02B27E8919680BF2001E9A3B /* DCDeclarationFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclarationFooterView.h; sourceTree = "<group>"; };
-		02B27E8A19680BF2001E9A3B /* DCDeclarationFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationFooterView.m; sourceTree = "<group>"; };
-		02B27E92196B0B6E001E9A3B /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
-		02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGeneralInfo.h; sourceTree = "<group>"; };
 		B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGeneralInfo.m; sourceTree = "<group>"; };
 		B82FDBC61932923600E12D30 /* DCProfitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCProfitInfo.h; sourceTree = "<group>"; };
@@ -193,7 +187,6 @@
 		02B265FA192A89B40091C2EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02B27E91196B0B6E001E9A3B /* TTTAttributedLabel */,
 				02B2665F192F545E0091C2EA /* libz.dylib */,
 				02B2665D192F54430091C2EA /* Security.framework */,
 				02B2664C192F4FF40091C2EA /* TestFlight */,
@@ -231,8 +224,6 @@
 				0272BCD31965DC9A0013CE24 /* DCValueCellView.m */,
 				0272BCD51965E5240013CE24 /* DCVehicleTableViewCell.h */,
 				0272BCD61965E5240013CE24 /* DCVehicleTableViewCell.m */,
-				02B27E8919680BF2001E9A3B /* DCDeclarationFooterView.h */,
-				02B27E8A19680BF2001E9A3B /* DCDeclarationFooterView.m */,
 			);
 			path = Declarations;
 			sourceTree = "<group>";
@@ -297,16 +288,6 @@
 				02B2665A192F51330091C2EA /* AdHoc.xcconfig */,
 			);
 			name = "Build Configs";
-			sourceTree = "<group>";
-		};
-		02B27E91196B0B6E001E9A3B /* TTTAttributedLabel */ = {
-			isa = PBXGroup;
-			children = (
-				02B27E92196B0B6E001E9A3B /* TTTAttributedLabel.h */,
-				02B27E93196B0B6E001E9A3B /* TTTAttributedLabel.m */,
-			);
-			name = TTTAttributedLabel;
-			path = Declarations/External/TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
 		B82FDBC51932920500E12D30 /* Declaration */ = {
@@ -466,7 +447,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B27E8B19680BF2001E9A3B /* DCDeclarationFooterView.m in Sources */,
 				02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */,
 				B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */,
 				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
@@ -477,7 +457,6 @@
 				02B26608192A89B40091C2EA /* main.m in Sources */,
 				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,
-				02B27E94196B0B6F001E9A3B /* TTTAttributedLabel.m in Sources */,
 				B864A1F41935008D00FA5D58 /* DCRealtyInfo.m in Sources */,
 				B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */,
 				B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */,
@@ -624,7 +603,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8322D333-56D9-49BA-82C4-6F4E71012FFC";
+				PROVISIONING_PROFILE = "F4282DAA-1267-4EC9-96C3-71ED3B82A47D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -644,7 +623,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8322D333-56D9-49BA-82C4-6F4E71012FFC";
+				PROVISIONING_PROFILE = "F4282DAA-1267-4EC9-96C3-71ED3B82A47D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -737,7 +716,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8322D333-56D9-49BA-82C4-6F4E71012FFC";
+				PROVISIONING_PROFILE = "F4282DAA-1267-4EC9-96C3-71ED3B82A47D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;

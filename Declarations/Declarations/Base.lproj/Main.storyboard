@@ -72,6 +72,47 @@
             </objects>
             <point key="canvasLocation" x="638" y="599"/>
         </scene>
+        <!--Declaration View Controller - Декларація-->
+        <scene sceneID="T3G-Yr-LmZ">
+            <objects>
+                <tableViewController id="9IQ-oH-yyX" customClass="DCDeclarationViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" id="QfZ-UM-6lm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryCell" textLabel="Kka-Sb-FyF" style="IBUITableViewCellStyleDefault" id="iW3-11-Ou7">
+                                <rect key="frame" x="0.0" y="86" width="320" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iW3-11-Ou7" id="hZs-Lf-S8h">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" id="Kka-Sb-FyF">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9IQ-oH-yyX" id="pTU-Jo-Ypg"/>
+                            <outlet property="delegate" destination="9IQ-oH-yyX" id="vc1-tr-nRX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Декларація" id="c24-bG-pay"/>
+                    <connections>
+                        <segue destination="B4E-ve-oYM" kind="push" identifier="DeclarationCategorySegue" id="tDy-e0-2ws"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ncl-jh-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="636"/>
+        </scene>
         <!--Declarations View Controller - Декларації-->
         <scene sceneID="VTP-MN-KE6">
             <objects>
@@ -97,9 +138,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Jek-e7-xww" kind="push" identifier="DeclarationDataSegue" id="ucm-Op-1Wf"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -110,84 +148,12 @@
                     <navigationItem key="navigationItem" title="Декларації" id="MIL-YS-mMG"/>
                     <connections>
                         <outlet property="tableView" destination="683-Hp-q62" id="6T8-7s-KEG"/>
+                        <segue destination="9IQ-oH-yyX" kind="push" identifier="DeclarationDataSegue" id="wvZ-zR-z3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKl-a8-OJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="-91"/>
-        </scene>
-        <!--Declaration View Controller - Декларації-->
-        <scene sceneID="AZW-Qc-hAH">
-            <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Jek-e7-xww" customClass="DCDeclarationViewController" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="php-BC-IAP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u5b-wg-bgZ">
-                            <size key="itemSize" width="90" height="120"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="MCL-9F-vss" customClass="DCCategoryCell">
-                                <rect key="frame" x="10" y="74" width="90" height="120"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDK-0S-QNy">
-                                            <rect key="frame" x="5" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="90" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-uf-Wfh">
-                                            <rect key="frame" x="0.0" y="79" width="90" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <size key="customSize" width="90" height="120"/>
-                                <connections>
-                                    <outlet property="imageView" destination="zDK-0S-QNy" id="b9s-ir-GHP"/>
-                                    <outlet property="titleView" destination="hKx-uf-Wfh" id="kXd-0K-jfx"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="Xqq-h4-YFR" customClass="DCDeclarationFooterView">
-                            <rect key="frame" x="0.0" y="194" width="320" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Джерело отримано 05 липня 2014." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="309" translatesAutoresizingMaskIntoConstraints="NO" id="2r7-YS-SUr" customClass="TTTAttributedLabel">
-                                    <rect key="frame" x="6" y="0.0" width="309" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <connections>
-                                <outlet property="originURLView" destination="2r7-YS-SUr" id="R9c-6e-Wal"/>
-                            </connections>
-                        </collectionReusableView>
-                        <connections>
-                            <outlet property="dataSource" destination="Jek-e7-xww" id="Lw8-7J-TQG"/>
-                            <outlet property="delegate" destination="Jek-e7-xww" id="Zw1-3t-jEg"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Декларації" id="Y6I-l9-DSJ"/>
-                    <connections>
-                        <segue destination="B4E-ve-oYM" kind="push" identifier="DeclarationCategorySegue" id="8lk-pl-GGb"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H5a-Ku-9ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1157" y="442"/>
+            <point key="canvasLocation" x="1532" y="-99"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="EBa-wh-OHA">

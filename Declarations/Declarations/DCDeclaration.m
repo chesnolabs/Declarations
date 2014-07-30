@@ -162,6 +162,7 @@ static NSString *const DCVehicleModelKey = @"model";
     {
         _profit = [DCProfitInfo new];
         _profit.name = @"Дохід";
+        _profit.icon = [UIImage imageNamed:@"Profit"];
     }
     return _profit;
 }
@@ -172,6 +173,7 @@ static NSString *const DCVehicleModelKey = @"model";
     {
         _deposit = [DCDepositsInfo new];
         _deposit.name = @"Депозити";
+        _deposit.icon = [UIImage imageNamed:@"Deposit"];
     }
     return _deposit;
 }
@@ -192,6 +194,7 @@ static NSString *const DCVehicleModelKey = @"model";
     if (!_financialLiabilities)
     {
         _financialLiabilities = [DCFinancialLiabilities new];
+        _financialLiabilities.icon = [UIImage imageNamed:@"Liability"];
         _financialLiabilities.name = @"Фінансові забов'язання";
     }
     return _financialLiabilities;

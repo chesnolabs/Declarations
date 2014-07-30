@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DCCategoryCell : UICollectionViewCell
-
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property (nonatomic, strong) IBOutlet UILabel *titleView;
+@interface DCCategoryCell : UITableViewCell
 
 @end
