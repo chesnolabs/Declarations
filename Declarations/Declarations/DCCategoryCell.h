@@ -10,4 +10,7 @@
 
 @interface DCCategoryCell : UITableViewCell
 
+@property IBOutlet UILabel *categoryLabel;
+@property IBOutlet UIImageView *categoryIconView;
+
 @end

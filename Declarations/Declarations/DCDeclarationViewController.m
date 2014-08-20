@@ -65,8 +65,8 @@
     DCCategoryCell *cell = (DCCategoryCell *)[tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
     cell.backgroundColor = [UIColor clearColor];
     DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
-    cell.textLabel.text = category.name;
-    cell.imageView.image = category.icon;
+    cell.categoryLabel.text = category.name;
+    cell.categoryIconView.image = category.icon;
     return cell;
 }
 

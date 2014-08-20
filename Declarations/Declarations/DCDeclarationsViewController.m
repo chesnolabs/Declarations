@@ -61,7 +61,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
 	DCDeclaration *declaration = (self.deputy.declarations)[indexPath.row];
-    cell.textLabel.text = declaration.title;
+    cell.textLabel.text = [NSString stringWithFormat:@"Декларація за %@ рік", declaration.title];
     
     return cell;
 }
