@@ -19,6 +19,8 @@
 @property (readonly) NSString *units;
 @property (readonly) NSString *title;
 
+@property (readonly) BOOL isFamily;
+
 @property (readonly) id value;
 
 @end

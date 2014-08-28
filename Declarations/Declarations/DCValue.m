@@ -49,4 +49,23 @@
     return [[super description] stringByAppendingFormat:@"[title:%@; code:%@; value:%@; units:%@]", self.title, self.code, self.value, self.units];
 }
 
+#pragma mark -
+
+- (BOOL)isFamily
+{
+    double doubleValue = [self.code doubleValue];
+    
+    if ((doubleValue < 21.0 && ((int)(doubleValue * 10) % 10) == 1) ||
+         doubleValue == 22.0 ||
+         (doubleValue > 28.0 && doubleValue < 35.0) ||
+         (doubleValue > 39.0 && doubleValue < 45.0) ||
+         (doubleValue > 50.0 && doubleValue < 54.0) ||
+         (doubleValue > 59.0 && doubleValue < 65))
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end
