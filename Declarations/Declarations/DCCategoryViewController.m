@@ -46,8 +46,6 @@
     return section == 0 ? self.category.values.count : self.category.familyValues.count;
 }
 
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DCValue *value = (indexPath.section == 0 ? self.category.values : self.category.familyValues)[indexPath.row];
