@@ -31,14 +31,26 @@
 
 #pragma mark - TableView datasource/delegate
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return section == 0 ? @"Декларанта" : @"Сім'ї декларанта";
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.category.values.count;
+    return section == 0 ? self.category.values.count : self.category.familyValues.count;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCValue *value = (self.category.values)[indexPath.row];
+    DCValue *value = (indexPath.section == 0 ? self.category.values : self.category.familyValues)[indexPath.row];
     
     if ([value isKindOfClass:[DCVehicle class]])
     {

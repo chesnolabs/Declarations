@@ -18,6 +18,7 @@
 @property (strong, nonatomic) DCValue *totalValue;
 
 @property (readonly) NSArray *values; // DCValue
+@property (readonly) NSArray *familyValues; // DCValue
 
 - (void)addValue:(DCValue *)value;
 

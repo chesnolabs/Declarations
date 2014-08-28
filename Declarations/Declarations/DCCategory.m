@@ -12,6 +12,7 @@
 @interface DCCategory ()
 
 @property (strong) NSMutableArray *valuesStorage;
+@property (strong) NSMutableArray *familyValuesStorage;
 @property (assign) CGFloat totalFloatValue;
 
 @end
@@ -25,6 +26,7 @@
     {
         self.icon = [UIImage imageNamed:@"Finance"];
         self.valuesStorage = [NSMutableArray array];
+        self.familyValuesStorage = [NSMutableArray array];
     }
     return self;
 }
@@ -34,11 +36,23 @@
     return self.valuesStorage;
 }
 
+- (NSArray *)familyValues
+{
+    return self.familyValuesStorage;
+}
+
 - (void)addValue:(DCValue *)value
 {
     if (value)
     {
-        [self.valuesStorage addObject:value];
+        if (value.isFamily)
+        {
+            [self.familyValuesStorage addObject:value];
+        }
+        else
+        {
+            [self.valuesStorage addObject:value];
+        }
         
         if ([value isKindOfClass:[DCVehicle class]])
         {
