@@ -11,6 +11,12 @@
 #import "DCDeclarationViewController.h"
 #import "DCDataLoader.h"
 
+@interface DCDeclarationsViewController ()
+
+@property (strong) UIActivityIndicatorView *indicator;
+
+@end
+
 @implementation DCDeclarationsViewController
 
 - (void)viewDidLoad
@@ -23,13 +29,26 @@
      {
          if (success)
          {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.indicator stopAnimating];
+                 [self.indicator setHidden:YES];
+             });
+             
              NSLog(@"Succeded in loading declaration %@", self.deputy.declarations);
              [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                  [self.tableView reloadData];
              }];
          }
      }];
-
+    
+    self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
+                      CGRectMake(self.view.bounds.size.width / 2.0 - 12,
+                                 self.view.bounds.size.width / 2.0 - 12,
+                                 24, 24)];
+    self.indicator.color = [UIColor blackColor];
+    
+    [self.indicator startAnimating];
+    [self.view addSubview:self.indicator];
 }
 
 - (void)didReceiveMemoryWarning

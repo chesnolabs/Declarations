@@ -15,6 +15,7 @@
 
 @property (strong) NSMutableArray *deputies;
 @property (strong) NSArray *displayedDeputies;
+@property (strong) UIActivityIndicatorView *indicator;
 
 @end
 
@@ -24,6 +25,12 @@
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
     [loader loadPersonsWithCompletionHandler:^(NSArray *persons) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.indicator stopAnimating];
+            [self.indicator setHidden:YES];
+        });
+        
         if (persons != nil)
         {
             self.deputies = [persons mutableCopy];
@@ -40,6 +47,15 @@
 {
     [super viewDidLoad];
     [self loadPersons];
+    
+    self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
+                                          CGRectMake(self.view.bounds.size.width / 2.0 - 12,
+                                                     self.view.bounds.size.width / 2.0 - 12,
+                                                     24, 24)];
+    self.indicator.color = [UIColor blackColor];
+    
+    [self.indicator startAnimating];
+    [self.view addSubview:self.indicator];
 }
 
 - (void)didReceiveMemoryWarning
