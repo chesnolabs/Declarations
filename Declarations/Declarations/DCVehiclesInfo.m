@@ -10,6 +10,9 @@
 
 @implementation DCVehiclesInfo
 
-
+- (NSString *)unit
+{
+    return @"шт";
+}
 
 @end

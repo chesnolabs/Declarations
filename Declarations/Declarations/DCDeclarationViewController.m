@@ -11,6 +11,7 @@
 #import "DCCategory.h"
 #import "DCCategoryViewController.h"
 #import "DCPerson.h"
+#import "DCValueTransformer.h"
 
 @implementation DCDeclarationViewController
 
@@ -67,6 +68,7 @@
     DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
     cell.categoryLabel.text = category.name;
     cell.categoryIconView.image = category.icon;
+    cell.totalValueLabel.text = [[DCValueTransformer new] transformedValue:category.totalValue];
     return cell;
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02370A7919AFA172003A4B15 /* DCValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02370A7819AFA172003A4B15 /* DCValueTransformer.m */; };
 		025EE78C195B4AB1006531EF /* DCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78B195B4AB1006531EF /* DCCategory.m */; };
 		025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78F195B4F4E006531EF /* DCCategoryCell.m */; };
 		0272BCD41965DC9A0013CE24 /* DCValueCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0272BCD31965DC9A0013CE24 /* DCValueCellView.m */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02370A7719AFA172003A4B15 /* DCValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueTransformer.h; sourceTree = "<group>"; };
+		02370A7819AFA172003A4B15 /* DCValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValueTransformer.m; sourceTree = "<group>"; };
 		025EE78A195B4AB1006531EF /* DCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategory.h; sourceTree = "<group>"; };
 		025EE78B195B4AB1006531EF /* DCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategory.m; sourceTree = "<group>"; };
 		025EE78E195B4F4E006531EF /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */,
 				02912E0319609D4D007963E5 /* DCCategoryViewController.h */,
 				02912E0419609D4D007963E5 /* DCCategoryViewController.m */,
+				02370A7719AFA172003A4B15 /* DCValueTransformer.h */,
+				02370A7819AFA172003A4B15 /* DCValueTransformer.m */,
 				0272BCD21965DC9A0013CE24 /* DCValueCellView.h */,
 				0272BCD31965DC9A0013CE24 /* DCValueCellView.m */,
 				0272BCD51965E5240013CE24 /* DCVehicleTableViewCell.h */,
@@ -463,6 +468,7 @@
 				02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */,
 				025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
+				02370A7919AFA172003A4B15 /* DCValueTransformer.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
 				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,

@@ -10,4 +10,9 @@
 
 @implementation DCRealtyInfo
 
+- (NSString *)unit
+{
+    return @"кв. м.";
+}
+
 @end

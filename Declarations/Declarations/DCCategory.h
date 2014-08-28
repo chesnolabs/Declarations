@@ -14,6 +14,9 @@
 @property (strong) NSString *name;
 @property (strong) UIImage *icon;
 
+@property (readonly) NSString *unit;
+@property (strong, nonatomic) DCValue *totalValue;
+
 @property (readonly) NSArray *values; // DCValue
 
 - (void)addValue:(DCValue *)value;

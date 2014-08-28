@@ -96,7 +96,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8f-Q5-hZM">
-                                            <rect key="frame" x="83" y="25" width="204" height="21"/>
+                                            <rect key="frame" x="83" y="15" width="204" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="204" id="WlB-4W-tih"/>
@@ -105,10 +105,22 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9X-u0-nYb">
+                                            <rect key="frame" x="83" y="35" width="204" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="204" id="PxT-MP-KNH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ZeZ-Wv-zwA" secondAttribute="bottom" constant="5" id="0DO-kx-X6h"/>
-                                        <constraint firstItem="I8f-Q5-hZM" firstAttribute="centerY" secondItem="hZs-Lf-S8h" secondAttribute="centerY" id="NIY-iH-4fi"/>
+                                        <constraint firstAttribute="bottom" secondItem="Q9X-u0-nYb" secondAttribute="bottom" constant="15" id="7C8-MH-y9U"/>
+                                        <constraint firstItem="Q9X-u0-nYb" firstAttribute="leading" secondItem="I8f-Q5-hZM" secondAttribute="leading" id="N85-CP-AqB"/>
+                                        <constraint firstItem="I8f-Q5-hZM" firstAttribute="centerY" secondItem="hZs-Lf-S8h" secondAttribute="centerY" constant="-10" id="NIY-iH-4fi"/>
                                         <constraint firstItem="I8f-Q5-hZM" firstAttribute="leading" secondItem="ZeZ-Wv-zwA" secondAttribute="trailing" constant="8" symbolic="YES" id="YTZ-wf-RQ2"/>
                                         <constraint firstAttribute="trailing" secondItem="I8f-Q5-hZM" secondAttribute="trailing" id="csm-CH-9eC"/>
                                         <constraint firstItem="ZeZ-Wv-zwA" firstAttribute="top" secondItem="hZs-Lf-S8h" secondAttribute="top" constant="6" id="d00-Ug-5Dw"/>
@@ -117,6 +129,7 @@
                                 <connections>
                                     <outlet property="categoryIconView" destination="ZeZ-Wv-zwA" id="XPe-yV-6VO"/>
                                     <outlet property="categoryLabel" destination="I8f-Q5-hZM" id="Hzs-Op-17O"/>
+                                    <outlet property="totalValueLabel" destination="Q9X-u0-nYb" id="RzT-8s-r3K"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

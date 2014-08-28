@@ -10,5 +10,9 @@
 
 @implementation DCProfitInfo
 
+- (NSString *)unit
+{
+    return @"грн";
+}
 
 @end

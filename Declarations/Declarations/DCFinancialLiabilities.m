@@ -10,4 +10,9 @@
 
 @implementation DCFinancialLiabilities
 
+- (NSString *)unit
+{
+    return @"грн";
+}
+
 @end

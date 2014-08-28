@@ -7,10 +7,12 @@
 //
 
 #import "DCCategory.h"
+#import "DCVehicle.h"
 
 @interface DCCategory ()
 
 @property (strong) NSMutableArray *valuesStorage;
+@property (assign) CGFloat totalFloatValue;
 
 @end
 
@@ -37,7 +39,25 @@
     if (value)
     {
         [self.valuesStorage addObject:value];
+        
+        if ([value isKindOfClass:[DCVehicle class]])
+        {
+            self.totalFloatValue ++;
+        }
+        else
+        {
+            self.totalFloatValue += [[value value] floatValue];
+        }
     }
+}
+
+- (DCValue *)totalValue
+{
+    if (_totalValue == nil)
+    {
+        _totalValue = [[DCValue alloc] initWithCode:nil value:@( self.totalFloatValue ) title:nil units:self.unit];
+    }
+    return _totalValue;
 }
 
 @end
