@@ -27,13 +27,13 @@
     DCDataLoader *loader = [DCDataLoader new];
     [loader loadDataForPerson:self.deputy completionHandler:^(BOOL success)
      {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.indicator stopAnimating];
+             [self.indicator setHidden:YES];
+         });
+         
          if (success)
          {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 [self.indicator stopAnimating];
-                 [self.indicator setHidden:YES];
-             });
-             
              NSLog(@"Succeded in loading declaration %@", self.deputy.declarations);
              [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                  [self.tableView reloadData];
