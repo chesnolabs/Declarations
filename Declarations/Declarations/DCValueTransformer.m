@@ -56,6 +56,12 @@ static NSNumberFormatter *sDCAreaFormatter;
 	}
     NSString *transformedValue = nil;
     DCValue *declarationValue = (DCValue *)aValue;
+    
+    if ([declarationValue.value floatValue] == 0.0f)
+    {
+        return @"немає";
+    }
+    
     if ([declarationValue.units isEqualToString:@"грн"])
     {
         transformedValue = [self.currencyFormatter stringForObjectValue:declarationValue.value];

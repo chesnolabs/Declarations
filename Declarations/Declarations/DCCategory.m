@@ -31,6 +31,11 @@
     return self;
 }
 
+- (BOOL)isEmpty
+{
+    return self.values.count == 0 && self.familyValues.count == 0;
+}
+
 - (NSArray *)values
 {
     return self.valuesStorage;

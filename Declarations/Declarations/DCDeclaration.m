@@ -150,7 +150,7 @@ static NSString *const DCVehicleModelKey = @"model";
     if (!_vehicles)
     {
         _vehicles = [DCVehiclesInfo new];
-        _vehicles.name = @"Авто";
+        _vehicles.name = @"Транспорт";
         _vehicles.icon = [UIImage imageNamed:@"Vehicle"];
     }
     return _vehicles;

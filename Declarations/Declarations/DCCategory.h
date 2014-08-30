@@ -22,4 +22,6 @@
 
 - (void)addValue:(DCValue *)value;
 
+@property (readonly, getter = isEmpty) BOOL empty;
+
 @end
