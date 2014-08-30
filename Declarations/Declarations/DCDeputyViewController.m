@@ -15,6 +15,9 @@
 
 @property (strong) NSMutableArray *deputies;
 @property (strong) NSArray *displayedDeputies;
+
+@property (strong) NSMutableDictionary *sections;
+
 @property (strong) UIActivityIndicatorView *indicator;
 
 @end
@@ -25,19 +28,18 @@
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
     [loader loadPersonsWithCompletionHandler:^(NSArray *persons) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.indicator stopAnimating];
-            [self.indicator setHidden:YES];
-        });
-        
         if (persons != nil)
         {
             self.deputies = [persons mutableCopy];
         }
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.indicator stopAnimating];
+            [self.indicator setHidden:YES];
+            
             self.displayedDeputies = self.deputies;
+            [self generateSections];
+            
             [self.tableView reloadData];
         }];
     }];
@@ -77,19 +79,48 @@
     }
 }
 
-#pragma mark - Table View delegate
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)generateSections
 {
-    return self.displayedDeputies.count;
+    BOOL found;
+    
+    self.sections = [NSMutableDictionary new];
+    // Loop through the books and create our keys
+    for (DCPerson *person in self.displayedDeputies)
+    {
+        NSString *c = [person.lastName substringToIndex:1];
+        
+        found = NO;
+        
+        for (NSString *str in [self.sections allKeys])
+        {
+            if ([str isEqualToString:c])
+            {
+                found = YES;
+            }
+        }
+        
+        if (!found)
+        {
+            [self.sections setValue:[[NSMutableArray alloc] init] forKey:c];
+        }
+    }
+    
+    // Loop again and sort the books into their respective keys
+    for (DCPerson *person in self.displayedDeputies)
+    {
+        [[self.sections objectForKey:[person.lastName substringToIndex:1]] addObject:person];
+    }
 }
+
+#pragma mark - Table View delegatep
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DeputyIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-	DCPerson *deputy = (self.displayedDeputies)[indexPath.row];
+    DCPerson *deputy = [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+
     cell.textLabel.text = deputy.fullName;
     
     return cell;
@@ -98,6 +129,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self showDeclarationsForDeputy:self.displayedDeputies[indexPath.row]];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [self.sections.allKeys count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)][section];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+     return [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
 }
 
 #pragma mark - Search
@@ -119,6 +170,7 @@
         NSArray *filteredDeputies = [self.deputies filteredArrayUsingPredicate:filterPredicate];
         self.displayedDeputies = filteredDeputies;
     }
+    [self generateSections];
     [self.tableView reloadData];
 }
 
