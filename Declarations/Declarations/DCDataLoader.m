@@ -117,16 +117,21 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
         {
             [person removeAllDeclarations];
             NSError *parsingJSONError;
-            NSArray *jsonResponse = [NSJSONSerialization JSONObjectWithData:data
+            NSArray *declarationsJSON = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:NSJSONReadingAllowFragments
                                                                       error:&parsingJSONError];
             
-            if (jsonResponse != nil && jsonResponse.count)
+            if (declarationsJSON != nil && declarationsJSON.count)
             {
-                // just demo depends on future json structure
-                NSDictionary *declarationInfo = jsonResponse[0];
-                DCDeclaration *newDeclaration = [[DCDeclaration alloc] initWithJSONObject:declarationInfo];
-                [person addDeclaration:newDeclaration];
+                for (id declaration in declarationsJSON)
+                {
+                    if ([declaration isKindOfClass:[NSDictionary class]])
+                    {
+                        NSDictionary *declarationInfo = (NSDictionary *)declaration;
+                        DCDeclaration *newDeclaration = [[DCDeclaration alloc] initWithJSONObject:declarationInfo];
+                        [person addDeclaration:newDeclaration];
+                    }
+                }
                 
                 [self.delegate dataLoader:self didFinishLoadingPerson:person];
                 block(YES);
