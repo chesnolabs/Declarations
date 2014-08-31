@@ -92,41 +92,49 @@ static NSString *const DCVehicleModelKey = @"model";
             NSString *units = [obj objectForKey:MHDeclarationsUnitsKey];
             NSString *title = [obj objectForKey:DCDeclarationsTitleKey];
             
-            for (id currentItem in items)
+            if ([items isKindOfClass:[NSArray class]])
             {
-                id value = [currentItem objectForKey:MHDeclarationsValueKey];
-                
-                __block NSString *foundCategory = nil;
-                [self.table enumerateKeysAndObjectsUsingBlock:^(NSString *category, NSDictionary *range, BOOL *stop) {
-                    if ([key floatValue] >= [range[@"from"] floatValue] && [key floatValue] <= [range[@"to"] floatValue])
-                    {
-                        foundCategory = category;
-                        *stop = YES;
-                    }
-                }];
-                
-                if (foundCategory != nil)
+                for (id currentItem in items)
                 {
-                    DCValue *newValue = nil;
+                    id value = [currentItem objectForKey:MHDeclarationsValueKey];
                     
-                    if ([foundCategory isEqualToString:@"vehicles"])
+                    if (value == [NSNull null])
                     {
-                        newValue = [[DCVehicle alloc] initWithCode:key
-                                                              info:[currentItem objectForKey:DCVehicleInfoKey]
-                                                              mark:[currentItem objectForKey:DCVehicleMarkKey]
-                                                             model:[currentItem objectForKey:DCVehicleModelKey]
-                                                              year:[currentItem objectForKey:MHDeclarationYearKey]];
-                    }
-                    else
-                    {
-                        newValue = [[DCValue alloc] initWithCode:key
-                                                           value:value
-                                                           title:title
-                                                           units:units];
+                        value = @( 0 );
                     }
                     
-                    DCCategory *category = [self valueForKey:foundCategory];
-                    [category addValue:newValue];
+                    __block NSString *foundCategory = nil;
+                    [self.table enumerateKeysAndObjectsUsingBlock:^(NSString *category, NSDictionary *range, BOOL *stop) {
+                        if ([key floatValue] >= [range[@"from"] floatValue] && [key floatValue] <= [range[@"to"] floatValue])
+                        {
+                            foundCategory = category;
+                            *stop = YES;
+                        }
+                    }];
+                    
+                    if (foundCategory != nil)
+                    {
+                        DCValue *newValue = nil;
+                        
+                        if ([foundCategory isEqualToString:@"vehicles"])
+                        {
+                            newValue = [[DCVehicle alloc] initWithCode:key
+                                                                  info:[currentItem objectForKey:DCVehicleInfoKey]
+                                                                  mark:[currentItem objectForKey:DCVehicleMarkKey]
+                                                                 model:[currentItem objectForKey:DCVehicleModelKey]
+                                                                  year:[currentItem objectForKey:MHDeclarationYearKey]];
+                        }
+                        else
+                        {
+                            newValue = [[DCValue alloc] initWithCode:key
+                                                               value:value
+                                                               title:title
+                                                               units:units];
+                        }
+                        
+                        DCCategory *category = [self valueForKey:foundCategory];
+                        [category addValue:newValue];
+                    }
                 }
             }
         }
