@@ -112,14 +112,19 @@
     }
 }
 
-#pragma mark - Table View delegatep
+- (DCPerson *)deputyAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+}
+
+#pragma mark - Table View delegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DeputyIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    DCPerson *deputy = [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    DCPerson *deputy = [self deputyAtIndexPath:indexPath];
 
     cell.textLabel.text = deputy.fullName;
     
@@ -128,7 +133,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self showDeclarationsForDeputy:self.displayedDeputies[indexPath.row]];
+    [self showDeclarationsForDeputy:[self deputyAtIndexPath:indexPath]];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
