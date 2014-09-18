@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -51,26 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQB-o7-2BW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="-68"/>
-        </scene>
-        <!--Second View Controller - Кандидати-->
-        <scene sceneID="ot8-2e-RuS">
-            <objects>
-                <viewController title="Кандидати" id="QUy-BD-bpt" customClass="DCSecondViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FgS-U6-xeU"/>
-                        <viewControllerLayoutGuide type="bottom" id="stI-4g-hlJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Чиновники" image="candidates" id="Z7h-1E-pvt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="638" y="599"/>
+            <point key="canvasLocation" x="1154" y="-85"/>
         </scene>
         <!--Declaration View Controller - Декларація-->
         <scene sceneID="T3G-Yr-LmZ">
@@ -151,7 +132,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncl-jh-wUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="636"/>
+            <point key="canvasLocation" x="2043" y="180"/>
         </scene>
         <!--Declarations View Controller - Декларації-->
         <scene sceneID="VTP-MN-KE6">
@@ -193,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKl-a8-OJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-99"/>
+            <point key="canvasLocation" x="1601" y="180"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="EBa-wh-OHA">
@@ -324,7 +305,7 @@ Label</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jy-Y6-o4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="563"/>
+            <point key="canvasLocation" x="2456" y="180"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -339,7 +320,7 @@ Label</string>
                     </tabBar>
                     <connections>
                         <segue destination="L2A-t8-oYV" kind="relationship" relationship="viewControllers" id="JzC-q4-HaK"/>
-                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="gMU-Rv-quX" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -365,6 +346,74 @@ Label</string>
             </objects>
             <point key="canvasLocation" x="638" y="-85"/>
         </scene>
+        <!--Navigation Controller - Чиновники-->
+        <scene sceneID="6hv-ND-0eR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMU-Rv-quX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Чиновники" image="candidates" id="Z7h-1E-pvt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMo-tA-xxL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eBB-0I-1Ve" kind="relationship" relationship="rootViewController" id="yub-4G-Bzw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9j-9a-zrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="599"/>
+        </scene>
+        <!--Officials View Controller - Депутати-->
+        <scene sceneID="kcu-DN-vUW">
+            <objects>
+                <tableViewController title="Депутати" id="eBB-0I-1Ve" customClass="DCOfficialsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VkL-Yh-HDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Пошук" id="nMo-OI-0fX">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="eBB-0I-1Ve" id="2pg-T3-xOM"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeputyIdentifier" textLabel="kPj-eF-jf9" style="IBUITableViewCellStyleDefault" id="giy-DF-LGf">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giy-DF-LGf" id="AzX-79-J4O">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPj-eF-jf9">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eBB-0I-1Ve" id="fUC-0e-Qbp"/>
+                            <outlet property="delegate" destination="eBB-0I-1Ve" id="fzG-fY-1YQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Усі депутати" id="x0I-ss-CPw"/>
+                    <connections>
+                        <segue destination="jEL-eF-0hv" kind="push" identifier="DeclarationSegue" id="NFG-wW-PiH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v46-j6-xla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="585"/>
+        </scene>
     </scenes>
     <resources>
         <image name="candidates" width="30" height="30"/>
@@ -376,4 +425,7 @@ Label</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="NFG-wW-PiH"/>
+    </inferredMetricsTieBreakers>
 </document>

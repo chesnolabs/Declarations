@@ -27,21 +27,26 @@
 - (void)loadPersons
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
-    [loader loadPersonsWithCompletionHandler:^(NSArray *persons) {
-        if (persons != nil)
-        {
-            self.deputies = [persons mutableCopy];
-        }
+    [loader loadDeputiesWithCompletionHandler:^(NSArray *persons) {
+        [self processedPersons:persons];
+    }];
+}
+
+- (void)processedPersons:(NSArray *)persons
+{
+    if (persons != nil)
+    {
+        self.deputies = [persons mutableCopy];
+    }
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.indicator stopAnimating];
+        [self.indicator setHidden:YES];
         
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [self.indicator stopAnimating];
-            [self.indicator setHidden:YES];
-            
-            self.displayedDeputies = self.deputies;
-            [self generateSections];
-            
-            [self.tableView reloadData];
-        }];
+        self.displayedDeputies = self.deputies;
+        [self generateSections];
+        
+        [self.tableView reloadData];
     }];
 }
 

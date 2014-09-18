@@ -12,11 +12,11 @@
 @interface DCDataLoader ()
 
 @property (strong) NSURLSession *session;
-@property (strong) NSURL *chesnoLink;
 
 @end
 
-static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
+static NSString *const DCOfficialsLink = @"http://chesno.org/persons/json/officials/";
+static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputies/7/";
 
 @implementation DCDataLoader
 
@@ -34,8 +34,6 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         
         _session = [NSURLSession sessionWithConfiguration:configuration];
-        _chesnoLink = [NSURL URLWithString:DCChesnoLink];
-        
         _delegate = delegate;
     }
     
@@ -44,13 +42,23 @@ static NSString *const DCChesnoLink = @"http://chesno.org/persons/json";
 
 #pragma mark -
 
-- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons)) completionHandler
+- (void)loadDeputiesWithCompletionHandler:(void (^)(NSArray *persons))completionHandler
 {
-    NSLog(@"Start loading data from %@", self.chesnoLink);
+    [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCDeputiesLink]];
+}
+
+- (void)loadOfficialsWithCompletionHandler:(void (^)(NSArray *persons))completionHandler
+{
+    [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCOfficialsLink]];
+}
+
+- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons))completionHandler url:(NSURL *)url
+{
+    NSLog(@"Start loading data from %@", url);
 
     NSMutableArray *loadedPersons = [NSMutableArray array];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.chesnoLink];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // setup request for all persons here
     
     __block id jsonResponse = nil;

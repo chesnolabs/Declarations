@@ -21,7 +21,6 @@
 		02B2660C192A89B40091C2EA /* DCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B2660B192A89B40091C2EA /* DCAppDelegate.m */; };
 		02B2660F192A89B40091C2EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B2660D192A89B40091C2EA /* Main.storyboard */; };
 		02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26611192A89B40091C2EA /* DCDeputyViewController.m */; };
-		02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26614192A89B40091C2EA /* DCSecondViewController.m */; };
 		02B26617192A89B40091C2EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02B26616192A89B40091C2EA /* Images.xcassets */; };
 		02B2661E192A89B40091C2EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2661D192A89B40091C2EA /* XCTest.framework */; };
 		02B2661F192A89B40091C2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FB192A89B40091C2EA /* Foundation.framework */; };
@@ -47,6 +46,7 @@
 		B87BAF3F1965DFCE00964A70 /* DCVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BAF3E1965DFCE00964A70 /* DCVehicle.m */; };
 		B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */ = {isa = PBXBuildFile; fileRef = B88CCE47192E5F2800DE6960 /* declaration_example.dat */; };
 		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
+		B8FB3FA519CB4B1700B0731C /* DCOfficialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +85,6 @@
 		02B2660E192A89B40091C2EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02B26610192A89B40091C2EA /* DCDeputyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCDeputyViewController.h; sourceTree = "<group>"; };
 		02B26611192A89B40091C2EA /* DCDeputyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCDeputyViewController.m; sourceTree = "<group>"; };
-		02B26613192A89B40091C2EA /* DCSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCSecondViewController.h; sourceTree = "<group>"; };
-		02B26614192A89B40091C2EA /* DCSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCSecondViewController.m; sourceTree = "<group>"; };
 		02B26616192A89B40091C2EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02B2661C192A89B40091C2EA /* DeclarationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclarationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2661D192A89B40091C2EA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -130,6 +128,8 @@
 		B88CCE47192E5F2800DE6960 /* declaration_example.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = declaration_example.dat; sourceTree = "<group>"; };
 		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
+		B8FB3FA319CB4B1700B0731C /* DCOfficialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOfficialsViewController.h; sourceTree = "<group>"; };
+		B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCOfficialsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +162,10 @@
 			isa = PBXGroup;
 			children = (
 				025EE78E195B4F4E006531EF /* DCCategoryCell.h */,
+				0272BCD21965DC9A0013CE24 /* DCValueCellView.h */,
+				0272BCD31965DC9A0013CE24 /* DCValueCellView.m */,
+				0272BCD51965E5240013CE24 /* DCVehicleTableViewCell.h */,
+				0272BCD61965E5240013CE24 /* DCVehicleTableViewCell.m */,
 				025EE78F195B4F4E006531EF /* DCCategoryCell.m */,
 			);
 			name = Views;
@@ -205,30 +209,16 @@
 			isa = PBXGroup;
 			children = (
 				02B26661192F59DA0091C2EA /* Declarations.entitlements */,
+				B8FB3FA619CB4C1200B0731C /* View Controllers */,
 				025EE78D195B4EF5006531EF /* Views */,
 				B8ABC29D192B6E5A00BAD5E5 /* Connection */,
 				02B26633192A912E0091C2EA /* Model */,
 				02B26602192A89B40091C2EA /* Supporting Files */,
+				B8FB3FA719CB4C7800B0731C /* Value Transformers */,
 				02B2660A192A89B40091C2EA /* DCAppDelegate.h */,
 				02B2660B192A89B40091C2EA /* DCAppDelegate.m */,
 				02B2660D192A89B40091C2EA /* Main.storyboard */,
 				02B26616192A89B40091C2EA /* Images.xcassets */,
-				02B26610192A89B40091C2EA /* DCDeputyViewController.h */,
-				02B26611192A89B40091C2EA /* DCDeputyViewController.m */,
-				02B26613192A89B40091C2EA /* DCSecondViewController.h */,
-				02B26614192A89B40091C2EA /* DCSecondViewController.m */,
-				02B26641192B823F0091C2EA /* DCDeclarationViewController.h */,
-				02B26642192B823F0091C2EA /* DCDeclarationViewController.m */,
-				02B2663A192B6FE30091C2EA /* DCDeclarationsViewController.h */,
-				02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */,
-				02912E0319609D4D007963E5 /* DCCategoryViewController.h */,
-				02912E0419609D4D007963E5 /* DCCategoryViewController.m */,
-				02370A7719AFA172003A4B15 /* DCValueTransformer.h */,
-				02370A7819AFA172003A4B15 /* DCValueTransformer.m */,
-				0272BCD21965DC9A0013CE24 /* DCValueCellView.h */,
-				0272BCD31965DC9A0013CE24 /* DCValueCellView.m */,
-				0272BCD51965E5240013CE24 /* DCVehicleTableViewCell.h */,
-				0272BCD61965E5240013CE24 /* DCVehicleTableViewCell.m */,
 			);
 			path = Declarations;
 			sourceTree = "<group>";
@@ -337,6 +327,32 @@
 				B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */,
 			);
 			name = Connection;
+			sourceTree = "<group>";
+		};
+		B8FB3FA619CB4C1200B0731C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				02B26641192B823F0091C2EA /* DCDeclarationViewController.h */,
+				02B26642192B823F0091C2EA /* DCDeclarationViewController.m */,
+				02B2663A192B6FE30091C2EA /* DCDeclarationsViewController.h */,
+				02B2663B192B6FE30091C2EA /* DCDeclarationsViewController.m */,
+				02912E0319609D4D007963E5 /* DCCategoryViewController.h */,
+				02912E0419609D4D007963E5 /* DCCategoryViewController.m */,
+				02B26610192A89B40091C2EA /* DCDeputyViewController.h */,
+				02B26611192A89B40091C2EA /* DCDeputyViewController.m */,
+				B8FB3FA319CB4B1700B0731C /* DCOfficialsViewController.h */,
+				B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B8FB3FA719CB4C7800B0731C /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				02370A7719AFA172003A4B15 /* DCValueTransformer.h */,
+				02370A7819AFA172003A4B15 /* DCValueTransformer.m */,
+			);
+			name = "Value Transformers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,7 +476,6 @@
 				02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */,
 				B87BAF3F1965DFCE00964A70 /* DCVehicle.m in Sources */,
 				02B26608192A89B40091C2EA /* main.m in Sources */,
-				02B26615192A89B40091C2EA /* DCSecondViewController.m in Sources */,
 				02B26612192A89B40091C2EA /* DCDeputyViewController.m in Sources */,
 				B864A1F41935008D00FA5D58 /* DCRealtyInfo.m in Sources */,
 				B864A1F71935025500FA5D58 /* DCVehiclesInfo.m in Sources */,
@@ -472,6 +487,7 @@
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
 				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,
+				B8FB3FA519CB4B1700B0731C /* DCOfficialsViewController.m in Sources */,
 				0272BCD71965E5240013CE24 /* DCVehicleTableViewCell.m in Sources */,
 				025EE78C195B4AB1006531EF /* DCCategory.m in Sources */,
 				0272BCD41965DC9A0013CE24 /* DCValueCellView.m in Sources */,
