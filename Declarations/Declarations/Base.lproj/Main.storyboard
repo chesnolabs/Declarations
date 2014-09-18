@@ -437,7 +437,7 @@
         <image name="candidates" width="30" height="30"/>
         <image name="deputies" width="30" height="30"/>
     </resources>
-    <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.30196079611778259" green="0.16862745583057404" blue="0.43529415130615234" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
