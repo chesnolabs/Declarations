@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -192,42 +192,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fea-ln-rhs">
-                                            <rect key="frame" x="20" y="3" width="280" height="31"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label LabelLabel LabelLabel LabelLabel LabelLabel LabelLabel Label" lineBreakMode="characterWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fea-ln-rhs">
+                                            <rect key="frame" x="20" y="3" width="280" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="31" id="SBt-4r-XMG"/>
                                                 <constraint firstAttribute="width" constant="280" id="whK-XM-Yhm"/>
                                             </constraints>
-                                            <attributedString key="attributedText">
-                                                <fragment>
-                                                    <string key="content">Label
-Label</string>
-                                                    <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                        <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWn-dz-ttO">
-                                            <rect key="frame" x="109" y="38" width="191" height="21"/>
+                                            <rect key="frame" x="109" y="36" width="191" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="JRy-72-79n"/>
                                                 <constraint firstAttribute="width" constant="191" id="gzi-P5-42y"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="RWn-dz-ttO" firstAttribute="top" secondItem="fea-ln-rhs" secondAttribute="bottom" constant="3" id="0Sy-Kx-a53"/>
                                         <constraint firstItem="fea-ln-rhs" firstAttribute="top" secondItem="hIn-hR-nlB" secondAttribute="top" constant="3" id="NXE-8y-iUT"/>
                                         <constraint firstItem="fea-ln-rhs" firstAttribute="leading" secondItem="hIn-hR-nlB" secondAttribute="leading" constant="20" symbolic="YES" id="aEF-Zi-SuG"/>
                                         <constraint firstAttribute="trailing" secondItem="RWn-dz-ttO" secondAttribute="trailing" constant="20" symbolic="YES" id="kNZ-qh-X6O"/>
-                                        <constraint firstAttribute="bottom" secondItem="RWn-dz-ttO" secondAttribute="bottom" id="lSH-KA-nfT"/>
+                                        <constraint firstAttribute="bottom" secondItem="RWn-dz-ttO" secondAttribute="bottom" constant="2" id="lSH-KA-nfT"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
