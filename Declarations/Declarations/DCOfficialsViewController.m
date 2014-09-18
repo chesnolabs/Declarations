@@ -7,7 +7,16 @@
 //
 
 #import "DCOfficialsViewController.h"
+#import "DCDataLoader.h"
 
 @implementation DCOfficialsViewController
+
+- (void)loadPersons
+{
+    DCDataLoader *loader = [[DCDataLoader alloc] init];
+    [loader loadOfficialsWithCompletionHandler:^(NSArray *persons) {
+        [super processedPersons:persons];
+    }];
+}
 
 @end
