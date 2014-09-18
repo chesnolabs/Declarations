@@ -227,8 +227,34 @@
                                     <outlet property="valueLabel" destination="RWn-dz-ttO" id="XAZ-Yk-QaI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarValueIdentifier" id="4Gd-IU-Md5" customClass="DCVehicleTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmptyValueIdentifier" id="eVn-zF-vQh">
                                 <rect key="frame" x="0.0" y="146" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eVn-zF-vQh" id="lXG-Rq-dLH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="немає" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="6" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="U2F-vM-5vx">
+                                            <rect key="frame" x="20" y="3" width="280" height="53"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="xTC-F4-0Op"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="U2F-vM-5vx" firstAttribute="leading" secondItem="lXG-Rq-dLH" secondAttribute="leading" constant="20" symbolic="YES" id="22b-q2-JxR"/>
+                                        <constraint firstAttribute="centerX" secondItem="U2F-vM-5vx" secondAttribute="centerX" id="4BH-Mw-ZVK"/>
+                                        <constraint firstItem="U2F-vM-5vx" firstAttribute="top" secondItem="lXG-Rq-dLH" secondAttribute="top" constant="3" id="LXL-IL-VGm"/>
+                                        <constraint firstAttribute="centerY" secondItem="U2F-vM-5vx" secondAttribute="centerY" id="Tbo-wl-hAH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarValueIdentifier" id="4Gd-IU-Md5" customClass="DCVehicleTableViewCell">
+                                <rect key="frame" x="0.0" y="206" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Gd-IU-Md5" id="wUR-oV-uKa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>

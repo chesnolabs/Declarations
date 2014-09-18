@@ -19,6 +19,8 @@
 
 @end
 
+const static CGFloat kDCDefaultRowHeight = 60.0;
+
 @implementation DCCategoryViewController
 
 - (void)viewDidLoad
@@ -33,10 +35,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCValue *value = (indexPath.section == 0 ? self.category.values : self.category.familyValues)[indexPath.row];
+    NSArray *array = (indexPath.section == 0 ? self.category.values : self.category.familyValues);
+    
+    if (array.count == 0)
+    {
+        return kDCDefaultRowHeight;
+    }
+    
+    DCValue *value = array[indexPath.row];
     if (!value.title || [value isKindOfClass:[DCVehicle class]])
     {
-        return 60;
+        return kDCDefaultRowHeight;
     }
     
     static NSString *CellIdentifier = @"ValueIdentifier";
@@ -56,7 +65,7 @@
         requiredHeight = CGRectMake(0, 0, cell.titleLabel.frame.size.width, requiredHeight.size.height);
     }
     
-    return 60.0 + requiredHeight.size.height;
+    return kDCDefaultRowHeight + requiredHeight.size.height;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -71,12 +80,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return section == 0 ? self.category.values.count : self.category.familyValues.count;
+    NSInteger numberOfRows = section == 0 ? self.category.values.count : self.category.familyValues.count;
+    return numberOfRows ?: 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCValue *value = (indexPath.section == 0 ? self.category.values : self.category.familyValues)[indexPath.row];
+    NSArray *array = (indexPath.section == 0 ? self.category.values : self.category.familyValues);
+    
+    if (array.count == 0)
+    {
+        static NSString *CellIdentifier = @"EmptyValueIdentifier";
+        return [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    }
+    
+    DCValue *value = array[indexPath.row];
     
     if ([value isKindOfClass:[DCVehicle class]])
     {
