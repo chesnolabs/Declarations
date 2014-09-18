@@ -15,7 +15,7 @@
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
     [loader loadOfficialsWithCompletionHandler:^(NSArray *persons) {
-        [super processedPersons:persons];
+        [super processPersons:persons];
     }];
 }
 

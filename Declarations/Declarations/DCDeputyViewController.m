@@ -28,11 +28,11 @@
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
     [loader loadDeputiesWithCompletionHandler:^(NSArray *persons) {
-        [self processedPersons:persons];
+        [self processPersons:persons];
     }];
 }
 
-- (void)processedPersons:(NSArray *)persons
+- (void)processPersons:(NSArray *)persons
 {
     if (persons != nil)
     {

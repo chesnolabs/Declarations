@@ -11,6 +11,6 @@
 @interface DCDeputyViewController : UITableViewController
 
 - (void)loadPersons;
-- (void)processedPersons:(NSArray *)persons;
+- (void)processPersons:(NSArray *)persons;
 
 @end
