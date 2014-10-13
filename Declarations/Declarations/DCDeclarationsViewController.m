@@ -95,7 +95,7 @@
 {
     if ([segue.identifier isEqualToString:@"DeclarationDataSegue"])
     {
-        ((DCDeclarationViewController *)segue.destinationViewController).declaration = self.deputy.declarations[[self.tableView indexPathForCell:sender].row];
+        ((DCDeclarationViewController *)segue.destinationViewController).declaration = (DCDeclaration *)sender;
     }
 }
 
