@@ -616,6 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
@@ -625,7 +626,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d6d75536-2863-415b-b434-a8ef40d6ef47";
+				PROVISIONING_PROFILE = "e7131563-ceef-4b33-8c39-1303d1bf1b79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -636,6 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
@@ -645,7 +647,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d6d75536-2863-415b-b434-a8ef40d6ef47";
+				PROVISIONING_PROFILE = "e7131563-ceef-4b33-8c39-1303d1bf1b79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -729,6 +731,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
@@ -738,7 +741,7 @@
 					"$(PROJECT_DIR)/Declarations/TestFlight",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d6d75536-2863-415b-b434-a8ef40d6ef47";
+				PROVISIONING_PROFILE = "e7131563-ceef-4b33-8c39-1303d1bf1b79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;
