@@ -36,6 +36,7 @@
 		02B26655192F4FF40091C2EA /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 02B2664F192F4FF40091C2EA /* release_notes.md */; };
 		02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02B2665A192F51330091C2EA /* AdHoc.xcconfig */; };
 		02B26660192F545E0091C2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2665F192F545E0091C2EA /* libz.dylib */; };
+		02E2679719EC6AA2000CCB90 /* DCAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E2679619EC6AA2000CCB90 /* DCAboutViewController.m */; };
 		B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */; };
 		B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBC71932923600E12D30 /* DCProfitInfo.m */; };
 		B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B82FDBCA193292DC00E12D30 /* DCValue.m */; };
@@ -109,6 +110,8 @@
 		02B2665D192F54430091C2EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		02B2665F192F545E0091C2EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		02B26661192F59DA0091C2EA /* Declarations.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Declarations.entitlements; sourceTree = "<group>"; };
+		02E2679519EC6AA2000CCB90 /* DCAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAboutViewController.h; sourceTree = "<group>"; };
+		02E2679619EC6AA2000CCB90 /* DCAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAboutViewController.m; sourceTree = "<group>"; };
 		B82FDBC2193291B500E12D30 /* DCGeneralInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCGeneralInfo.h; sourceTree = "<group>"; };
 		B82FDBC3193291B500E12D30 /* DCGeneralInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCGeneralInfo.m; sourceTree = "<group>"; };
 		B82FDBC61932923600E12D30 /* DCProfitInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCProfitInfo.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				02B26611192A89B40091C2EA /* DCDeputyViewController.m */,
 				B8FB3FA319CB4B1700B0731C /* DCOfficialsViewController.h */,
 				B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */,
+				02E2679519EC6AA2000CCB90 /* DCAboutViewController.h */,
+				02E2679619EC6AA2000CCB90 /* DCAboutViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */,
 				B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */,
 				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
+				02E2679719EC6AA2000CCB90 /* DCAboutViewController.m in Sources */,
 				B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */,
 				B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */,
 				02B2663C192B6FE30091C2EA /* DCDeclarationsViewController.m in Sources */,
