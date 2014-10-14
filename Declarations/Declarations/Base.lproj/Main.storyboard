@@ -349,65 +349,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69X-R6-nqA">
-                                <rect key="frame" x="11" y="92" width="299" height="364.5"/>
+                                <rect key="frame" x="11" y="144" width="299" height="327"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Додаток Сhesno Declarations дозволяє швидко проглянути задекларовані майно та статки чиновників і народних депутатів України у електронній формі та завантажити pdf-копію декларації.
 
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="©">
-                                        <attributes>
-                                            <color key="NSColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="13" name="AppleColorEmoji"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <font key="NSOriginalFont" size="13" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="2014 ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="13" name="ArialMT"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Рух ЧЕСНО">
-                                        <attributes>
-                                            <color key="NSColor" red="0.062745098039215685" green="0.23529411764705882" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="13" name="ArialMT"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <url key="NSLink" string="http://chesno.org/"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                            <color key="NSUnderlineColor" red="0.062745098039215685" green="0.23529411764705882" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cgo
+
 </string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -501,52 +448,74 @@ Cg
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-D5-znZ">
-                                <rect key="frame" x="11" y="9" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="T2g-g3-3mc"/>
-                                    <constraint firstAttribute="width" constant="60" id="ixW-uN-ZBk"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7p-t4-R7r">
-                                <rect key="frame" x="175" y="46" width="135" height="30"/>
+                                <rect key="frame" x="93" y="106" width="135" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="wUO-K9-Hc1"/>
+                                    <constraint firstAttribute="width" constant="135" id="Ln3-Wy-5g9"/>
                                 </constraints>
                                 <state key="normal" title="Зворотній зв'язок ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="feedBackAciton:" destination="Ok0-VE-PYI" eventType="touchUpInside" id="hTH-Vs-YOx"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declarations" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLI-fj-Hz0">
-                                <rect key="frame" x="79" y="28" width="96" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v. 1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye9-9G-13B">
-                                <rect key="frame" x="79" y="48" width="23" height="11"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chesnoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3E0-D5-znZ">
+                                <rect key="frame" x="72" y="13" width="176" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="a0Q-4l-hhQ"/>
+                                    <constraint firstAttribute="width" constant="176" id="mdD-sq-lPX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-Yb-Itn">
+                                <rect key="frame" x="11" y="479" width="111.5" height="15"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="©2014 ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                            <integer key="NSLigature" value="0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="26.450000762939453"/>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Рух ЧЕСНО">
+                                        <attributes>
+                                            <color key="NSColor" red="0.062745098039215685" green="0.23529411764705882" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="13" name="ArialMT"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="http://chesno.org/"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="26.450000762939453"/>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.062745098039215685" green="0.23529411764705882" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                            <color key="NSUnderlineColor" red="0.062745098039215685" green="0.23529411764705882" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3E0-D5-znZ" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="-11" id="6rh-CS-loC"/>
-                            <constraint firstItem="Ye9-9G-13B" firstAttribute="top" secondItem="KLI-fj-Hz0" secondAttribute="bottom" constant="-0.5" id="9ad-er-e6X"/>
-                            <constraint firstItem="T7p-t4-R7r" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="26" id="KU6-mI-IAx"/>
-                            <constraint firstItem="KLI-fj-Hz0" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="8" id="PmU-6j-QIu"/>
-                            <constraint firstItem="KLI-fj-Hz0" firstAttribute="leading" secondItem="3E0-D5-znZ" secondAttribute="trailing" constant="8" id="ZId-Bw-MTT"/>
-                            <constraint firstItem="Ye9-9G-13B" firstAttribute="leading" secondItem="3E0-D5-znZ" secondAttribute="trailing" constant="8" id="aO9-EL-eb6"/>
-                            <constraint firstItem="69X-R6-nqA" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="72" id="cqa-DT-Odg"/>
-                            <constraint firstAttribute="centerX" secondItem="69X-R6-nqA" secondAttribute="centerX" id="iCa-6k-2Zv"/>
-                            <constraint firstItem="3E0-D5-znZ" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leadingMargin" constant="-5" id="lcR-JF-27F"/>
-                            <constraint firstItem="69X-R6-nqA" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leadingMargin" constant="-5" id="nhh-Du-XLu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="69X-R6-nqA" secondAttribute="trailing" constant="-6" id="nvg-ty-7YS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="T7p-t4-R7r" secondAttribute="trailing" constant="-6" id="yzv-RI-aiR"/>
+                            <constraint firstAttribute="centerX" secondItem="3E0-D5-znZ" secondAttribute="centerX" id="6HX-Ca-GHM"/>
+                            <constraint firstItem="3E0-D5-znZ" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="-7" id="6rh-CS-loC"/>
+                            <constraint firstItem="69X-R6-nqA" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leadingMargin" constant="-5" id="Bvl-Ff-cFN"/>
+                            <constraint firstItem="hMh-Yb-Itn" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leadingMargin" constant="-5" id="Cg0-hw-aFr"/>
+                            <constraint firstItem="69X-R6-nqA" firstAttribute="top" secondItem="T7p-t4-R7r" secondAttribute="bottom" constant="8" id="DLx-SW-dtl"/>
+                            <constraint firstItem="T7p-t4-R7r" firstAttribute="top" secondItem="3E0-D5-znZ" secondAttribute="bottom" constant="5" id="EDG-FG-shd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="69X-R6-nqA" secondAttribute="trailing" constant="-6" id="FGu-dU-Ai0"/>
+                            <constraint firstAttribute="centerX" secondItem="T7p-t4-R7r" secondAttribute="centerX" id="cf5-hJ-4Ez"/>
+                            <constraint firstItem="hMh-Yb-Itn" firstAttribute="top" secondItem="69X-R6-nqA" secondAttribute="bottom" constant="8" id="nkN-TH-LWQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Інфо" id="EhL-Jg-Q9z"/>
+                    <tabBarItem key="tabBarItem" title="Інфо" image="AboutIcon" id="EhL-Jg-Q9z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Diy-zG-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -641,8 +610,9 @@ Cg
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="AboutIcon" width="30" height="30"/>
         <image name="candidates" width="30" height="30"/>
+        <image name="chesnoLogo" width="176" height="88"/>
         <image name="deputies" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

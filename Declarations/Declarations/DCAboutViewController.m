@@ -24,6 +24,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)feedBackAciton:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:gudvadym@gmail.com"]];
+}
+
 /*
 #pragma mark - Navigation
 
