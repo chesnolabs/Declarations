@@ -58,31 +58,47 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.declaration.categories.count;
+    return self.declaration.categories.count + ((self.declaration.originalURL != nil) ? 1 : 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCCategoryCell *cell = (DCCategoryCell *)[tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
-    cell.backgroundColor = [UIColor clearColor];
-    DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
-    if (category.isEmpty)
+    if (self.declaration.originalURL != nil && indexPath.row == self.declaration.categories.count)
     {
-        cell.userInteractionEnabled = NO;
-        cell.alpha = 0.5f;
-        cell.categoryLabel.enabled = NO;
-        cell.categoryIconView.alpha = 0.5f;
+        return [tableView dequeueReusableCellWithIdentifier:@"OriginalPDFCell"];
     }
-    cell.categoryLabel.text = category.name;
-    cell.categoryIconView.image = category.icon;
-    cell.totalValueLabel.text = [[DCValueTransformer new] transformedValue:category.totalValue];
-    return cell;
+    else
+    {
+        DCCategoryCell *cell = (DCCategoryCell *)[tableView dequeueReusableCellWithIdentifier:@"CategoryCell"];
+        cell.backgroundColor = [UIColor clearColor];
+        DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
+        if (category.isEmpty)
+        {
+            cell.userInteractionEnabled = NO;
+            cell.alpha = 0.5f;
+            cell.categoryLabel.enabled = NO;
+            cell.categoryIconView.alpha = 0.5f;
+        }
+        cell.categoryLabel.text = category.name;
+        cell.categoryIconView.image = category.icon;
+        cell.totalValueLabel.text = [[DCValueTransformer new] transformedValue:category.totalValue];
+        return cell;
+    }
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
-    [self performSegueWithIdentifier:@"DeclarationCategorySegue" sender:category];
+    if (self.declaration.originalURL != nil && indexPath.row == self.declaration.categories.count)
+    {
+        [[UIApplication sharedApplication] openURL:self.declaration.originalURL];
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }
+    else
+    {
+        DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
+        [self performSegueWithIdentifier:@"DeclarationCategorySegue" sender:category];
+    }
 }
 
 #pragma mark - Navigation
