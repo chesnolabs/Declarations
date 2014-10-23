@@ -26,10 +26,49 @@
 
 - (void)loadPersons
 {
+    if (!self.indicator)
+    {
+        self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
+                          CGRectMake(self.view.bounds.size.width / 2.0 - 12,
+                                     self.view.bounds.size.height / 2.0 - 12,
+                                     24, 24)];
+        self.indicator.color = [UIColor blackColor];
+        
+        [self.view addSubview:self.indicator];
+    }
+    
+    [self.indicator startAnimating];
+    self.indicator.hidden = NO;
+
+    
     DCDataLoader *loader = [[DCDataLoader alloc] init];
-    [loader loadDeputiesWithCompletionHandler:^(NSArray *persons) {
-        [self processPersons:persons];
+    [loader loadDeputiesWithCompletionHandler:^(NSArray *persons, NSError *error) {
+        if (persons != nil)
+        {
+            [self processPersons:persons];
+        }
+        else
+        {
+            [self showError:error];
+        }
     }];
+}
+
+- (void)showError:(NSError *)error
+{
+    UIAlertView *alert = [UIAlertView new];
+    alert.title = @"Неможливо завантажити данні.";
+    alert.message = @"Можливо відсутній Інтернет. Спробуйте пізніше.";
+    alert.delegate = self;
+    [alert addButtonWithTitle:@"Спробувати"];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [alert show];
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self loadPersons];
 }
 
 - (void)processPersons:(NSArray *)persons
@@ -37,32 +76,25 @@
     if (persons != nil)
     {
         self.deputies = [persons mutableCopy];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.indicator stopAnimating];
+            [self.indicator setHidden:YES];
+            
+            self.displayedDeputies = self.deputies;
+            [self generateSections];
+            
+            [self.tableView reloadData];
+        }];
     }
-    
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self.indicator stopAnimating];
-        [self.indicator setHidden:YES];
-        
-        self.displayedDeputies = self.deputies;
-        [self generateSections];
-        
-        [self.tableView reloadData];
-    }];
+    else
+    {
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self loadPersons];
-    
-    self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
-                                          CGRectMake(self.view.bounds.size.width / 2.0 - 12,
-                                                     self.view.bounds.size.width / 2.0 - 12,
-                                                     24, 24)];
-    self.indicator.color = [UIColor blackColor];
-    
-    [self.indicator startAnimating];
-    [self.view addSubview:self.indicator];
 }
 
 - (void)didReceiveMemoryWarning

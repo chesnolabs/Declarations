@@ -42,17 +42,17 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
 
 #pragma mark -
 
-- (void)loadDeputiesWithCompletionHandler:(void (^)(NSArray *persons))completionHandler
+- (void)loadDeputiesWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler
 {
     [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCDeputiesLink]];
 }
 
-- (void)loadOfficialsWithCompletionHandler:(void (^)(NSArray *persons))completionHandler
+- (void)loadOfficialsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler
 {
     [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCOfficialsLink]];
 }
 
-- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons))completionHandler url:(NSURL *)url
+- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler url:(NSURL *)url
 {
     NSLog(@"Start loading data from %@", url);
 
@@ -93,7 +93,7 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
                     
                     if (completionHandler != nil)
                     {
-                        completionHandler(loadedPersons);
+                        completionHandler(loadedPersons, nil);
                     }
                 }
                 else
@@ -104,7 +104,11 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
         }
         else
         {
-            NSLog(@"Error performing request %@", error);
+            NSLog(@"Error performing request: %@", error);
+            if (completionHandler != nil)
+            {
+                completionHandler(nil, error);
+            }
         }
     }];
     

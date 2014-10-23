@@ -14,8 +14,15 @@
 - (void)loadPersons
 {
     DCDataLoader *loader = [[DCDataLoader alloc] init];
-    [loader loadOfficialsWithCompletionHandler:^(NSArray *persons) {
-        [super processPersons:persons];
+    [loader loadOfficialsWithCompletionHandler:^(NSArray *persons, NSError *error) {
+        if (persons != nil)
+        {
+            [self processPersons:persons];
+        }
+        else
+        {
+            [self showError:error];
+        }
     }];
 }
 

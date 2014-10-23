@@ -12,5 +12,6 @@
 
 - (void)loadPersons;
 - (void)processPersons:(NSArray *)persons;
+- (void)showError:(NSError *)error;
 
 @end
