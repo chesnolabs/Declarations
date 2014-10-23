@@ -24,9 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)feedBackAciton:(id)sender
+- (IBAction)feedBackAction:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:gudvadym@gmail.com"]];
+}
+
+- (IBAction)clickLogoAction:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://chesno.org"]];
 }
 
 /*
