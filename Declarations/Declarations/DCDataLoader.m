@@ -69,11 +69,27 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
     {
         if (error == nil && data != nil)
         {
+            NSCachedURLResponse *cachedResponse = [[NSCachedURLResponse alloc] initWithResponse:response
+                                                                                           data:data];
+            
+            [[NSURLCache sharedURLCache] removeCachedResponseForRequest:request];
+            [[NSURLCache sharedURLCache] storeCachedResponse:cachedResponse
+                                                  forRequest:request];
+        }
+        else
+        {
+            NSLog(@"Error performing request: %@", error);
+            
+            NSCachedURLResponse *cachedResponce = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
+            data = [cachedResponce data];
+        }
+        
+        if (data != nil)
+        {
             NSError *parsingJSONError = nil;
             jsonResponse = [NSJSONSerialization JSONObjectWithData:data
                                                            options:NSJSONReadingAllowFragments
                                                              error:&parsingJSONError];
-
             if (jsonResponse == nil)
             {
                 NSLog(@"Error parsing json server response %@ data: %@", parsingJSONError, stringData);
@@ -104,7 +120,6 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
         }
         else
         {
-            NSLog(@"Error performing request: %@", error);
             if (completionHandler != nil)
             {
                 completionHandler(nil, error);
@@ -126,6 +141,21 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         if (error == nil && data != nil)
+        {
+            NSCachedURLResponse *cachedResponse = [[NSCachedURLResponse alloc] initWithResponse:response
+                                                                                           data:data];
+            
+            [[NSURLCache sharedURLCache] removeCachedResponseForRequest:request];
+            [[NSURLCache sharedURLCache] storeCachedResponse:cachedResponse
+                                                  forRequest:request];
+        }
+        else
+        {
+            NSCachedURLResponse *cachedResponce = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
+            data = [cachedResponce data];
+        }
+        
+        if (data != nil)
         {
             [person removeAllDeclarations];
             NSError *parsingJSONError;
