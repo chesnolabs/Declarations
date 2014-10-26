@@ -479,7 +479,7 @@
         <scene sceneID="6hv-ND-0eR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMU-Rv-quX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Чиновники" image="candidates" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Чиновники" image="official" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dMo-tA-xxL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -545,10 +545,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AboutIcon" width="30" height="30"/>
-        <image name="candidates" width="30" height="30"/>
+        <image name="AboutIcon" width="29" height="29"/>
         <image name="chesnoLogo" width="176" height="88"/>
-        <image name="deputies" width="30" height="30"/>
+        <image name="deputies" width="29" height="29"/>
+        <image name="official" width="29" height="29"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
