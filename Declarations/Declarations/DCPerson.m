@@ -11,20 +11,11 @@
 @interface DCPerson ()
 
 @property (strong) NSMutableArray *declarationsStorage;
+@property (strong) NSMutableArray *parliamentsStorage;
 
 @end
 
 @implementation DCPerson
-
-- (id)init
-{
-    self = [super init];
-    if (self)
-    {
-        self.declarationsStorage = [NSMutableArray array];
-    }
-    return self;
-}
 
 - (id)initWithJSONObject:(NSDictionary *)jsonObject
 {
@@ -32,6 +23,8 @@
     if (self)
     {
         self.declarationsStorage = [NSMutableArray array];
+        self.parliamentsStorage = [NSMutableArray array];
+
         id lastNameJson = jsonObject[@"last_name"];
         if (lastNameJson == [NSNull null] || ![lastNameJson isKindOfClass:[NSString class]] || ([lastNameJson isKindOfClass:[NSString class]] && ((NSString *)lastNameJson).length == 0))
         {
@@ -49,6 +42,9 @@
             self.middleName = jsonObject[@"second_name"];
         }
         self.identifier = [jsonObject[@"id"] unsignedIntegerValue];
+        
+        // TODO: Get from JSON
+        [self.parliamentsStorage addObject:@( self.identifier % 2 == 0 ? 8 : 7 )];
     }
     return self;
 }
@@ -69,6 +65,11 @@
 - (NSArray *)declarations
 {
     return self.declarationsStorage;
+}
+
+- (NSArray *)parliaments
+{
+    return self.parliamentsStorage;
 }
 
 - (void)addDeclaration:(DCDeclaration *)aDeclaration

@@ -12,6 +12,9 @@
 		025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78F195B4F4E006531EF /* DCCategoryCell.m */; };
 		0272BCD41965DC9A0013CE24 /* DCValueCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0272BCD31965DC9A0013CE24 /* DCValueCellView.m */; };
 		0272BCD71965E5240013CE24 /* DCVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0272BCD61965E5240013CE24 /* DCVehicleTableViewCell.m */; };
+		028C888F1A5D3787004C7EFC /* DCParliament.m in Sources */ = {isa = PBXBuildFile; fileRef = 028C888E1A5D3787004C7EFC /* DCParliament.m */; };
+		028C88931A5D4815004C7EFC /* LGMRomanNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 028C88911A5D4815004C7EFC /* LGMRomanNumber.m */; };
+		028C88961A5D511C004C7EFC /* DCParliamentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 028C88951A5D511C004C7EFC /* DCParliamentFactory.m */; };
 		02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02912E0419609D4D007963E5 /* DCCategoryViewController.m */; };
 		02B265FC192A89B40091C2EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FB192A89B40091C2EA /* Foundation.framework */; };
 		02B265FE192A89B40091C2EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FD192A89B40091C2EA /* CoreGraphics.framework */; };
@@ -71,6 +74,12 @@
 		0272BCD31965DC9A0013CE24 /* DCValueCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValueCellView.m; sourceTree = "<group>"; };
 		0272BCD51965E5240013CE24 /* DCVehicleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehicleTableViewCell.h; sourceTree = "<group>"; };
 		0272BCD61965E5240013CE24 /* DCVehicleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehicleTableViewCell.m; sourceTree = "<group>"; };
+		028C888D1A5D3787004C7EFC /* DCParliament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParliament.h; sourceTree = "<group>"; };
+		028C888E1A5D3787004C7EFC /* DCParliament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParliament.m; sourceTree = "<group>"; };
+		028C88911A5D4815004C7EFC /* LGMRomanNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGMRomanNumber.m; sourceTree = "<group>"; };
+		028C88921A5D4815004C7EFC /* LGMRomanNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGMRomanNumber.h; sourceTree = "<group>"; };
+		028C88941A5D511C004C7EFC /* DCParliamentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCParliamentFactory.h; sourceTree = "<group>"; };
+		028C88951A5D511C004C7EFC /* DCParliamentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCParliamentFactory.m; sourceTree = "<group>"; };
 		02912E0319609D4D007963E5 /* DCCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryViewController.h; sourceTree = "<group>"; };
 		02912E0419609D4D007963E5 /* DCCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryViewController.m; sourceTree = "<group>"; };
 		02B265F8192A89B40091C2EA /* Declarations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Declarations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +183,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		028C88901A5D47ED004C7EFC /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				028C88911A5D4815004C7EFC /* LGMRomanNumber.m */,
+				028C88921A5D4815004C7EFC /* LGMRomanNumber.h */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 		02B265EF192A89B40091C2EA = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +247,7 @@
 		02B26602192A89B40091C2EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				028C88901A5D47ED004C7EFC /* Additions */,
 				02B26603192A89B40091C2EA /* Declarations-Info.plist */,
 				02B26604192A89B40091C2EA /* InfoPlist.strings */,
 				02B26607192A89B40091C2EA /* main.m */,
@@ -262,6 +281,10 @@
 				B82FDBC51932920500E12D30 /* Declaration */,
 				02B26634192A913C0091C2EA /* DCPerson.h */,
 				02B26635192A913C0091C2EA /* DCPerson.m */,
+				028C888D1A5D3787004C7EFC /* DCParliament.h */,
+				028C888E1A5D3787004C7EFC /* DCParliament.m */,
+				028C88941A5D511C004C7EFC /* DCParliamentFactory.h */,
+				028C88951A5D511C004C7EFC /* DCParliamentFactory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -474,8 +497,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				02912E0519609D4D007963E5 /* DCCategoryViewController.m in Sources */,
+				028C88931A5D4815004C7EFC /* LGMRomanNumber.m in Sources */,
 				B82FDBCB193292DC00E12D30 /* DCValue.m in Sources */,
 				02B26636192A913C0091C2EA /* DCPerson.m in Sources */,
+				028C888F1A5D3787004C7EFC /* DCParliament.m in Sources */,
 				02E2679719EC6AA2000CCB90 /* DCAboutViewController.m in Sources */,
 				B82FDBC81932923600E12D30 /* DCProfitInfo.m in Sources */,
 				B82FDBC4193291B500E12D30 /* DCGeneralInfo.m in Sources */,
@@ -490,6 +515,7 @@
 				025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */,
 				02B26639192B4DDE0091C2EA /* DCDeclaration.m in Sources */,
 				02370A7919AFA172003A4B15 /* DCValueTransformer.m in Sources */,
+				028C88961A5D511C004C7EFC /* DCParliamentFactory.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
 				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,

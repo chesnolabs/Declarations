@@ -19,6 +19,7 @@
 @property (strong) NSString *middleName;
 @property (assign) NSUInteger identifier;
 
+@property (readonly) NSArray *parliaments;
 @property (readonly) NSArray *declarations;
 
 - (void)addDeclaration:(DCDeclaration *)aDeclaration;

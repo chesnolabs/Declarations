@@ -8,17 +8,24 @@
 
 #import "DCDeputyViewController.h"
 #import "DCPerson.h"
+#import "DCParliament.h"
+#import "DCParliamentFactory.h"
 #import "DCDeclarationsViewController.h"
 #import "DCDataLoader.h"
+#import "LGMRomanNumber.h"
 
 @interface DCDeputyViewController ()
 
 @property (strong) NSMutableArray *deputies;
+@property (strong) NSArray *parliaments;
 @property (strong) NSArray *displayedDeputies;
 
 @property (strong) NSMutableDictionary *sections;
 
 @property (strong) UIActivityIndicatorView *indicator;
+
+@property (assign, getter=isGroupedByParliaments) BOOL groupedByParliaments;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -81,6 +88,19 @@
             [self.indicator setHidden:YES];
             
             self.displayedDeputies = self.deputies;
+
+            DCParliamentFactory *parliamentFactory = [DCParliamentFactory sharedInstance];
+            for (DCPerson *deputy in self.deputies)
+            {
+                for (NSNumber *convocationNumber in deputy.parliaments)
+                {
+                    DCParliament *parliament = [parliamentFactory parliamentWithConvocation:convocationNumber.integerValue];
+                    [parliament addDeputy:deputy];
+                }
+            }
+            
+            self.parliaments = parliamentFactory.parliaments;
+            
             [self generateSections];
             
             [self.tableView reloadData];
@@ -158,14 +178,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"DeputyIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    DCPerson *deputy = [self deputyAtIndexPath:indexPath];
+    if (self.isGroupedByParliaments)
+    {
+        static NSString *CellIdentifier = @"ParliamentIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        DCParliament *parliament = self.parliaments[indexPath.row];
+        
+        cell.textLabel.text = [NSString stringWithFormat:@"Парламент %@ скликання", [LGMRomanNumber romanFromArabic:parliament.convocationNumber]];
+        
+        return cell;
+    }
+    else
+    {
+        static NSString *CellIdentifier = @"DeputyIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        
+        DCPerson *deputy = [self deputyAtIndexPath:indexPath];
 
-    cell.textLabel.text = deputy.fullName;
-    
-    return cell;
+        cell.textLabel.text = deputy.fullName;
+
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -175,22 +209,22 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.sections.allKeys count];
+    return self.isGroupedByParliaments ? 1 : [self.sections.allKeys count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)][section];
+    return self.isGroupedByParliaments ? nil : [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)][section];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return self.isGroupedByParliaments ? nil : [self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-     return [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
+    return self.isGroupedByParliaments ? self.parliaments.count : [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
 }
 
 #pragma mark - Search
@@ -213,6 +247,16 @@
         self.displayedDeputies = filteredDeputies;
     }
     [self generateSections];
+    [self.tableView reloadData];
+}
+
+- (IBAction)changeGroupingAction:(UISegmentedControl *)sender
+{
+    self.groupedByParliaments = sender.selectedSegmentIndex == 1;
+    [self.searchBar removeFromSuperview];//.hidden = self.isGroupedByParliaments;
+    CGRect frame = self.tableView.frame;
+    frame.size.height += self.searchBar.frame.size.height;
+    self.tableView.frame = frame;
     [self.tableView reloadData];
 }
 
