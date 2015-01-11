@@ -463,10 +463,10 @@
                                     <action selector="feedBackAction:" destination="Ok0-VE-PYI" eventType="touchUpInside" id="dD0-nt-2Om"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-Yb-Itn">
-                                <rect key="frame" x="210" y="473" width="100" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-Yb-Itn">
+                                <rect key="frame" x="209" y="473" width="100" height="13"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="©2014 Рух Чесно">
+                                    <fragment content="©2015 Рух Чесно">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="11" name="Menlo-Regular"/>
