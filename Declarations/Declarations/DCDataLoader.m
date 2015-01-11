@@ -134,7 +134,6 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
 {
     NSString *urlString = [NSString stringWithFormat:@"http://chesno.org/person/json/declarations_for/%lu", (unsigned long)person.identifier];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-                             //[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"declaration_example" ofType:@"dat"]]];
     
     // setup request for defined person
     NSURLSessionDataTask *personInfoTask = [self.session dataTaskWithRequest:request

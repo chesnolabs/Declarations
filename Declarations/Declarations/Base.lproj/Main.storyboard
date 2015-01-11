@@ -6,6 +6,40 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Deputies Grouping View Controller-->
+        <scene sceneID="Vqb-ft-Oc7">
+            <objects>
+                <tableViewController id="G38-NH-Rec" customClass="DCDeputiesGroupingViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="b7Y-Tc-w4G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ParliamentIdentifier" textLabel="27u-s4-mvr" style="IBUITableViewCellStyleDefault" id="JhR-L9-KQb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JhR-L9-KQb" id="m1s-5F-nG3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27u-s4-mvr">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="G38-NH-Rec" id="3FK-aS-fTq"/>
+                            <outlet property="delegate" destination="G38-NH-Rec" id="Z8V-Ht-a5N"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okk-ge-Wy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="-431"/>
+        </scene>
         <!--Депутати-->
         <scene sceneID="t0h-P9-dRf">
             <objects>
@@ -63,19 +97,12 @@
                             <outlet property="delegate" destination="BxU-oD-0aJ" id="k22-tl-JMu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1j2-yX-tOX">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="q3D-yB-n4D">
-                            <rect key="frame" x="49.5" y="7" width="221" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Усі депутати"/>
-                                <segment title="По скликанням"/>
-                            </segments>
+                    <navigationItem key="navigationItem" title="Депутати" id="1j2-yX-tOX">
+                        <barButtonItem key="leftBarButtonItem" title="Скликання" id="z7z-9B-khB">
                             <connections>
-                                <action selector="changeGroupingAction:" destination="BxU-oD-0aJ" eventType="valueChanged" id="Kh5-dA-s2t"/>
+                                <segue destination="G38-NH-Rec" kind="modal" identifier="ChangeGroupingSeague" id="4fm-Bw-juG"/>
                             </connections>
-                        </segmentedControl>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="qZa-xt-pOz" id="Gfz-Np-Og0"/>
@@ -499,12 +526,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BxU-oD-0aJ" kind="relationship" relationship="rootViewController" id="XMW-kU-6sQ"/>
+                        <segue destination="BxU-oD-0aJ" kind="relationship" relationship="rootViewController" id="YTa-dr-OCT"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIV-ex-MF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-85"/>
+            <point key="canvasLocation" x="598" y="-109"/>
         </scene>
         <!--Чиновники-->
         <scene sceneID="6hv-ND-0eR">

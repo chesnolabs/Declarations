@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02370A7919AFA172003A4B15 /* DCValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02370A7819AFA172003A4B15 /* DCValueTransformer.m */; };
+		0238F2731A62A70F00EAFC9B /* DCDeputiesGroupingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0238F2721A62A70F00EAFC9B /* DCDeputiesGroupingViewController.m */; };
 		025EE78C195B4AB1006531EF /* DCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78B195B4AB1006531EF /* DCCategory.m */; };
 		025EE790195B4F4E006531EF /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025EE78F195B4F4E006531EF /* DCCategoryCell.m */; };
 		0272BCD41965DC9A0013CE24 /* DCValueCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0272BCD31965DC9A0013CE24 /* DCValueCellView.m */; };
@@ -48,7 +49,6 @@
 		B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FA193504B100FA5D58 /* DCDepositsInfo.m */; };
 		B864A1FE193508CE00FA5D58 /* DCFinancialLiabilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */; };
 		B87BAF3F1965DFCE00964A70 /* DCVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BAF3E1965DFCE00964A70 /* DCVehicle.m */; };
-		B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */ = {isa = PBXBuildFile; fileRef = B88CCE47192E5F2800DE6960 /* declaration_example.dat */; };
 		B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */; };
 		B8FB3FA519CB4B1700B0731C /* DCOfficialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +66,8 @@
 /* Begin PBXFileReference section */
 		02370A7719AFA172003A4B15 /* DCValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueTransformer.h; sourceTree = "<group>"; };
 		02370A7819AFA172003A4B15 /* DCValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValueTransformer.m; sourceTree = "<group>"; };
+		0238F2711A62A70F00EAFC9B /* DCDeputiesGroupingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeputiesGroupingViewController.h; sourceTree = "<group>"; };
+		0238F2721A62A70F00EAFC9B /* DCDeputiesGroupingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeputiesGroupingViewController.m; sourceTree = "<group>"; };
 		025EE78A195B4AB1006531EF /* DCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategory.h; sourceTree = "<group>"; };
 		025EE78B195B4AB1006531EF /* DCCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategory.m; sourceTree = "<group>"; };
 		025EE78E195B4F4E006531EF /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
@@ -137,7 +139,6 @@
 		B864A1FD193508CE00FA5D58 /* DCFinancialLiabilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFinancialLiabilities.m; sourceTree = "<group>"; };
 		B87BAF3D1965DFCE00964A70 /* DCVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehicle.h; sourceTree = "<group>"; };
 		B87BAF3E1965DFCE00964A70 /* DCVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehicle.m; sourceTree = "<group>"; };
-		B88CCE47192E5F2800DE6960 /* declaration_example.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = declaration_example.dat; sourceTree = "<group>"; };
 		B8ABC29E192B727400BAD5E5 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B8ABC29F192B727400BAD5E5 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
 		B8FB3FA319CB4B1700B0731C /* DCOfficialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOfficialsViewController.h; sourceTree = "<group>"; };
@@ -252,7 +253,6 @@
 				02B26604192A89B40091C2EA /* InfoPlist.strings */,
 				02B26607192A89B40091C2EA /* main.m */,
 				02B26609192A89B40091C2EA /* Declarations-Prefix.pch */,
-				B88CCE47192E5F2800DE6960 /* declaration_example.dat */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -370,6 +370,8 @@
 				B8FB3FA419CB4B1700B0731C /* DCOfficialsViewController.m */,
 				02E2679519EC6AA2000CCB90 /* DCAboutViewController.h */,
 				02E2679619EC6AA2000CCB90 /* DCAboutViewController.m */,
+				0238F2711A62A70F00EAFC9B /* DCDeputiesGroupingViewController.h */,
+				0238F2721A62A70F00EAFC9B /* DCDeputiesGroupingViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -477,7 +479,6 @@
 				02B2660F192A89B40091C2EA /* Main.storyboard in Resources */,
 				02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */,
 				02B26655192F4FF40091C2EA /* release_notes.md in Resources */,
-				B88CCE48192E5F2800DE6960 /* declaration_example.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +518,7 @@
 				02370A7919AFA172003A4B15 /* DCValueTransformer.m in Sources */,
 				028C88961A5D511C004C7EFC /* DCParliamentFactory.m in Sources */,
 				B8ABC2A0192B727400BAD5E5 /* DCDataLoader.m in Sources */,
+				0238F2731A62A70F00EAFC9B /* DCDeputiesGroupingViewController.m in Sources */,
 				B864A1FB193504B100FA5D58 /* DCDepositsInfo.m in Sources */,
 				02B26643192B823F0091C2EA /* DCDeclarationViewController.m in Sources */,
 				B8FB3FA519CB4B1700B0731C /* DCOfficialsViewController.m in Sources */,

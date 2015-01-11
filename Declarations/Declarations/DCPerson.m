@@ -7,6 +7,7 @@
 //
 
 #import "DCPerson.h"
+#import "DCParliamentFactory.h"
 
 @interface DCPerson ()
 
@@ -44,7 +45,15 @@
         self.identifier = [jsonObject[@"id"] unsignedIntegerValue];
         
         // TODO: Get from JSON
-        [self.parliamentsStorage addObject:@( self.identifier % 2 == 0 ? 8 : 7 )];
+        NSArray *parliamentsNumbers = @[ @( self.identifier % 2 == 0 ? 8 : 7 ) ];
+        
+        for (NSNumber *convocationNumber in parliamentsNumbers)
+        {
+            DCParliament *parliament = [[DCParliamentFactory sharedInstance] parliamentWithConvocation:convocationNumber.integerValue];
+            [parliament addDeputy:self];
+            [self.parliamentsStorage addObject:parliament];
+        }
+
     }
     return self;
 }

@@ -14,4 +14,6 @@
 - (void)processPersons:(NSArray *)persons;
 - (void)showError:(NSError *)error;
 
+- (void)updateWithSelectedParliament:(NSArray *)selectedParliaments;
+
 @end

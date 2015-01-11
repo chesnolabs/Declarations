@@ -56,11 +56,11 @@ static NSArray *_romanNumeralValues;
 + (NSString *)romanFromArabic:(NSUInteger)arabic {
     
     if (arabic <= 0u) {
-        [NSException raise:@"Invalid decimal value" format:@"*** -[LGMRomanNumber romanFromArabic:]: arabic value %d should be greater than 0", arabic];
+        [NSException raise:@"Invalid decimal value" format:@"*** -[LGMRomanNumber romanFromArabic:]: arabic value %lu should be greater than 0", (unsigned long)arabic];
     }
     
     if (arabic > 4000u) {
-        [NSException raise:@"Invalid decimal value" format:@"*** -[LGMRomanNumber romanFromArabic:]: arabic value %d should be smaller or equals to 4000", arabic];
+        [NSException raise:@"Invalid decimal value" format:@"*** -[LGMRomanNumber romanFromArabic:]: arabic value %lu should be smaller or equals to 4000", (unsigned long)arabic];
     }
     
     NSMutableArray *result = [NSMutableArray array];
