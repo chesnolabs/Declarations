@@ -13,6 +13,8 @@
 
 - (void)loadPersons
 {
+    [self showSpinIndicator];
+    
     DCDataLoader *loader = [[DCDataLoader alloc] init];
     [loader loadOfficialsWithCompletionHandler:^(NSArray *persons, NSError *error) {
         if (persons != nil)

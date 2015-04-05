@@ -16,7 +16,7 @@
 @end
 
 static NSString *const DCOfficialsLink = @"http://chesno.org/persons/json/officials/";
-static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputies/7/";
+static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputies/all/";
 static NSString *const DCCandidatesLink = @"http://chesno.org/persons/json/presidentialcandidate/";
 
 @implementation DCDataLoader

@@ -34,6 +34,23 @@
 
 - (void)loadPersons
 {
+    [self showSpinIndicator];
+    
+    DCDataLoader *loader = [[DCDataLoader alloc] init];
+    [loader loadDeputiesWithCompletionHandler:^(NSArray *persons, NSError *error) {
+        if (persons != nil)
+        {
+            [self processPersons:persons];
+        }
+        else
+        {
+            [self showError:error];
+        }
+    }];
+}
+
+- (void)showSpinIndicator
+{
     if (!self.indicator)
     {
         self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
@@ -47,19 +64,6 @@
     
     [self.indicator startAnimating];
     self.indicator.hidden = NO;
-
-    
-    DCDataLoader *loader = [[DCDataLoader alloc] init];
-    [loader loadDeputiesWithCompletionHandler:^(NSArray *persons, NSError *error) {
-        if (persons != nil)
-        {
-            [self processPersons:persons];
-        }
-        else
-        {
-            [self showError:error];
-        }
-    }];
 }
 
 - (void)showError:(NSError *)error

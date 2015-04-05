@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DCCandidateViewController.h"
+#import "DCDeputiesGroupingViewController.h"
 
-@interface DCCandidateGroupingViewController : UITableViewController
+@interface DCCandidateGroupingViewController : DCDeputiesGroupingViewController
 
-@property NSMutableArray *selectedParliaments;
-@property (weak) DCCandidateViewController *deputyViewController;
 
 @end

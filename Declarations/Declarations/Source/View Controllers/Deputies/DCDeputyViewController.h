@@ -12,6 +12,7 @@
 
 - (void)loadPersons;
 - (void)processPersons:(NSArray *)persons;
+- (void)showSpinIndicator;
 - (void)showError:(NSError *)error;
 
 - (void)updateWithSelectedParliament:(NSArray *)selectedParliaments;

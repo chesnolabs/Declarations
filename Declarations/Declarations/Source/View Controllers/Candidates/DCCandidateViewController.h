@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DCDeputyViewController.h"
 
-@interface DCCandidateViewController : UITableViewController
-
-- (void)loadPersons;
-- (void)processPersons:(NSArray *)persons;
-- (void)showError:(NSError *)error;
-
-- (void)updateWithSelectedParliament:(NSArray *)selectedParliaments;
+@interface DCCandidateViewController : DCDeputyViewController
 
 @end
