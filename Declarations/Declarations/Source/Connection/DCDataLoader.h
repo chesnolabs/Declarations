@@ -19,6 +19,7 @@
 
 - (void)loadDeputiesWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler;
 - (void)loadOfficialsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler;
+- (void)loadCandidatesWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler;
 
 - (void)loadDataForPerson:(DCPerson *)person completionHandler:(void (^)(BOOL success))block;
 

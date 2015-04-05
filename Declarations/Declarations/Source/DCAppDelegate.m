@@ -7,7 +7,7 @@
 //
 
 #import "DCAppDelegate.h"
-#import "TestFlight/TestFlight.h"
+#import "../TestFlight/TestFlight.h"
 
 #define MACROSTRING(x) #x
 #define NSSTRING_MACRO(x) @MACROSTRING(x)

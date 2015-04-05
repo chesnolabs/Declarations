@@ -17,6 +17,7 @@
 
 static NSString *const DCOfficialsLink = @"http://chesno.org/persons/json/officials/";
 static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputies/7/";
+static NSString *const DCCandidatesLink = @"http://chesno.org/persons/json/presidentialcandidate/";
 
 @implementation DCDataLoader
 
@@ -50,6 +51,11 @@ static NSString *const DCDeputiesLink = @"http://chesno.org/persons/json/deputie
 - (void)loadOfficialsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler
 {
     [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCOfficialsLink]];
+}
+
+- (void)loadCandidatesWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler
+{
+    [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCCandidatesLink]];
 }
 
 - (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler url:(NSURL *)url

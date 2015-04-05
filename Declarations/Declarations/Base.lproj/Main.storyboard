@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +38,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okk-ge-Wy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="-431"/>
+            <point key="canvasLocation" x="1601" y="-483"/>
+        </scene>
+        <!--Категорії кандидатів-->
+        <scene sceneID="QmN-zn-0Gv">
+            <objects>
+                <tableViewController title="Категорії кандидатів" id="2qi-bE-uBn" customClass="DCCandidateGroupingViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M6P-0W-Kdk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ParliamentIdentifier" textLabel="jar-5j-CDW" style="IBUITableViewCellStyleDefault" id="d7u-2D-KAf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7u-2D-KAf" id="Mn2-FS-Am8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jar-5j-CDW">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2qi-bE-uBn" id="3i7-gO-wPn"/>
+                            <outlet property="delegate" destination="2qi-bE-uBn" id="zzl-QF-Rgs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLg-4S-hJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="1202"/>
         </scene>
         <!--Депутати-->
         <scene sceneID="t0h-P9-dRf">
@@ -111,7 +145,80 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQB-o7-2BW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-85"/>
+            <point key="canvasLocation" x="915" y="-162"/>
+        </scene>
+        <!--Кандидати-->
+        <scene sceneID="IgG-UO-bMI">
+            <objects>
+                <tableViewController title="Кандидати" id="BUg-nx-2mJ" customClass="DCCandidateViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mpG-Ur-T5d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Пошук" id="N7Q-l8-FqU">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="BUg-nx-2mJ" id="98J-fu-XrR"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeputyIdentifier" textLabel="BPW-4c-6Ow" style="IBUITableViewCellStyleDefault" id="LYv-Pf-JIp">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYv-Pf-JIp" id="2me-nX-GDA">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BPW-4c-6Ow">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParliamentIdentifier" textLabel="r0m-Xm-B5O" style="IBUITableViewCellStyleDefault" id="z14-6W-GTf">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z14-6W-GTf" id="ebE-VQ-Ay1">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r0m-Xm-B5O">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BUg-nx-2mJ" id="dfc-ed-Cev"/>
+                            <outlet property="delegate" destination="BUg-nx-2mJ" id="2El-ym-tju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Кандидати" id="TO3-by-Cdk">
+                        <barButtonItem key="leftBarButtonItem" title="Категорія" id="zWy-VX-mqE">
+                            <connections>
+                                <segue destination="2qi-bE-uBn" kind="modal" id="bbJ-qh-59c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="N7Q-l8-FqU" id="1LU-pC-STe"/>
+                        <segue destination="jEL-eF-0hv" kind="push" identifier="DeclarationSegue" id="it1-kE-GoR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAd-NJ-agk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="1202"/>
         </scene>
         <!--Декларація-->
         <scene sceneID="T3G-Yr-LmZ">
@@ -407,12 +514,13 @@
                     <connections>
                         <segue destination="L2A-t8-oYV" kind="relationship" relationship="viewControllers" id="JzC-q4-HaK"/>
                         <segue destination="gMU-Rv-quX" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="LkR-n1-xqS" kind="relationship" relationship="viewControllers" id="mhq-bG-A4v"/>
                         <segue destination="Ok0-VE-PYI" kind="relationship" relationship="viewControllers" id="G2I-Xi-U3e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-145" y="90"/>
         </scene>
         <!--Інфо-->
         <scene sceneID="eMm-Om-uHD">
@@ -512,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Diy-zG-BEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="507" y="28"/>
+            <point key="canvasLocation" x="-282" y="844"/>
         </scene>
         <!--Депутати-->
         <scene sceneID="wtT-sF-n6D">
@@ -531,7 +639,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIV-ex-MF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-109"/>
+            <point key="canvasLocation" x="395" y="-162"/>
         </scene>
         <!--Чиновники-->
         <scene sceneID="6hv-ND-0eR">
@@ -550,7 +658,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9j-9a-zrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="599"/>
+            <point key="canvasLocation" x="395" y="529"/>
+        </scene>
+        <!--Кандидати-->
+        <scene sceneID="PAc-ca-kad">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LkR-n1-xqS" userLabel="Кандидати" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Кандидати" image="official" id="r5N-Q1-Cii"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDh-Bl-6va">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BUg-nx-2mJ" kind="relationship" relationship="rootViewController" id="9Z1-dV-Cdh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0S-o5-dfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="1202"/>
         </scene>
         <!--Депутати-->
         <scene sceneID="kcu-DN-vUW">
@@ -599,7 +726,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v46-j6-xla" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="585"/>
+            <point key="canvasLocation" x="915" y="529"/>
         </scene>
     </scenes>
     <resources>
@@ -614,7 +741,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Fre-5s-Nkx"/>
+        <segue reference="it1-kE-GoR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.30196079611778259" green="0.16862745583057404" blue="0.43529415130615234" alpha="1" colorSpace="deviceRGB"/>
 </document>
