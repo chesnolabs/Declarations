@@ -233,7 +233,7 @@
         NSArray *filteredDeputies = self.deputies;
         if ([filterString length] != 0)
         {
-            NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"self.fullName CONTAINS[cd]", filterString];
+            NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"self.fullName CONTAINS[cd] %@", filterString];
             filteredDeputies = [self.deputies filteredArrayUsingPredicate:filterPredicate];
         }
         
