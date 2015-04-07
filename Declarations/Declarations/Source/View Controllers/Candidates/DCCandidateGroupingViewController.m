@@ -10,6 +10,13 @@
 
 @implementation DCCandidateGroupingViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.navigationItem.title = @"Категорії";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ParliamentIdentifier";

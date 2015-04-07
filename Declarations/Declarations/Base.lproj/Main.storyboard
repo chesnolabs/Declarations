@@ -664,7 +664,7 @@
         <scene sceneID="PAc-ca-kad">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LkR-n1-xqS" userLabel="Кандидати" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Кандидати" image="official" id="r5N-Q1-Cii"/>
+                    <tabBarItem key="tabBarItem" title="Кандидати" image="candidates" id="r5N-Q1-Cii"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vDh-Bl-6va">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -731,6 +731,7 @@
     </scenes>
     <resources>
         <image name="AboutIcon" width="29" height="29"/>
+        <image name="candidates" width="29" height="29"/>
         <image name="chesnoLogo" width="176" height="88"/>
         <image name="deputies" width="29" height="29"/>
         <image name="official" width="29" height="29"/>
