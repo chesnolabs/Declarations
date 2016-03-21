@@ -44,7 +44,9 @@
         }
         else
         {
-            [self showError:error];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showError:error];
+            });
         }
     }];
 }
@@ -68,19 +70,20 @@
 
 - (void)showError:(NSError *)error
 {
-    UIAlertView *alert = [UIAlertView new];
-    alert.title = @"Неможливо завантажити данні.";
-    alert.message = @"Можливо відсутній Інтернет. Спробуйте пізніше.";
-    alert.delegate = self;
-    [alert addButtonWithTitle:@"Спробувати"];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [alert show];
-    }];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    [self loadPersons];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Неможливо завантажити данні."
+                                                                   message:@"Можливо відсутній Інтернет. Спробуйте пізніше."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Спробувати"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        [self loadPersons];
+                                        
+                                        [alert dismissViewControllerAnimated:NO completion:nil];
+                                    }];
+    [alert addAction:dismissAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)processPersons:(NSArray *)persons
