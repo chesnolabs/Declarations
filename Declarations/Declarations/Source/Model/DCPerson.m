@@ -42,7 +42,9 @@
         {
             self.middleName = jsonObject[@"second_name"];
         }
-        self.identifier = [jsonObject[@"id"] unsignedIntegerValue];
+        
+        NSString *stringIdentifier = jsonObject[@"id"];
+        self.identifier = [stringIdentifier integerValue];
         
         // TODO: Get from JSON
         NSArray *parliamentsNumbers = @[ @( self.identifier % 2 == 0 ? 8 : 7 ) ];

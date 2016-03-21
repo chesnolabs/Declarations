@@ -17,10 +17,8 @@
 		02B26620192A89B40091C2EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B265FF192A89B40091C2EA /* UIKit.framework */; };
 		02B26628192A89B40091C2EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B26626192A89B40091C2EA /* InfoPlist.strings */; };
 		02B2662A192A89B40091C2EA /* DeclarationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B26629192A89B40091C2EA /* DeclarationsTests.m */; };
-		02B26653192F4FF40091C2EA /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2664D192F4FF40091C2EA /* libTestFlight.a */; };
 		02B26654192F4FF40091C2EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 02B2664E192F4FF40091C2EA /* README.md */; };
 		02B26655192F4FF40091C2EA /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 02B2664F192F4FF40091C2EA /* release_notes.md */; };
-		02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 02B2665A192F51330091C2EA /* AdHoc.xcconfig */; };
 		02B26660192F545E0091C2EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B2665F192F545E0091C2EA /* libz.dylib */; };
 		B817AD541AD16E450066E325 /* LGMRomanNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD101AD16E450066E325 /* LGMRomanNumber.m */; };
 		B817AD561AD16E450066E325 /* DCAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD151AD16E450066E325 /* DCAboutViewController.m */; };
@@ -50,11 +48,7 @@
 		B817AD6E1AD16E450066E325 /* DCVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD4F1AD16E450066E325 /* DCVehicleTableViewCell.m */; };
 		B817AD6F1AD16E450066E325 /* DCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD501AD16E450066E325 /* DCAppDelegate.m */; };
 		B817AD721AD16E5A0066E325 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B817AD701AD16E5A0066E325 /* InfoPlist.strings */; };
-		B817AD8E1AD171E10066E325 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B817AD881AD171E10066E325 /* libTestFlight.a */; };
-		B817AD8F1AD171E10066E325 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B817AD891AD171E10066E325 /* README.md */; };
-		B817AD901AD171E10066E325 /* release_notes.md in Sources */ = {isa = PBXBuildFile; fileRef = B817AD8A1AD171E10066E325 /* release_notes.md */; };
 		B817AD951AD172220066E325 /* Declarations.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B817AD921AD172220066E325 /* Declarations.entitlements */; };
-		B817AD961AD172220066E325 /* Declarations-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B817AD931AD172220066E325 /* Declarations-Info.plist */; };
 		B817AD971AD172220066E325 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD941AD172220066E325 /* main.m */; };
 		B817AD9C1AD177600066E325 /* DCCandidateGroupingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD9A1AD177600066E325 /* DCCandidateGroupingViewController.m */; };
 		B817AD9D1AD177600066E325 /* DCCandidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD9B1AD177600066E325 /* DCCandidateViewController.m */; };
@@ -170,9 +164,7 @@
 				02B26660192F545E0091C2EA /* libz.dylib in Frameworks */,
 				02B265FE192A89B40091C2EA /* CoreGraphics.framework in Frameworks */,
 				02B26600192A89B40091C2EA /* UIKit.framework in Frameworks */,
-				B817AD8E1AD171E10066E325 /* libTestFlight.a in Frameworks */,
 				02B265FC192A89B40091C2EA /* Foundation.framework in Frameworks */,
-				02B26653192F4FF40091C2EA /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,11 +496,11 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DC;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Chesno;
 				TargetAttributes = {
 					02B265F7192A89B40091C2EA = {
-						DevelopmentTeam = 94ZA6EM495;
+						DevelopmentTeam = Z49X2AVBQ3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -550,10 +542,8 @@
 				B817AD951AD172220066E325 /* Declarations.entitlements in Resources */,
 				B817AD721AD16E5A0066E325 /* InfoPlist.strings in Resources */,
 				02B26617192A89B40091C2EA /* Images.xcassets in Resources */,
-				B817AD961AD172220066E325 /* Declarations-Info.plist in Resources */,
 				02B26654192F4FF40091C2EA /* README.md in Resources */,
 				02B2660F192A89B40091C2EA /* Main.storyboard in Resources */,
-				02B2665B192F51330091C2EA /* AdHoc.xcconfig in Resources */,
 				02B26655192F4FF40091C2EA /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,7 +577,6 @@
 				B817AD5F1AD16E450066E325 /* DCParliamentFactory.m in Sources */,
 				B817AD571AD16E450066E325 /* DCCategoryViewController.m in Sources */,
 				B817AD6B1AD16E450066E325 /* DCDataLoader.m in Sources */,
-				B817AD8F1AD171E10066E325 /* README.md in Sources */,
 				B817AD5B1AD16E450066E325 /* DCDeputyViewController.m in Sources */,
 				B817AD651AD16E450066E325 /* DCProfitInfo.m in Sources */,
 				B817AD9C1AD177600066E325 /* DCCandidateGroupingViewController.m in Sources */,
@@ -599,7 +588,6 @@
 				B817AD541AD16E450066E325 /* LGMRomanNumber.m in Sources */,
 				B817AD681AD16E450066E325 /* DCVehiclesInfo.m in Sources */,
 				B817AD9D1AD177600066E325 /* DCCandidateViewController.m in Sources */,
-				B817AD901AD171E10066E325 /* release_notes.md in Sources */,
 				B817AD6A1AD16E450066E325 /* DCValue.m in Sources */,
 				B817AD641AD16E450066E325 /* DCGeneralInfo.m in Sources */,
 				B817AD611AD16E450066E325 /* DCCategory.m in Sources */,
@@ -672,6 +660,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -729,19 +718,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Declarations/TestFlight",
-					"$(PROJECT_DIR)/Declarations/Source/TestFlight",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.chesno.declarationsIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a75914d-e0a3-47b1-9567-9a1641a07989";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -751,19 +738,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Declarations/TestFlight",
-					"$(PROJECT_DIR)/Declarations/Source/TestFlight",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.chesno.declarationsIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a75914d-e0a3-47b1-9567-9a1641a07989";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -784,6 +769,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DeclarationsTests/DeclarationsTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chesno.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -802,6 +788,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "DeclarationsTests/DeclarationsTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chesno.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -846,19 +833,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Declarations/Declarations.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "Declarations/Declarations-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Declarations/TestFlight",
-					"$(PROJECT_DIR)/Declarations/Source/TestFlight",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.chesno.declarationsIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2a75914d-e0a3-47b1-9567-9a1641a07989";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;
@@ -875,6 +860,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Declarations/Declarations-Prefix.pch";
 				INFOPLIST_FILE = "DeclarationsTests/DeclarationsTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.chesno.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

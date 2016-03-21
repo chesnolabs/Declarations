@@ -91,6 +91,10 @@
     [self performSegueWithIdentifier:@"DeclarationDataSegue" sender:declaration];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"DeclarationDataSegue"])

@@ -122,4 +122,8 @@ const static CGFloat kDCDefaultRowHeight = 60.0;
     return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return section == 0 ? 30.0 : 15.0;
+}
+
 @end
