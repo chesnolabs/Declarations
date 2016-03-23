@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Deputies Grouping View Controller-->
@@ -540,68 +541,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69X-R6-nqA">
-                                <rect key="frame" x="11" y="183" width="299" height="282"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Додаток Сhesno Declarations дозволяє швидко проглянути задекларовані майно та статки чиновників і народних депутатів України у електронній формі та завантажити pdf-копію декларації.
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYm-4X-TD2">
+                                <rect key="frame" x="0.0" y="118" width="320" height="401"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-Yb-Itn">
+                                        <rect key="frame" x="237" y="378" width="73" height="13"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="gGe-kp-EBF"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="©2015 Рух Чесно">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="8" name="Menlo-Regular"/>
+                                                    <integer key="NSLigature" value="0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="26.450000762939453">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kz0-TX-aU8">
+                                        <rect key="frame" x="10" y="50" width="300" height="82"/>
+                                        <string key="text">Додаток Сhesno Declarations дозволяє швидко проглянути задекларовані майно та статки чиновників і народних депутатів України у електронній формі та завантажити pdf-копію декларації.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHV-Zj-hA9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7p-t4-R7r">
+                                                <rect key="frame" x="94" y="5" width="131" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="BbI-pN-jZP"/>
+                                                </constraints>
+                                                <state key="normal" title="Зворотній зв'язок ">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="feedBackAction:" destination="Ok0-VE-PYI" eventType="touchUpInside" id="dD0-nt-2Om"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="T7p-t4-R7r" firstAttribute="centerX" secondItem="sHV-Zj-hA9" secondAttribute="centerX" id="GLg-pA-arG"/>
+                                            <constraint firstItem="T7p-t4-R7r" firstAttribute="centerY" secondItem="sHV-Zj-hA9" secondAttribute="centerY" id="hXa-fq-KoA"/>
+                                            <constraint firstItem="T7p-t4-R7r" firstAttribute="height" secondItem="sHV-Zj-hA9" secondAttribute="height" multiplier="30:48" priority="750" id="oqa-ii-Q1O"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="qtY-lv-WYu"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="qIV-9B-4dZ">
+                                        <rect key="frame" x="10" y="147" width="300" height="215"/>
+                                        <mutableString key="text">Додаток надає доступ до відомостей з декларацій про майно, доходи, витрати і зобов'язання фінансового характеру народних депутатів України та державних службовців (окрім відомостей, віднесені законодавством до інформації з обмеженим доступом). Опубліковані через Додаток дані декларацій були оприлюднені на офіційних веб-сайтах відповідних державних органів (на офіційному веб-порталі ВРУ, у газеті "Голос України", на веб-сайті ЦВК тощо) або надані Руху ЧЕСНО для оприлюднення самими публічними персонами.
 
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Додаток надає доступ до відомостей з декларацій про майно, доходи, витрати і зобов'язання фінансового характеру народних депутатів України та державних службовців (окрім відомостей, віднесені законодавством до інформації з обмеженим доступом). Опубліковані через Додаток дані декларацій були оприлюднені на офіційних веб-сайтах відповідних державних органів (на офіційному веб-порталі ВРУ, у газеті "Голос України", на веб-сайті ЦВК тощо) або надані Руху ЧЕСНО для оприлюднення самими публічними персонами.
-
-Використання та розповсюдження продукту та контенту: Правовласник надає безоплатне, невиключне, безстрокове право на використання Продукту. Внесення будь-яких змін до Контенту забороняється. Використання та розповсюдження Продукту можливе лише з посиланням на Правовласника. Використання Продукту з комерційною метою забороняється.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="9" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7p-t4-R7r">
-                                <rect key="frame" x="93" y="128" width="135" height="30"/>
+Використання та розповсюдження продукту та контенту: Правовласник надає безоплатне, невиключне, безстрокове право на використання Продукту. Внесення будь-яких змін до Контенту забороняється. 
+Використання та розповсюдження Продукту можливе лише з посиланням на Правовласника. Використання Продукту з комерційною метою забороняється.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="Ln3-Wy-5g9"/>
+                                    <constraint firstAttribute="trailing" secondItem="qIV-9B-4dZ" secondAttribute="trailing" constant="10" id="4pz-MR-6Aw"/>
+                                    <constraint firstAttribute="trailing" secondItem="hMh-Yb-Itn" secondAttribute="trailing" constant="10" id="AiM-ci-4ka"/>
+                                    <constraint firstItem="qIV-9B-4dZ" firstAttribute="leading" secondItem="sYm-4X-TD2" secondAttribute="leading" constant="10" id="CRw-mW-IWW"/>
+                                    <constraint firstItem="hMh-Yb-Itn" firstAttribute="top" secondItem="qIV-9B-4dZ" secondAttribute="bottom" priority="750" constant="20" id="Cuv-ul-D6h"/>
+                                    <constraint firstItem="sHV-Zj-hA9" firstAttribute="top" secondItem="sYm-4X-TD2" secondAttribute="top" id="F3L-9G-RhY"/>
+                                    <constraint firstItem="sHV-Zj-hA9" firstAttribute="leading" secondItem="sYm-4X-TD2" secondAttribute="leading" id="Gga-JL-Wq2"/>
+                                    <constraint firstItem="qIV-9B-4dZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kz0-TX-aU8" secondAttribute="bottom" constant="15" id="IeF-SM-yl1"/>
+                                    <constraint firstItem="Kz0-TX-aU8" firstAttribute="top" secondItem="sHV-Zj-hA9" secondAttribute="bottom" constant="10" id="XV4-HC-xMB"/>
+                                    <constraint firstAttribute="trailing" secondItem="sHV-Zj-hA9" secondAttribute="trailing" id="go5-ia-vJS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kz0-TX-aU8" secondAttribute="trailing" constant="10" id="oLr-vX-PNE"/>
+                                    <constraint firstItem="Kz0-TX-aU8" firstAttribute="leading" secondItem="sYm-4X-TD2" secondAttribute="leading" constant="10" id="q2g-Ju-yrs"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hMh-Yb-Itn" secondAttribute="bottom" constant="10" id="uY4-fx-Gg9"/>
                                 </constraints>
-                                <state key="normal" title="Зворотній зв'язок ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="feedBackAction:" destination="Ok0-VE-PYI" eventType="touchUpInside" id="dD0-nt-2Om"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-Yb-Itn">
-                                <rect key="frame" x="210" y="473" width="100" height="13"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="©2015 Рух Чесно">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="11" name="Menlo-Regular"/>
-                                            <integer key="NSLigature" value="0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="26.450000762939453">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLl-lI-yyf">
-                                <rect key="frame" x="72" y="20" width="176" height="88"/>
+                                <rect key="frame" x="72" y="30" width="176" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="9zS-ey-DfK"/>
-                                    <constraint firstAttribute="height" constant="88" id="BZH-Sg-0sf"/>
+                                    <constraint firstAttribute="width" secondItem="OLl-lI-yyf" secondAttribute="height" multiplier="2:1" id="GzG-sC-1Jp"/>
                                 </constraints>
                                 <state key="normal" image="chesnoLogo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -613,15 +640,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OLl-lI-yyf" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" id="6MJ-ih-j7U"/>
-                            <constraint firstItem="69X-R6-nqA" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leadingMargin" constant="-5" id="Bvl-Ff-cFN"/>
-                            <constraint firstItem="69X-R6-nqA" firstAttribute="top" secondItem="T7p-t4-R7r" secondAttribute="bottom" constant="25" id="DLx-SW-dtl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="69X-R6-nqA" secondAttribute="trailing" constant="-6" id="FGu-dU-Ai0"/>
+                            <constraint firstItem="OLl-lI-yyf" firstAttribute="top" secondItem="ddH-3U-bpb" secondAttribute="bottom" constant="10" id="6MJ-ih-j7U"/>
+                            <constraint firstItem="sYm-4X-TD2" firstAttribute="top" secondItem="OLl-lI-yyf" secondAttribute="bottom" id="75H-qJ-zpc"/>
+                            <constraint firstItem="OLl-lI-yyf" firstAttribute="height" secondItem="8Ps-Qy-zoh" secondAttribute="height" multiplier="88:568" id="M0d-Ln-r6V"/>
+                            <constraint firstItem="sYm-4X-TD2" firstAttribute="leading" secondItem="8Ps-Qy-zoh" secondAttribute="leading" id="Qcf-0w-Xmg"/>
                             <constraint firstAttribute="centerX" secondItem="OLl-lI-yyf" secondAttribute="centerX" id="a8X-WS-iSr"/>
-                            <constraint firstAttribute="centerX" secondItem="T7p-t4-R7r" secondAttribute="centerX" id="cf5-hJ-4Ez"/>
-                            <constraint firstItem="T7p-t4-R7r" firstAttribute="top" secondItem="OLl-lI-yyf" secondAttribute="bottom" constant="20" id="fLH-yt-DB0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hMh-Yb-Itn" secondAttribute="trailing" constant="-5.5" id="hWa-Jk-nZj"/>
-                            <constraint firstItem="hMh-Yb-Itn" firstAttribute="top" secondItem="69X-R6-nqA" secondAttribute="bottom" constant="8" id="nkN-TH-LWQ"/>
+                            <constraint firstItem="odN-c5-bfT" firstAttribute="top" secondItem="sYm-4X-TD2" secondAttribute="bottom" id="c3p-g1-0S9"/>
+                            <constraint firstAttribute="trailing" secondItem="sYm-4X-TD2" secondAttribute="trailing" id="eiE-M6-mMO"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Інфо" image="AboutIcon" id="EhL-Jg-Q9z"/>
