@@ -8,36 +8,21 @@
 
 #import "DCParliament.h"
 
-@interface DCParliament ()
+#import "LGMRomanNumber.h"
 
-@property (strong) NSMutableArray *deputiesStorage;
+@interface DCParliament ()
 
 @end
 
 @implementation DCParliament
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self)
-    {
-        _deputiesStorage = [NSMutableArray new];
-    }
-    return self;
-}
+#pragma mark -
+#pragma mark Accessors
 
-
-- (void)addDeputy:(DCPerson *)deputy
-{
-    if (deputy)
-    {
-        [self.deputiesStorage addObject:deputy];
-    }
-}
-
-- (NSArray *)deputies
-{
-    return self.deputiesStorage;
+- (NSString *)title {
+    NSString *title = self.convocationNumber > 2000 ? [NSString stringWithFormat:@"Скликання %ld р.", (unsigned long)self.convocationNumber] : [NSString stringWithFormat:@"%@ скликання", [LGMRomanNumber romanFromArabic:self.convocationNumber]];
+    
+    return title;
 }
 
 @end

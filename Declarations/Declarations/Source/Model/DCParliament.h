@@ -6,16 +6,13 @@
 //  Copyright (c) 2015 Chesno. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "DCPerson.h"
+#import "DCArrayModel.h"
 
-@interface DCParliament : NSObject
+@class DCPerson;
 
-@property (readonly) NSArray *deputies;
-- (void)addDeputy:(DCPerson *)deputy;
-
-@property NSUInteger convocationNumber;
-@property NSDate *startDate;
-@property NSDate *endDate;
+@interface DCParliament : DCArrayModel
+@property   NSUInteger    convocationNumber;
+@property   NSDate        *startDate;
+@property   NSDate        *endDate;
 
 @end

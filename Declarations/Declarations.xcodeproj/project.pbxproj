@@ -25,7 +25,6 @@
 		B817AD571AD16E450066E325 /* DCCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD191AD16E450066E325 /* DCCategoryViewController.m */; };
 		B817AD581AD16E450066E325 /* DCDeclarationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD1B1AD16E450066E325 /* DCDeclarationsViewController.m */; };
 		B817AD591AD16E450066E325 /* DCDeclarationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD1D1AD16E450066E325 /* DCDeclarationViewController.m */; };
-		B817AD5A1AD16E450066E325 /* DCDeputiesGroupingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD201AD16E450066E325 /* DCDeputiesGroupingViewController.m */; };
 		B817AD5B1AD16E450066E325 /* DCDeputyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD221AD16E450066E325 /* DCDeputyViewController.m */; };
 		B817AD5C1AD16E450066E325 /* DCOfficialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD251AD16E450066E325 /* DCOfficialsViewController.m */; };
 		B817AD5D1AD16E450066E325 /* DCValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD281AD16E450066E325 /* DCValueTransformer.m */; };
@@ -43,15 +42,41 @@
 		B817AD691AD16E450066E325 /* DCDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD431AD16E450066E325 /* DCDeclaration.m */; };
 		B817AD6A1AD16E450066E325 /* DCValue.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD451AD16E450066E325 /* DCValue.m */; };
 		B817AD6B1AD16E450066E325 /* DCDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD481AD16E450066E325 /* DCDataLoader.m */; };
-		B817AD6C1AD16E450066E325 /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD4B1AD16E450066E325 /* DCCategoryCell.m */; };
-		B817AD6D1AD16E450066E325 /* DCValueCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD4D1AD16E450066E325 /* DCValueCellView.m */; };
-		B817AD6E1AD16E450066E325 /* DCVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD4F1AD16E450066E325 /* DCVehicleTableViewCell.m */; };
 		B817AD6F1AD16E450066E325 /* DCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD501AD16E450066E325 /* DCAppDelegate.m */; };
 		B817AD721AD16E5A0066E325 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B817AD701AD16E5A0066E325 /* InfoPlist.strings */; };
 		B817AD951AD172220066E325 /* Declarations.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B817AD921AD172220066E325 /* Declarations.entitlements */; };
 		B817AD971AD172220066E325 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD941AD172220066E325 /* main.m */; };
-		B817AD9C1AD177600066E325 /* DCCandidateGroupingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD9A1AD177600066E325 /* DCCandidateGroupingViewController.m */; };
 		B817AD9D1AD177600066E325 /* DCCandidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B817AD9B1AD177600066E325 /* DCCandidateViewController.m */; };
+		C7CBB7661CA2CE5200392BBB /* DCPersonsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7651CA2CE5200392BBB /* DCPersonsListViewController.m */; };
+		C7CBB7691CA2DC5500392BBB /* DCPersonsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7681CA2DC5500392BBB /* DCPersonsListView.m */; };
+		C7CBB76C1CA2E16C00392BBB /* DCDeputyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB76B1CA2E16C00392BBB /* DCDeputyView.m */; };
+		C7CBB7761CA2E8DB00392BBB /* UITableView+DCTableViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7751CA2E8DB00392BBB /* UITableView+DCTableViewCategory.m */; };
+		C7CBB7791CA2E95000392BBB /* NSBundle+DCBundleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7781CA2E95000392BBB /* NSBundle+DCBundleCategory.m */; };
+		C7CBB77C1CA2E99400392BBB /* NSArray+DCArrayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB77B1CA2E99400392BBB /* NSArray+DCArrayCategory.m */; };
+		C7CBB77F1CA2F03600392BBB /* DCCandidatesView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB77E1CA2F03600392BBB /* DCCandidatesView.m */; };
+		C7CBB7821CA2F23D00392BBB /* DCOfficialsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7811CA2F23D00392BBB /* DCOfficialsView.m */; };
+		C7CBB7851CA322E200392BBB /* DCKindOfCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7841CA322E200392BBB /* DCKindOfCandidate.m */; };
+		C7CBB7881CA3242C00392BBB /* DCArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7871CA3242C00392BBB /* DCArrayModel.m */; };
+		C7CBB7951CA573A000392BBB /* AFSwipeToHide.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7941CA573A000392BBB /* AFSwipeToHide.m */; };
+		C7CBB7991CA686C000392BBB /* UIColor+DCColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7981CA686C000392BBB /* UIColor+DCColorCategory.m */; };
+		C7CBB79E1CA6DDBC00392BBB /* VMLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB79C1CA6DDBC00392BBB /* VMLoadingView.m */; };
+		C7CBB79F1CA6DDBC00392BBB /* VMLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CBB79D1CA6DDBC00392BBB /* VMLoadingView.xib */; };
+		C7CBB7A31CA6DDD500392BBB /* UIView+MILoadingViewCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7A21CA6DDD500392BBB /* UIView+MILoadingViewCategory.m */; };
+		C7CBB7A71CA701FF00392BBB /* DCPersonListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7A61CA701FF00392BBB /* DCPersonListHeaderView.m */; };
+		C7CBB7AB1CA7023300392BBB /* DCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7AA1CA7023300392BBB /* DCNavigationBar.m */; };
+		C7CBB7BC1CA7030000392BBB /* DCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7AF1CA7030000392BBB /* DCCategoryCell.m */; };
+		C7CBB7BD1CA7030000392BBB /* DCPersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7B21CA7030000392BBB /* DCPersonTableViewCell.m */; };
+		C7CBB7BE1CA7030000392BBB /* DCScopeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7B51CA7030000392BBB /* DCScopeCollectionViewCell.m */; };
+		C7CBB7BF1CA7030000392BBB /* DCValueCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7B81CA7030000392BBB /* DCValueCellView.m */; };
+		C7CBB7C01CA7030000392BBB /* DCVehicleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7BB1CA7030000392BBB /* DCVehicleTableViewCell.m */; };
+		C7CBB7C41CA7047B00392BBB /* MIStoreHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7C31CA7047B00392BBB /* MIStoreHeaderFlowLayout.m */; };
+		C7CBB7C61CA7052E00392BBB /* DCPersonListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CBB7C51CA7052E00392BBB /* DCPersonListHeaderView.xib */; };
+		C7CBB7CB1CA7217A00392BBB /* DCMailToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7CA1CA7217A00392BBB /* DCMailToButton.m */; };
+		C7CBB7CE1CA7219400392BBB /* DCMailToView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7CD1CA7219400392BBB /* DCMailToView.m */; };
+		C7CBB7D01CA721A800392BBB /* DCMailToView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7CBB7CF1CA721A800392BBB /* DCMailToView.xib */; };
+		C7CBB7D31CA729AA00392BBB /* UILabel+DCSetFontCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7D21CA729AA00392BBB /* UILabel+DCSetFontCategory.m */; };
+		C7CBB7D61CA729EC00392BBB /* UIFont+DCFontSizeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7D51CA729EC00392BBB /* UIFont+DCFontSizeCategory.m */; };
+		C7CBB7D91CB3C02D00392BBB /* CGRect+DCExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CBB7D81CB3C02D00392BBB /* CGRect+DCExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +120,6 @@
 		B817AD1B1AD16E450066E325 /* DCDeclarationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationsViewController.m; sourceTree = "<group>"; };
 		B817AD1C1AD16E450066E325 /* DCDeclarationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeclarationViewController.h; sourceTree = "<group>"; };
 		B817AD1D1AD16E450066E325 /* DCDeclarationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeclarationViewController.m; sourceTree = "<group>"; };
-		B817AD1F1AD16E450066E325 /* DCDeputiesGroupingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeputiesGroupingViewController.h; sourceTree = "<group>"; };
-		B817AD201AD16E450066E325 /* DCDeputiesGroupingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeputiesGroupingViewController.m; sourceTree = "<group>"; };
 		B817AD211AD16E450066E325 /* DCDeputyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeputyViewController.h; sourceTree = "<group>"; };
 		B817AD221AD16E450066E325 /* DCDeputyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeputyViewController.m; sourceTree = "<group>"; };
 		B817AD241AD16E450066E325 /* DCOfficialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOfficialsViewController.h; sourceTree = "<group>"; };
@@ -131,12 +154,6 @@
 		B817AD451AD16E450066E325 /* DCValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValue.m; sourceTree = "<group>"; };
 		B817AD471AD16E450066E325 /* DCDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDataLoader.h; sourceTree = "<group>"; };
 		B817AD481AD16E450066E325 /* DCDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDataLoader.m; sourceTree = "<group>"; };
-		B817AD4A1AD16E450066E325 /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
-		B817AD4B1AD16E450066E325 /* DCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryCell.m; sourceTree = "<group>"; };
-		B817AD4C1AD16E450066E325 /* DCValueCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueCellView.h; sourceTree = "<group>"; };
-		B817AD4D1AD16E450066E325 /* DCValueCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValueCellView.m; sourceTree = "<group>"; };
-		B817AD4E1AD16E450066E325 /* DCVehicleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehicleTableViewCell.h; sourceTree = "<group>"; };
-		B817AD4F1AD16E450066E325 /* DCVehicleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehicleTableViewCell.m; sourceTree = "<group>"; };
 		B817AD501AD16E450066E325 /* DCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCAppDelegate.m; path = Source/DCAppDelegate.m; sourceTree = "<group>"; };
 		B817AD511AD16E450066E325 /* DCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCAppDelegate.h; path = Source/DCAppDelegate.h; sourceTree = "<group>"; };
 		B817AD711AD16E5A0066E325 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Declarations/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
@@ -151,9 +168,66 @@
 		B817AD931AD172220066E325 /* Declarations-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Declarations-Info.plist"; path = "Declarations/Declarations-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B817AD941AD172220066E325 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Declarations/main.m; sourceTree = SOURCE_ROOT; };
 		B817AD981AD177600066E325 /* DCCandidateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCandidateViewController.h; sourceTree = "<group>"; };
-		B817AD991AD177600066E325 /* DCCandidateGroupingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCandidateGroupingViewController.h; sourceTree = "<group>"; };
-		B817AD9A1AD177600066E325 /* DCCandidateGroupingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCandidateGroupingViewController.m; sourceTree = "<group>"; };
 		B817AD9B1AD177600066E325 /* DCCandidateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCandidateViewController.m; sourceTree = "<group>"; };
+		C7CBB7641CA2CE5200392BBB /* DCPersonsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPersonsListViewController.h; sourceTree = "<group>"; };
+		C7CBB7651CA2CE5200392BBB /* DCPersonsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPersonsListViewController.m; sourceTree = "<group>"; };
+		C7CBB7671CA2DC5500392BBB /* DCPersonsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPersonsListView.h; sourceTree = "<group>"; };
+		C7CBB7681CA2DC5500392BBB /* DCPersonsListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPersonsListView.m; sourceTree = "<group>"; };
+		C7CBB76A1CA2E16C00392BBB /* DCDeputyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCDeputyView.h; sourceTree = "<group>"; };
+		C7CBB76B1CA2E16C00392BBB /* DCDeputyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCDeputyView.m; sourceTree = "<group>"; };
+		C7CBB76F1CA2E4C700392BBB /* DCPropertyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPropertyMacros.h; sourceTree = "<group>"; };
+		C7CBB7741CA2E8DB00392BBB /* UITableView+DCTableViewCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DCTableViewCategory.h"; sourceTree = "<group>"; };
+		C7CBB7751CA2E8DB00392BBB /* UITableView+DCTableViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DCTableViewCategory.m"; sourceTree = "<group>"; };
+		C7CBB7771CA2E95000392BBB /* NSBundle+DCBundleCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+DCBundleCategory.h"; sourceTree = "<group>"; };
+		C7CBB7781CA2E95000392BBB /* NSBundle+DCBundleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+DCBundleCategory.m"; sourceTree = "<group>"; };
+		C7CBB77A1CA2E99400392BBB /* NSArray+DCArrayCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DCArrayCategory.h"; sourceTree = "<group>"; };
+		C7CBB77B1CA2E99400392BBB /* NSArray+DCArrayCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DCArrayCategory.m"; sourceTree = "<group>"; };
+		C7CBB77D1CA2F03600392BBB /* DCCandidatesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCandidatesView.h; sourceTree = "<group>"; };
+		C7CBB77E1CA2F03600392BBB /* DCCandidatesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCandidatesView.m; sourceTree = "<group>"; };
+		C7CBB7801CA2F23D00392BBB /* DCOfficialsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCOfficialsView.h; sourceTree = "<group>"; };
+		C7CBB7811CA2F23D00392BBB /* DCOfficialsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCOfficialsView.m; sourceTree = "<group>"; };
+		C7CBB7831CA322E200392BBB /* DCKindOfCandidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCKindOfCandidate.h; sourceTree = "<group>"; };
+		C7CBB7841CA322E200392BBB /* DCKindOfCandidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCKindOfCandidate.m; sourceTree = "<group>"; };
+		C7CBB7861CA3242C00392BBB /* DCArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCArrayModel.h; sourceTree = "<group>"; };
+		C7CBB7871CA3242C00392BBB /* DCArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCArrayModel.m; sourceTree = "<group>"; };
+		C7CBB7931CA573A000392BBB /* AFSwipeToHide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSwipeToHide.h; sourceTree = "<group>"; };
+		C7CBB7941CA573A000392BBB /* AFSwipeToHide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSwipeToHide.m; sourceTree = "<group>"; };
+		C7CBB7961CA6863700392BBB /* DCColorMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCColorMacros.h; sourceTree = "<group>"; };
+		C7CBB7971CA686C000392BBB /* UIColor+DCColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DCColorCategory.h"; sourceTree = "<group>"; };
+		C7CBB7981CA686C000392BBB /* UIColor+DCColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DCColorCategory.m"; sourceTree = "<group>"; };
+		C7CBB79B1CA6DDBC00392BBB /* VMLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMLoadingView.h; sourceTree = "<group>"; };
+		C7CBB79C1CA6DDBC00392BBB /* VMLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMLoadingView.m; sourceTree = "<group>"; };
+		C7CBB79D1CA6DDBC00392BBB /* VMLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMLoadingView.xib; sourceTree = "<group>"; };
+		C7CBB7A11CA6DDD500392BBB /* UIView+MILoadingViewCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MILoadingViewCategory.h"; sourceTree = "<group>"; };
+		C7CBB7A21CA6DDD500392BBB /* UIView+MILoadingViewCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MILoadingViewCategory.m"; sourceTree = "<group>"; };
+		C7CBB7A51CA701FF00392BBB /* DCPersonListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPersonListHeaderView.h; sourceTree = "<group>"; };
+		C7CBB7A61CA701FF00392BBB /* DCPersonListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPersonListHeaderView.m; sourceTree = "<group>"; };
+		C7CBB7A91CA7023300392BBB /* DCNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCNavigationBar.h; sourceTree = "<group>"; };
+		C7CBB7AA1CA7023300392BBB /* DCNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCNavigationBar.m; sourceTree = "<group>"; };
+		C7CBB7AE1CA7030000392BBB /* DCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCategoryCell.h; sourceTree = "<group>"; };
+		C7CBB7AF1CA7030000392BBB /* DCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCategoryCell.m; sourceTree = "<group>"; };
+		C7CBB7B11CA7030000392BBB /* DCPersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPersonTableViewCell.h; sourceTree = "<group>"; };
+		C7CBB7B21CA7030000392BBB /* DCPersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPersonTableViewCell.m; sourceTree = "<group>"; };
+		C7CBB7B41CA7030000392BBB /* DCScopeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCScopeCollectionViewCell.h; sourceTree = "<group>"; };
+		C7CBB7B51CA7030000392BBB /* DCScopeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCScopeCollectionViewCell.m; sourceTree = "<group>"; };
+		C7CBB7B71CA7030000392BBB /* DCValueCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCValueCellView.h; sourceTree = "<group>"; };
+		C7CBB7B81CA7030000392BBB /* DCValueCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCValueCellView.m; sourceTree = "<group>"; };
+		C7CBB7BA1CA7030000392BBB /* DCVehicleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCVehicleTableViewCell.h; sourceTree = "<group>"; };
+		C7CBB7BB1CA7030000392BBB /* DCVehicleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCVehicleTableViewCell.m; sourceTree = "<group>"; };
+		C7CBB7C21CA7047B00392BBB /* MIStoreHeaderFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIStoreHeaderFlowLayout.h; sourceTree = "<group>"; };
+		C7CBB7C31CA7047B00392BBB /* MIStoreHeaderFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIStoreHeaderFlowLayout.m; sourceTree = "<group>"; };
+		C7CBB7C51CA7052E00392BBB /* DCPersonListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPersonListHeaderView.xib; sourceTree = "<group>"; };
+		C7CBB7C91CA7217A00392BBB /* DCMailToButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMailToButton.h; sourceTree = "<group>"; };
+		C7CBB7CA1CA7217A00392BBB /* DCMailToButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMailToButton.m; sourceTree = "<group>"; };
+		C7CBB7CC1CA7219400392BBB /* DCMailToView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCMailToView.h; sourceTree = "<group>"; };
+		C7CBB7CD1CA7219400392BBB /* DCMailToView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCMailToView.m; sourceTree = "<group>"; };
+		C7CBB7CF1CA721A800392BBB /* DCMailToView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCMailToView.xib; sourceTree = "<group>"; };
+		C7CBB7D11CA729AA00392BBB /* UILabel+DCSetFontCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+DCSetFontCategory.h"; sourceTree = "<group>"; };
+		C7CBB7D21CA729AA00392BBB /* UILabel+DCSetFontCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+DCSetFontCategory.m"; sourceTree = "<group>"; };
+		C7CBB7D41CA729EC00392BBB /* UIFont+DCFontSizeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+DCFontSizeCategory.h"; sourceTree = "<group>"; };
+		C7CBB7D51CA729EC00392BBB /* UIFont+DCFontSizeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+DCFontSizeCategory.m"; sourceTree = "<group>"; };
+		C7CBB7D71CB3BFE000392BBB /* CGRect+DCExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGRect+DCExtension.h"; sourceTree = "<group>"; };
+		C7CBB7D81CB3C02D00392BBB /* CGRect+DCExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGRect+DCExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +292,8 @@
 		02B26601192A89B40091C2EA /* Declarations */ = {
 			isa = PBXGroup;
 			children = (
+				C7CBB76D1CA2E49700392BBB /* Categories */,
+				C7CBB76E1CA2E49700392BBB /* Macroses */,
 				B817AD871AD171E10066E325 /* TestFlight */,
 				B817AD121AD16E450066E325 /* View Controllers */,
 				B817AD491AD16E450066E325 /* Views */,
@@ -291,6 +367,7 @@
 		B817AD121AD16E450066E325 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C7CBB7631CA2CE2800392BBB /* Base */,
 				B817AD131AD16E450066E325 /* About */,
 				B817AD161AD16E450066E325 /* Candidates */,
 				B817AD171AD16E450066E325 /* Declarations */,
@@ -315,8 +392,8 @@
 			children = (
 				B817AD981AD177600066E325 /* DCCandidateViewController.h */,
 				B817AD9B1AD177600066E325 /* DCCandidateViewController.m */,
-				B817AD991AD177600066E325 /* DCCandidateGroupingViewController.h */,
-				B817AD9A1AD177600066E325 /* DCCandidateGroupingViewController.m */,
+				C7CBB77D1CA2F03600392BBB /* DCCandidatesView.h */,
+				C7CBB77E1CA2F03600392BBB /* DCCandidatesView.m */,
 			);
 			path = Candidates;
 			sourceTree = "<group>";
@@ -337,10 +414,10 @@
 		B817AD1E1AD16E450066E325 /* Deputies */ = {
 			isa = PBXGroup;
 			children = (
-				B817AD1F1AD16E450066E325 /* DCDeputiesGroupingViewController.h */,
-				B817AD201AD16E450066E325 /* DCDeputiesGroupingViewController.m */,
 				B817AD211AD16E450066E325 /* DCDeputyViewController.h */,
 				B817AD221AD16E450066E325 /* DCDeputyViewController.m */,
+				C7CBB76A1CA2E16C00392BBB /* DCDeputyView.h */,
+				C7CBB76B1CA2E16C00392BBB /* DCDeputyView.m */,
 			);
 			path = Deputies;
 			sourceTree = "<group>";
@@ -350,6 +427,8 @@
 			children = (
 				B817AD241AD16E450066E325 /* DCOfficialsViewController.h */,
 				B817AD251AD16E450066E325 /* DCOfficialsViewController.m */,
+				C7CBB7801CA2F23D00392BBB /* DCOfficialsView.h */,
+				C7CBB7811CA2F23D00392BBB /* DCOfficialsView.m */,
 			);
 			path = Officials;
 			sourceTree = "<group>";
@@ -374,6 +453,10 @@
 				B817AD2E1AD16E450066E325 /* DCPerson.h */,
 				B817AD2F1AD16E450066E325 /* DCPerson.m */,
 				B817AD301AD16E450066E325 /* Declarations */,
+				C7CBB7831CA322E200392BBB /* DCKindOfCandidate.h */,
+				C7CBB7841CA322E200392BBB /* DCKindOfCandidate.m */,
+				C7CBB7861CA3242C00392BBB /* DCArrayModel.h */,
+				C7CBB7871CA3242C00392BBB /* DCArrayModel.m */,
 			);
 			name = Model;
 			path = Source/Model;
@@ -427,12 +510,12 @@
 		B817AD491AD16E450066E325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B817AD4A1AD16E450066E325 /* DCCategoryCell.h */,
-				B817AD4B1AD16E450066E325 /* DCCategoryCell.m */,
-				B817AD4C1AD16E450066E325 /* DCValueCellView.h */,
-				B817AD4D1AD16E450066E325 /* DCValueCellView.m */,
-				B817AD4E1AD16E450066E325 /* DCVehicleTableViewCell.h */,
-				B817AD4F1AD16E450066E325 /* DCVehicleTableViewCell.m */,
+				C7CBB7C71CA7215500392BBB /* Buttons */,
+				C7CBB7C11CA7047B00392BBB /* Layouts */,
+				C7CBB7AC1CA7030000392BBB /* Cells */,
+				C7CBB7A81CA7023300392BBB /* DCNavigationBar */,
+				C7CBB7A41CA701E600392BBB /* DCPersonListHeaderView */,
+				C7CBB79A1CA6DDBC00392BBB /* VMLoadingView */,
 			);
 			name = Views;
 			path = Source/Views;
@@ -449,6 +532,184 @@
 				B817AD8D1AD171E10066E325 /* TestFlight.h */,
 			);
 			path = TestFlight;
+			sourceTree = "<group>";
+		};
+		C7CBB7631CA2CE2800392BBB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7641CA2CE5200392BBB /* DCPersonsListViewController.h */,
+				C7CBB7651CA2CE5200392BBB /* DCPersonsListViewController.m */,
+				C7CBB7671CA2DC5500392BBB /* DCPersonsListView.h */,
+				C7CBB7681CA2DC5500392BBB /* DCPersonsListView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C7CBB76D1CA2E49700392BBB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7A01CA6DDD500392BBB /* UIView */,
+				C7CBB7921CA573A000392BBB /* AFSwipeToHide */,
+				C7CBB7741CA2E8DB00392BBB /* UITableView+DCTableViewCategory.h */,
+				C7CBB7751CA2E8DB00392BBB /* UITableView+DCTableViewCategory.m */,
+				C7CBB7771CA2E95000392BBB /* NSBundle+DCBundleCategory.h */,
+				C7CBB7781CA2E95000392BBB /* NSBundle+DCBundleCategory.m */,
+				C7CBB77A1CA2E99400392BBB /* NSArray+DCArrayCategory.h */,
+				C7CBB77B1CA2E99400392BBB /* NSArray+DCArrayCategory.m */,
+				C7CBB7971CA686C000392BBB /* UIColor+DCColorCategory.h */,
+				C7CBB7981CA686C000392BBB /* UIColor+DCColorCategory.m */,
+				C7CBB7D11CA729AA00392BBB /* UILabel+DCSetFontCategory.h */,
+				C7CBB7D21CA729AA00392BBB /* UILabel+DCSetFontCategory.m */,
+				C7CBB7D41CA729EC00392BBB /* UIFont+DCFontSizeCategory.h */,
+				C7CBB7D51CA729EC00392BBB /* UIFont+DCFontSizeCategory.m */,
+				C7CBB7D71CB3BFE000392BBB /* CGRect+DCExtension.h */,
+				C7CBB7D81CB3C02D00392BBB /* CGRect+DCExtension.m */,
+			);
+			name = Categories;
+			path = Source/Categories;
+			sourceTree = "<group>";
+		};
+		C7CBB76E1CA2E49700392BBB /* Macroses */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB76F1CA2E4C700392BBB /* DCPropertyMacros.h */,
+				C7CBB7961CA6863700392BBB /* DCColorMacros.h */,
+			);
+			name = Macroses;
+			path = Source/Macroses;
+			sourceTree = "<group>";
+		};
+		C7CBB7921CA573A000392BBB /* AFSwipeToHide */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7931CA573A000392BBB /* AFSwipeToHide.h */,
+				C7CBB7941CA573A000392BBB /* AFSwipeToHide.m */,
+			);
+			path = AFSwipeToHide;
+			sourceTree = "<group>";
+		};
+		C7CBB79A1CA6DDBC00392BBB /* VMLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB79B1CA6DDBC00392BBB /* VMLoadingView.h */,
+				C7CBB79C1CA6DDBC00392BBB /* VMLoadingView.m */,
+				C7CBB79D1CA6DDBC00392BBB /* VMLoadingView.xib */,
+			);
+			path = VMLoadingView;
+			sourceTree = "<group>";
+		};
+		C7CBB7A01CA6DDD500392BBB /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7A11CA6DDD500392BBB /* UIView+MILoadingViewCategory.h */,
+				C7CBB7A21CA6DDD500392BBB /* UIView+MILoadingViewCategory.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		C7CBB7A41CA701E600392BBB /* DCPersonListHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7A51CA701FF00392BBB /* DCPersonListHeaderView.h */,
+				C7CBB7A61CA701FF00392BBB /* DCPersonListHeaderView.m */,
+				C7CBB7C51CA7052E00392BBB /* DCPersonListHeaderView.xib */,
+			);
+			path = DCPersonListHeaderView;
+			sourceTree = "<group>";
+		};
+		C7CBB7A81CA7023300392BBB /* DCNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7A91CA7023300392BBB /* DCNavigationBar.h */,
+				C7CBB7AA1CA7023300392BBB /* DCNavigationBar.m */,
+			);
+			path = DCNavigationBar;
+			sourceTree = "<group>";
+		};
+		C7CBB7AC1CA7030000392BBB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7AD1CA7030000392BBB /* DCCategoryCell */,
+				C7CBB7B01CA7030000392BBB /* DCPersonTableViewCell */,
+				C7CBB7B31CA7030000392BBB /* DCScopeCollectionViewCell */,
+				C7CBB7B61CA7030000392BBB /* DCValueCell */,
+				C7CBB7B91CA7030000392BBB /* DCVehicleTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C7CBB7AD1CA7030000392BBB /* DCCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7AE1CA7030000392BBB /* DCCategoryCell.h */,
+				C7CBB7AF1CA7030000392BBB /* DCCategoryCell.m */,
+			);
+			path = DCCategoryCell;
+			sourceTree = "<group>";
+		};
+		C7CBB7B01CA7030000392BBB /* DCPersonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7B11CA7030000392BBB /* DCPersonTableViewCell.h */,
+				C7CBB7B21CA7030000392BBB /* DCPersonTableViewCell.m */,
+			);
+			path = DCPersonTableViewCell;
+			sourceTree = "<group>";
+		};
+		C7CBB7B31CA7030000392BBB /* DCScopeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7B41CA7030000392BBB /* DCScopeCollectionViewCell.h */,
+				C7CBB7B51CA7030000392BBB /* DCScopeCollectionViewCell.m */,
+			);
+			path = DCScopeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C7CBB7B61CA7030000392BBB /* DCValueCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7B71CA7030000392BBB /* DCValueCellView.h */,
+				C7CBB7B81CA7030000392BBB /* DCValueCellView.m */,
+			);
+			path = DCValueCell;
+			sourceTree = "<group>";
+		};
+		C7CBB7B91CA7030000392BBB /* DCVehicleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7BA1CA7030000392BBB /* DCVehicleTableViewCell.h */,
+				C7CBB7BB1CA7030000392BBB /* DCVehicleTableViewCell.m */,
+			);
+			path = DCVehicleTableViewCell;
+			sourceTree = "<group>";
+		};
+		C7CBB7C11CA7047B00392BBB /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7C21CA7047B00392BBB /* MIStoreHeaderFlowLayout.h */,
+				C7CBB7C31CA7047B00392BBB /* MIStoreHeaderFlowLayout.m */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		C7CBB7C71CA7215500392BBB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7C81CA7215500392BBB /* MailToButton */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		C7CBB7C81CA7215500392BBB /* MailToButton */ = {
+			isa = PBXGroup;
+			children = (
+				C7CBB7C91CA7217A00392BBB /* DCMailToButton.h */,
+				C7CBB7CA1CA7217A00392BBB /* DCMailToButton.m */,
+				C7CBB7CC1CA7219400392BBB /* DCMailToView.h */,
+				C7CBB7CD1CA7219400392BBB /* DCMailToView.m */,
+				C7CBB7CF1CA721A800392BBB /* DCMailToView.xib */,
+			);
+			path = MailToButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,10 +801,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B817AD951AD172220066E325 /* Declarations.entitlements in Resources */,
+				C7CBB7D01CA721A800392BBB /* DCMailToView.xib in Resources */,
+				C7CBB7C61CA7052E00392BBB /* DCPersonListHeaderView.xib in Resources */,
 				B817AD721AD16E5A0066E325 /* InfoPlist.strings in Resources */,
 				02B26617192A89B40091C2EA /* Images.xcassets in Resources */,
 				02B26654192F4FF40091C2EA /* README.md in Resources */,
 				02B2660F192A89B40091C2EA /* Main.storyboard in Resources */,
+				C7CBB79F1CA6DDBC00392BBB /* VMLoadingView.xib in Resources */,
 				02B26655192F4FF40091C2EA /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,35 +827,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B817AD6C1AD16E450066E325 /* DCCategoryCell.m in Sources */,
-				B817AD5A1AD16E450066E325 /* DCDeputiesGroupingViewController.m in Sources */,
-				B817AD6E1AD16E450066E325 /* DCVehicleTableViewCell.m in Sources */,
+				C7CBB7761CA2E8DB00392BBB /* UITableView+DCTableViewCategory.m in Sources */,
 				B817AD671AD16E450066E325 /* DCVehicle.m in Sources */,
+				C7CBB7D91CB3C02D00392BBB /* CGRect+DCExtension.m in Sources */,
+				C7CBB7851CA322E200392BBB /* DCKindOfCandidate.m in Sources */,
 				B817AD591AD16E450066E325 /* DCDeclarationViewController.m in Sources */,
+				C7CBB7A71CA701FF00392BBB /* DCPersonListHeaderView.m in Sources */,
 				B817AD691AD16E450066E325 /* DCDeclaration.m in Sources */,
 				B817AD5D1AD16E450066E325 /* DCValueTransformer.m in Sources */,
 				B817AD601AD16E450066E325 /* DCPerson.m in Sources */,
+				C7CBB7A31CA6DDD500392BBB /* UIView+MILoadingViewCategory.m in Sources */,
+				C7CBB77C1CA2E99400392BBB /* NSArray+DCArrayCategory.m in Sources */,
 				B817AD561AD16E450066E325 /* DCAboutViewController.m in Sources */,
 				B817AD6F1AD16E450066E325 /* DCAppDelegate.m in Sources */,
+				C7CBB7791CA2E95000392BBB /* NSBundle+DCBundleCategory.m in Sources */,
+				C7CBB7D31CA729AA00392BBB /* UILabel+DCSetFontCategory.m in Sources */,
+				C7CBB7CE1CA7219400392BBB /* DCMailToView.m in Sources */,
 				B817AD971AD172220066E325 /* main.m in Sources */,
+				C7CBB7AB1CA7023300392BBB /* DCNavigationBar.m in Sources */,
 				B817AD5F1AD16E450066E325 /* DCParliamentFactory.m in Sources */,
 				B817AD571AD16E450066E325 /* DCCategoryViewController.m in Sources */,
 				B817AD6B1AD16E450066E325 /* DCDataLoader.m in Sources */,
 				B817AD5B1AD16E450066E325 /* DCDeputyViewController.m in Sources */,
 				B817AD651AD16E450066E325 /* DCProfitInfo.m in Sources */,
-				B817AD9C1AD177600066E325 /* DCCandidateGroupingViewController.m in Sources */,
 				B817AD581AD16E450066E325 /* DCDeclarationsViewController.m in Sources */,
+				C7CBB7C01CA7030000392BBB /* DCVehicleTableViewCell.m in Sources */,
+				C7CBB7C41CA7047B00392BBB /* MIStoreHeaderFlowLayout.m in Sources */,
+				C7CBB7BC1CA7030000392BBB /* DCCategoryCell.m in Sources */,
+				C7CBB7BD1CA7030000392BBB /* DCPersonTableViewCell.m in Sources */,
 				B817AD631AD16E450066E325 /* DCFinancialLiabilities.m in Sources */,
 				B817AD5E1AD16E450066E325 /* DCParliament.m in Sources */,
-				B817AD6D1AD16E450066E325 /* DCValueCellView.m in Sources */,
+				C7CBB7951CA573A000392BBB /* AFSwipeToHide.m in Sources */,
+				C7CBB7D61CA729EC00392BBB /* UIFont+DCFontSizeCategory.m in Sources */,
 				B817AD661AD16E450066E325 /* DCRealtyInfo.m in Sources */,
+				C7CBB7691CA2DC5500392BBB /* DCPersonsListView.m in Sources */,
+				C7CBB7BF1CA7030000392BBB /* DCValueCellView.m in Sources */,
 				B817AD541AD16E450066E325 /* LGMRomanNumber.m in Sources */,
+				C7CBB7BE1CA7030000392BBB /* DCScopeCollectionViewCell.m in Sources */,
 				B817AD681AD16E450066E325 /* DCVehiclesInfo.m in Sources */,
+				C7CBB79E1CA6DDBC00392BBB /* VMLoadingView.m in Sources */,
 				B817AD9D1AD177600066E325 /* DCCandidateViewController.m in Sources */,
+				C7CBB7CB1CA7217A00392BBB /* DCMailToButton.m in Sources */,
+				C7CBB7661CA2CE5200392BBB /* DCPersonsListViewController.m in Sources */,
+				C7CBB76C1CA2E16C00392BBB /* DCDeputyView.m in Sources */,
 				B817AD6A1AD16E450066E325 /* DCValue.m in Sources */,
+				C7CBB7991CA686C000392BBB /* UIColor+DCColorCategory.m in Sources */,
 				B817AD641AD16E450066E325 /* DCGeneralInfo.m in Sources */,
+				C7CBB77F1CA2F03600392BBB /* DCCandidatesView.m in Sources */,
 				B817AD611AD16E450066E325 /* DCCategory.m in Sources */,
+				C7CBB7881CA3242C00392BBB /* DCArrayModel.m in Sources */,
 				B817AD621AD16E450066E325 /* DCDepositsInfo.m in Sources */,
+				C7CBB7821CA2F23D00392BBB /* DCOfficialsView.m in Sources */,
 				B817AD5C1AD16E450066E325 /* DCOfficialsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Chesno. All rights reserved.
 //
 
-#import "DCDeputyViewController.h"
+#import "DCPersonsListViewController.h"
 
-@interface DCOfficialsViewController : DCDeputyViewController
+@interface DCOfficialsViewController : DCPersonsListViewController
 
 @end

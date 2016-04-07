@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DCPersonListHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4h-tH-s5d">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dq9-Ea-cCC">
+                            <rect key="frame" x="40" y="0.0" width="280" height="30"/>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuMask" translatesAutoresizingMaskIntoConstraints="NO" id="nYp-l0-cHw">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="nYp-l0-cHw" firstAttribute="leading" secondItem="B4h-tH-s5d" secondAttribute="leading" id="4pe-EL-8uh"/>
+                        <constraint firstAttribute="bottom" secondItem="nYp-l0-cHw" secondAttribute="bottom" id="5fw-1U-VGn"/>
+                        <constraint firstItem="nYp-l0-cHw" firstAttribute="top" secondItem="B4h-tH-s5d" secondAttribute="top" id="AwU-OY-a0r"/>
+                        <constraint firstAttribute="trailing" secondItem="Dq9-Ea-cCC" secondAttribute="trailing" id="Hft-Jj-syH"/>
+                        <constraint firstItem="Dq9-Ea-cCC" firstAttribute="leading" secondItem="B4h-tH-s5d" secondAttribute="leading" constant="40" id="KXb-0T-6V3"/>
+                        <constraint firstAttribute="trailing" secondItem="nYp-l0-cHw" secondAttribute="trailing" id="NqQ-Cx-fm9"/>
+                        <constraint firstItem="Dq9-Ea-cCC" firstAttribute="top" secondItem="B4h-tH-s5d" secondAttribute="top" id="Pim-O9-vZY"/>
+                        <constraint firstAttribute="bottom" secondItem="Dq9-Ea-cCC" secondAttribute="bottom" id="l6H-Sx-eSa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="B4h-tH-s5d" secondAttribute="bottom" id="ECo-bg-5Ua"/>
+                <constraint firstAttribute="trailing" secondItem="B4h-tH-s5d" secondAttribute="trailing" id="T8b-Xb-CV6"/>
+                <constraint firstItem="B4h-tH-s5d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cNW-em-xLR"/>
+                <constraint firstItem="B4h-tH-s5d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t4l-M8-cVV"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="maskImageView" destination="nYp-l0-cHw" id="GaV-4t-c4N"/>
+                <outlet property="titleLabel" destination="Dq9-Ea-cCC" id="i0I-cS-s72"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="menuMask" width="1242" height="159"/>
+    </resources>
+</document>

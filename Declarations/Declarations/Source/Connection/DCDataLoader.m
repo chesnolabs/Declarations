@@ -58,10 +58,9 @@ static NSString *const DCCandidatesLink = @"http://chesno.org/persons/json/presi
     [self loadPersonsWithCompletionHandler:completionHandler url:[NSURL URLWithString:DCCandidatesLink]];
 }
 
-- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler url:(NSURL *)url
+- (void)loadPersonsWithCompletionHandler:(void (^)(NSArray *persons, NSError *error))completionHandler
+                                     url:(NSURL *)url
 {
-    NSLog(@"Start loading data from %@", url);
-
     NSMutableArray *loadedPersons = [NSMutableArray array];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

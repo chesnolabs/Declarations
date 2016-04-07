@@ -7,22 +7,32 @@
 //
 
 #import "DCOfficialsViewController.h"
+#import "DCOfficialsView.h"
 #import "DCDataLoader.h"
+
+#import "UIView+MILoadingViewCategory.h"
+#import "DCPropertyMacros.h"
+
+@interface DCOfficialsViewController ()
+@property (nonatomic, readonly) DCOfficialsView    *rootView;
+
+@end
 
 @implementation DCOfficialsViewController
 
-- (void)loadPersons
-{
-    [self showSpinIndicator];
+#pragma mark -
+#pragma mark Accessors
+
+DCViewControllerViewOfClassGetterSynthesize(DCOfficialsView, rootView);
+
+- (void)loadPersons {
+    [self.rootView showLoadingView];
     
-    DCDataLoader *loader = [[DCDataLoader alloc] init];
+    DCDataLoader *loader = [DCDataLoader new];
     [loader loadOfficialsWithCompletionHandler:^(NSArray *persons, NSError *error) {
-        if (persons != nil)
-        {
+        if (persons != nil) {
             [self processPersons:persons];
-        }
-        else
-        {
+        } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self showError:error];
             });

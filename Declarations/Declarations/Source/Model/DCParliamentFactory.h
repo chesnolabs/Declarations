@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCParliament.h"
+
+@class DCParliament;
+@class DCKindOfCandidate;
 
 @interface DCParliamentFactory : NSObject
+@property (nonatomic, readonly) NSArray *parliaments;       //[DCParliament]
+@property (nonatomic, readonly) NSArray *kindsOfCandidates; //[DCKindOfCandidate]
 
 + (instancetype)sharedInstance;
-- (DCParliament *)parliamentWithConvocation:(NSUInteger)convocationNumber;
 
-@property (readonly) NSArray *parliaments;
+- (DCParliament *)parliamentWithConvocation:(NSUInteger)convocationNumber;
+- (DCKindOfCandidate *)kindOfCandidatesWithTitle:(NSString *)title;
 
 @end

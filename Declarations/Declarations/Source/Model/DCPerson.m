@@ -8,98 +8,119 @@
 
 #import "DCPerson.h"
 #import "DCParliamentFactory.h"
+#import "DCParliament.h"
+#import "DCKindOfCandidate.h"
 
 @interface DCPerson ()
-
 @property (strong) NSMutableArray *declarationsStorage;
 @property (strong) NSMutableArray *parliamentsStorage;
+@property (strong) NSMutableArray *kindsOfCandidatesStorage;
 
 @end
 
 @implementation DCPerson
 
-- (id)initWithJSONObject:(NSDictionary *)jsonObject
-{
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)initWithJSONObject:(NSDictionary *)jsonObject {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.declarationsStorage = [NSMutableArray array];
         self.parliamentsStorage = [NSMutableArray array];
 
         id lastNameJson = jsonObject[@"last_name"];
-        if (lastNameJson == [NSNull null] || ![lastNameJson isKindOfClass:[NSString class]] || ([lastNameJson isKindOfClass:[NSString class]] && ((NSString *)lastNameJson).length == 0))
-        {
-            //NSLogD(@"Failed to create person from JSON %@", jsonObject);
+        if (lastNameJson == [NSNull null] ||
+            ![lastNameJson isKindOfClass:[NSString class]] ||
+            ([lastNameJson isKindOfClass:[NSString class]] && ((NSString *)lastNameJson).length == 0)) {
+            
+            NSLog(@"Failed to create person from JSON %@", jsonObject);
+            
             return nil;
         }
 
         self.lastName = jsonObject[@"last_name"];
-        if (jsonObject[@"first_name"] != [NSNull null])
-        {
+        if (jsonObject[@"first_name"] != [NSNull null]) {
             self.firstName = jsonObject[@"first_name"];
         }
-        if (jsonObject[@"second_name"] != [NSNull null])
-        {
+        
+        if (jsonObject[@"second_name"] != [NSNull null]) {
             self.middleName = jsonObject[@"second_name"];
         }
         
         NSString *stringIdentifier = jsonObject[@"id"];
         self.identifier = [stringIdentifier integerValue];
         
-        // TODO: Get from JSON
-        NSArray *parliamentsNumbers = @[ @( self.identifier % 2 == 0 ? 8 : 7 ) ];
-        
-        for (NSNumber *convocationNumber in parliamentsNumbers)
-        {
-            DCParliament *parliament = [[DCParliamentFactory sharedInstance] parliamentWithConvocation:convocationNumber.integerValue];
-            [parliament addDeputy:self];
-            [self.parliamentsStorage addObject:parliament];
+        if (jsonObject[@"convocations"] != [NSNull null]) {
+            NSArray *parliamentsNumbers = jsonObject[@"convocations"];
+            for (NSNumber *number in parliamentsNumbers) {
+                DCParliament *parliament = [[DCParliamentFactory sharedInstance]
+                                            parliamentWithConvocation:number.integerValue];
+                [parliament addModel:self];
+                [self.parliamentsStorage addObject:parliament];
+            }
         }
-
+        
+#warning! When API will be changed, get kind of candidate from JSON
+        NSString *kind = @"Кандидати в Президенти 2014 р.";
+        DCKindOfCandidate *kindOfCandidate = [[DCParliamentFactory sharedInstance] kindOfCandidatesWithTitle:kind];
+        
+        [kindOfCandidate addModel:self];
+        [self.kindsOfCandidatesStorage addObject:kindOfCandidate];
     }
+    
     return self;
 }
 
-- (NSString *)fullName
-{
-    if (self.firstName.length == 0)
-    {
+#pragma mark -
+#pragma mark Accessors
+
+- (NSString *)fullName {
+    if (self.firstName.length == 0) {
         return [NSString stringWithFormat:@"%@", self.lastName];
     }
-    if (self.middleName.length == 0)
-    {
+    
+    if (self.middleName.length == 0) {
         return [NSString stringWithFormat:@"%@ %@.", self.lastName, [self.firstName substringToIndex:1]];
     }
+    
     return [NSString stringWithFormat:@"%@ %@.%@.", self.lastName, [self.firstName substringToIndex:1], [self.middleName substringToIndex:1]];
 }
 
-- (NSArray *)declarations
-{
-    return self.declarationsStorage;
+- (NSArray *)declarations {
+    @synchronized(self.declarationsStorage) {
+        return [self.declarationsStorage copy];
+    }
 }
 
-- (NSArray *)parliaments
-{
-    return self.parliamentsStorage;
+- (NSArray *)parliaments {
+    @synchronized(self.parliamentsStorage) {
+        return [self.parliamentsStorage copy];
+    }
 }
 
-- (void)addDeclaration:(DCDeclaration *)aDeclaration
-{
-    if (aDeclaration != nil)
-    {
+- (NSArray *)kindsOfCandidate {
+    @synchronized(self.kindsOfCandidatesStorage) {
+        return [self.kindsOfCandidatesStorage copy];
+    }
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Name: %@", self.fullName];
+}
+
+#pragma mark -
+#pragma mark Public
+
+- (void)addDeclaration:(DCDeclaration *)aDeclaration {
+    if (aDeclaration != nil) {
         [self.declarationsStorage addObject:aDeclaration];
         aDeclaration.person = self;
     }
 }
 
-- (void)removeAllDeclarations
-{
+- (void)removeAllDeclarations {
     [self.declarationsStorage removeAllObjects];
-}
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"Name: %@", self.fullName];
 }
 
 @end

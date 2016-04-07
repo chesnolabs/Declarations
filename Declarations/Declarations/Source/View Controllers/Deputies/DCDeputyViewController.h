@@ -6,15 +6,8 @@
 //  Copyright (c) 2014 Chesno. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DCPersonsListViewController.h"
 
-@interface DCDeputyViewController : UITableViewController
-
-- (void)loadPersons;
-- (void)processPersons:(NSArray *)persons;
-- (void)showSpinIndicator;
-- (void)showError:(NSError *)error;
-
-- (void)updateWithSelectedParliament:(NSArray *)selectedParliaments;
+@interface DCDeputyViewController : DCPersonsListViewController
 
 @end

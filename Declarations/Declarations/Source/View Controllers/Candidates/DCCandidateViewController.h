@@ -6,9 +6,8 @@
 //  Copyright (c) 2014 Chesno. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "DCDeputyViewController.h"
+#import "DCPersonsListViewController.h"
 
-@interface DCCandidateViewController : DCDeputyViewController
+@interface DCCandidateViewController : DCPersonsListViewController
 
 @end

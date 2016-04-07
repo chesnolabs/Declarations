@@ -11,55 +11,39 @@
 #import "DCDeclarationViewController.h"
 #import "DCDataLoader.h"
 
-@interface DCDeclarationsViewController ()
+#import "UIView+MILoadingViewCategory.h"
 
-@property (strong) UIActivityIndicatorView *indicator;
+@interface DCDeclarationsViewController ()
 
 @end
 
 @implementation DCDeclarationsViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navigationItem.title = self.deputy.fullName;
     
     DCDataLoader *loader = [DCDataLoader new];
-    [loader loadDataForPerson:self.deputy completionHandler:^(BOOL success)
-     {
+    [loader loadDataForPerson:self.deputy completionHandler:^(BOOL success) {
          dispatch_async(dispatch_get_main_queue(), ^{
-             [self.indicator stopAnimating];
-             [self.indicator setHidden:YES];
+             [self.view hideLoadingView];
          });
          
-         if (success)
-         {
-             NSLog(@"Succeded in loading declaration %@", self.deputy.declarations);
+         if (success) {
              [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                  [self.tableView reloadData];
              }];
          }
      }];
     
-    self.indicator = [[UIActivityIndicatorView alloc] initWithFrame:
-                      CGRectMake(self.view.bounds.size.width / 2.0 - 12,
-                                 self.view.bounds.size.width / 2.0 - 12,
-                                 24, 24)];
-    self.indicator.color = [UIColor blackColor];
+    [self.view showLoadingView];
     
-    [self.indicator startAnimating];
-    [self.view addSubview:self.indicator];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
+#warning! remove it to show title for navigation backBarButtonItem
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
 }
 
 - (IBAction)cancelAction:(id)sender

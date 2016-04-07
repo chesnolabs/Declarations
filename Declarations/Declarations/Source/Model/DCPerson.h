@@ -10,17 +10,17 @@
 #import "DCDeclaration.h"
 
 @interface DCPerson : NSObject
+@property (readonly)    NSString    *fullName;
+@property (strong)      NSString    *firstName;
+@property (strong)      NSString    *lastName;
+@property (strong)      NSString    *middleName;
+@property (assign)      NSUInteger  identifier;
 
-- (id)initWithJSONObject:(NSDictionary *)jsonObject;
+@property (nonatomic, readonly) NSArray     *parliaments;
+@property (nonatomic, readonly) NSArray     *declarations;
+@property (nonatomic, readonly) NSArray     *kindsOfCandidate;
 
-@property (readonly) NSString *fullName;
-@property (strong) NSString *firstName;
-@property (strong) NSString *lastName;
-@property (strong) NSString *middleName;
-@property (assign) NSUInteger identifier;
-
-@property (readonly) NSArray *parliaments;
-@property (readonly) NSArray *declarations;
+- (instancetype)initWithJSONObject:(NSDictionary *)jsonObject;
 
 - (void)addDeclaration:(DCDeclaration *)aDeclaration;
 - (void)removeAllDeclarations;

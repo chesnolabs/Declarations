@@ -13,6 +13,8 @@
 #import "DCPerson.h"
 #import "DCValueTransformer.h"
 
+#import "CGRect+DCExtension.h"
+
 @implementation DCDeclarationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,8 +29,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.navigationItem.title = self.declaration.title;
+    
+    DCDeclaration *declaration = self.declaration;
+    NSString *title = [NSString stringWithFormat:@"%@, %@", declaration.person.fullName, declaration.title];
+    
+    UINavigationItem *navigationItem = self.navigationItem;
+    
+    CGRect navigationRect = self.navigationController.navigationBar.frame;
+    CGPoint center = CGRectGetCenter(navigationRect);
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectFromCenter(center, navigationRect.size)];
+    titleLabel.text = title;
+    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.adjustsFontSizeToFitWidth = YES;
+    titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    navigationItem.titleView = titleLabel;
+    
+#warning! remove it to show title for navigation backBarButtonItem
+    navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                        style:UIBarButtonItemStylePlain
+                                                                       target:nil
+                                                                       action:nil];
 }
 
 - (IBAction)cancelAction:(id)sender
@@ -52,6 +73,14 @@
      applicationActivities:nil];
     
     [self presentViewController:controller animated:YES completion:nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UIPopoverPresentationController *popover = controller.popoverPresentationController;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+        CGRect screenRect = [UIScreen mainScreen].bounds;
+        popover.sourceRect = CGRectMake(CGRectGetWidth(screenRect) / 2, CGRectGetHeight(screenRect) / 4, 0.0, 0.0);
+        popover.sourceView = self.view;
+    }
 }
 
 #pragma mark - TableView datasource/delegate
@@ -94,19 +123,20 @@
         [[UIApplication sharedApplication] openURL:self.declaration.originalURL];
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
     }
-    else
-    {
+    else {
         DCCategory *category = (DCCategory *)self.declaration.categories[indexPath.row];
         [self performSegueWithIdentifier:@"DeclarationCategorySegue" sender:category];
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1;
+}
+
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"DeclarationCategorySegue"])
-    {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"DeclarationCategorySegue"]) {
         ((DCCategoryViewController *)segue.destinationViewController).category = sender;
     }
 }
